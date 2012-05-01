@@ -42,26 +42,26 @@
 		9F46EEB615504919009EFE4A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9F46EEB815504919009EFE4A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9F46EEBA15504919009EFE4A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9F46EEBE15504919009EFE4A /* CincyTraffic-Info.plist */ = {isa = PBXFileReference; path = "CincyTraffic-Info.plist"; sourceTree = "<group>"; };
+		9F46EEBE15504919009EFE4A /* CincyTraffic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CincyTraffic-Info.plist"; sourceTree = "<group>"; };
 		9F46EEC015504919009EFE4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9F46EEC215504919009EFE4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9F46EEC415504919009EFE4A /* CincyTraffic-Prefix.pch */ = {isa = PBXFileReference; path = "CincyTraffic-Prefix.pch"; sourceTree = "<group>"; };
-		9F46EEC515504919009EFE4A /* CTAppDelegate.h */ = {isa = PBXFileReference; path = CTAppDelegate.h; sourceTree = "<group>"; };
+		9F46EEC415504919009EFE4A /* CincyTraffic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CincyTraffic-Prefix.pch"; sourceTree = "<group>"; };
+		9F46EEC515504919009EFE4A /* CTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTAppDelegate.h; sourceTree = "<group>"; };
 		9F46EEC615504919009EFE4A /* CTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTAppDelegate.m; sourceTree = "<group>"; };
 		9F46EEC915504919009EFE4A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		9F46EECB15504919009EFE4A /* CTFirstViewController.h */ = {isa = PBXFileReference; path = CTFirstViewController.h; sourceTree = "<group>"; };
+		9F46EECB15504919009EFE4A /* CTFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTFirstViewController.h; sourceTree = "<group>"; };
 		9F46EECC15504919009EFE4A /* CTFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTFirstViewController.m; sourceTree = "<group>"; };
 		9F46EECE15504919009EFE4A /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		9F46EED015504919009EFE4A /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		9F46EED215504919009EFE4A /* CTSecondViewController.h */ = {isa = PBXFileReference; path = CTSecondViewController.h; sourceTree = "<group>"; };
+		9F46EED215504919009EFE4A /* CTSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTSecondViewController.h; sourceTree = "<group>"; };
 		9F46EED315504919009EFE4A /* CTSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTSecondViewController.m; sourceTree = "<group>"; };
 		9F46EED515504919009EFE4A /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		9F46EED715504919009EFE4A /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		9F46EEDE15504919009EFE4A /* CincyTrafficTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CincyTrafficTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F46EEDF15504919009EFE4A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		9F46EEE715504919009EFE4A /* CincyTrafficTests-Info.plist */ = {isa = PBXFileReference; path = "CincyTrafficTests-Info.plist"; sourceTree = "<group>"; };
+		9F46EEE715504919009EFE4A /* CincyTrafficTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CincyTrafficTests-Info.plist"; sourceTree = "<group>"; };
 		9F46EEE915504919009EFE4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9F46EEEB15504919009EFE4A /* CincyTrafficTests.h */ = {isa = PBXFileReference; path = CincyTrafficTests.h; sourceTree = "<group>"; };
+		9F46EEEB15504919009EFE4A /* CincyTrafficTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CincyTrafficTests.h; sourceTree = "<group>"; };
 		9F46EEEC15504919009EFE4A /* CincyTrafficTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CincyTrafficTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
