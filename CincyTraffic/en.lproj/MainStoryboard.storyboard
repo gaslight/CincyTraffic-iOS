@@ -7,20 +7,20 @@
     </dependencies>
     <scenes>
         <!--Cameras View Controller - Cameras-->
-        <scene sceneID="Glv-WJ-DQq">
+        <scene sceneID="vGh-t9-bVK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OIg-yq-lzt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="kA1-h6-b7x" customClass="CTCamerasViewController" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JUr-18-lLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController title="Cameras" id="dNi-dz-6U7" customClass="CTCamerasViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Zf1-Qz-ZbW">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CameraCell" textLabel="gGk-f2-RIL" detailTextLabel="WLA-XP-yKX" style="IBUITableViewCellStyleSubtitle" id="BKj-2A-cpE">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CameraCell" textLabel="gGk-f2-RIL" detailTextLabel="WLA-XP-yKX" style="IBUITableViewCellStyleSubtitle" id="BKj-2A-cpE">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" id="gGk-f2-RIL">
@@ -40,17 +40,70 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="Sic-Ji-ooP" kind="push" identifier="ShowCameraDetail" id="YRw-JQ-7Q3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="kA1-h6-b7x" id="8sG-52-Avy"/>
-                            <outlet property="delegate" destination="kA1-h6-b7x" id="lBw-wQ-hv1"/>
+                            <outlet property="dataSource" destination="dNi-dz-6U7" id="BjY-HG-LCZ"/>
+                            <outlet property="delegate" destination="dNi-dz-6U7" id="gMN-uI-nuW"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Cameras" image="86-camera.png" id="FiM-fa-qXR"/>
+                    <navigationItem key="navigationItem" title="Cameras" id="sVO-lJ-T0Z"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="653" y="-181"/>
+            <point key="canvasLocation" x="1188" y="422"/>
+        </scene>
+        <!--Camera View Controller - Camera Detail-->
+        <scene sceneID="ERg-CL-4IN">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RxZ-YO-iXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController title="Camera Detail" id="Sic-Ji-ooP" customClass="CTCameraViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iyW-Jf-5Zy">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Location:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="NFC-qo-hbY">
+                                <rect key="frame" x="20" y="35" width="90" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="x8q-hW-F5m">
+                                <rect key="frame" x="118" y="35" width="182" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Camera Detail" id="m79-rp-Ywr"/>
+                    <connections>
+                        <outlet property="locationLabel" destination="x8q-hW-F5m" id="g0p-VH-OHT"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1718" y="410"/>
+        </scene>
+        <!--Navigation Controller - Cameras-->
+        <scene sceneID="IuS-kp-4tJ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wos-VQ-kPU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController title="Cameras" definesPresentationContext="YES" id="cFu-tg-8VL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Cameras" image="86-camera.png" id="gwx-Lr-Ycu"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="JAK-BY-Tl8">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dNi-dz-6U7" kind="relationship" relationship="rootViewController" id="YbV-hb-ggW"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="654" y="422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -64,7 +117,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="kA1-h6-b7x" kind="relationship" relationship="viewControllers" id="Nan-4f-6Jq"/>
+                        <segue destination="cFu-tg-8VL" kind="relationship" relationship="viewControllers" id="US5-oK-VM6"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -75,6 +128,12 @@
         <image name="86-camera.png" width="24" height="18"/>
     </resources>
     <classes>
+        <class className="CTCameraViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTCameraViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="CTCamerasViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CTCamerasViewController.h"/>
         </class>

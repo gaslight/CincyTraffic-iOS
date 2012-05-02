@@ -7,6 +7,7 @@
 //
 
 #import "CTCamerasViewController.h"
+#import "CTCameraViewController.h"
 
 @implementation CTCamerasViewController
 
@@ -35,6 +36,13 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"ShowCameraDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        [[segue destinationViewController] setCamera:[self.cameras objectAtIndex:indexPath.row]];
+    }
 }
 
 #pragma mark - Table view data source
