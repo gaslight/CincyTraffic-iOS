@@ -1,0 +1,890 @@
+{
+    "poi": {
+        "addRoadActivity": "false",
+        "addClosures": "false",
+        "cameras": [
+            {
+                "Id": "ID000000000000000000000000000169",
+                "Location": "I-75 N at Glendale",
+                "Latitude": "39.2539",
+                "Longitude": "-84.4434",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000171",
+                "Location": "I-275 S at SR 131",
+                "Latitude": "39.1756",
+                "Longitude": "-84.2675",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000173",
+                "Location": "I-275 E at Lov-Mad",
+                "Latitude": "39.2421",
+                "Longitude": "-84.3004",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000175",
+                "Location": "I-275 E at Winton",
+                "Latitude": "39.2991",
+                "Longitude": "-84.5238",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000177",
+                "Location": "I-275 N at SR 32",
+                "Latitude": "39.1015",
+                "Longitude": "-84.2840",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000179",
+                "Location": "I-275 E at Kellogg",
+                "Latitude": "39.0604",
+                "Longitude": "-84.4214",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000181",
+                "Location": "I-275 W at Colerain",
+                "Latitude": "39.2566",
+                "Longitude": "-84.6007",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "0709097d4f224893b11fb5e738072243",
+                "Location": "I75 and Main St",
+                "Latitude": "39.770189",
+                "Longitude": "-84.194435",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "6bfed1e3f2b548cdae7050bc7d8932e9",
+                "Location": "US 35 and Wayne",
+                "Latitude": "39.753640",
+                "Longitude": "-84.179993",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "6afeffa1566f4ee7a357efdf2c1a45c4",
+                "Location": "US 35 at Whalen",
+                "Latitude": "39.755496",
+                "Longitude": "-84.1652",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "f85493c91d7a4383866ddbf703494775",
+                "Location": "US 35 and Longworth",
+                "Latitude": "39.750824",
+                "Longitude": "-84.195448",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "216d82d928924710bc6c1d572b716370",
+                "Location": "I75 at Carillon",
+                "Latitude": "39.728974",
+                "Longitude": "-84.206922",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "49c755583fb244bd8a5a13e0c747c6bf",
+                "Location": "I75 at US35",
+                "Latitude": "39.747355",
+                "Longitude": "-84.205999",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "c8bbb96f199f4a11b5cbd84494459b5d",
+                "Location": "I75 at Lyons Rd",
+                "Latitude": "39.628052",
+                "Longitude": "-84.229281",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "6bb4165f8fd942138272def1c31e6aa4",
+                "Location": "I-71/75 at Cut In The Hill",
+                "Latitude": "39.063882",
+                "Longitude": "-84.521835",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "839e3bd1189b4562b4b1502cd66561a8",
+                "Location": "I-275 at Dixie Hwy",
+                "Latitude": "39.026161",
+                "Longitude": "-84.572846",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "f8f98e2fa29940dea261591d829ebd3a",
+                "Location": "I-75 S at Mill Creek",
+                "Latitude": "39.169189",
+                "Longitude": "-84.504340",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "a2563db84c3e47b59f104cee5d70ef54",
+                "Location": "I-71/75  at Mt. Zion Rd",
+                "Latitude": "38.956556",
+                "Longitude": "-84.634606",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "7b4607bee02242a9ab8325fd9efeb250",
+                "Location": "I-275 East of KY/IN Border",
+                "Latitude": "39.093536",
+                "Longitude": "-84.813250",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "2cbf1468ee404316b153b43927ed1215",
+                "Location": "I-71 N at Robinson",
+                "Latitude": "39.157835",
+                "Longitude": "-84.439094",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "915768366566422a881088f578ea72cc",
+                "Location": "I-75 at Linn St",
+                "Latitude": "39.104714",
+                "Longitude": "-84.528701",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "c75f5b067b1e41cf8ae52a3ce4d18cff",
+                "Location": "I-71 at Montgomery Rd",
+                "Latitude": "39.143375",
+                "Longitude": "-84.470744",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "55e0efa282d14454848e7b20f5e34c13",
+                "Location": "I-275 at Hamilton Ave",
+                "Latitude": "39.285121",
+                "Longitude": "-84.564214",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "cd7abe5fd6b74b759079ccf2e1dfcfe9",
+                "Location": "I-471 South of US-27",
+                "Latitude": "39.062522",
+                "Longitude": "-84.468169",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "d0c3f0f1aa2d492696e2cc5669e8027c",
+                "Location": "I-71/75 KY Split",
+                "Latitude": "38.876835",
+                "Longitude": "-84.625454",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "a0328b49269144968284bdcf3d4b0110",
+                "Location": "I-275 at US-50",
+                "Latitude": "39.150348",
+                "Longitude": "-84.816835",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "6f142d290d0b4533acbe74ef58b5fb2d",
+                "Location": "I-74 at Rybolt Rd",
+                "Latitude": "39.187911",
+                "Longitude": "-84.641526",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "d475d93acd2f4d1a9cc4d7c95c74d5bd",
+                "Location": "I-74 at Corlerain Ave / Beekman St",
+                "Latitude": "39.160562",
+                "Longitude": "-84.552302",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "4492b70dca4647f5867963b50ac841cb",
+                "Location": "74 at Corlerain",
+                "Latitude": "39.160562",
+                "Longitude": "-84.552302",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "8c38a312b26d45b7abb3a1d3ce8066e2",
+                "Location": "I-74 at Wesselman Rd",
+                "Latitude": "39.214816",
+                "Longitude": "-84.684178",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "05f2d55eec004e46b687b26d484a8efd",
+                "Location": "I-275 at Lawrenceburg",
+                "Latitude": "39.122004",
+                "Longitude": "-84.834044",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "f0934b181eec499f86c69465d6c6427e",
+                "Location": "I-74 at Shepherd Creek",
+                "Latitude": "39.172618",
+                "Longitude": "-84.584770",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "9e66222d942142358dc86ff43d66eb89",
+                "Location": "74 at 275 N ",
+                "Latitude": "39.214267",
+                "Longitude": "-84.677467",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "71a4232a96554360b72d8b39dcf7d2df",
+                "Location": "IR-75 at Austin Pike",
+                "Latitude": "39.597852",
+                "Longitude": "-84.232049",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "42d590f51b0f4024b265fcc276eba11e",
+                "Location": "I-74 at Morgan Rd",
+                "Latitude": "39.229045",
+                "Longitude": "-84.754854",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "021cfe5e0f044db3bf11f665b83d5c74",
+                "Location": "I-74 at Elmore St",
+                "Latitude": "39.156050",
+                "Longitude": "-84.545310",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "2f6e27f9b469487b8830a4e6f6ea13d9",
+                "Location": "I-74 East of Harrison Rd",
+                "Latitude": "39.195449",
+                "Longitude": "-84.650964",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "744dd2f87ca741d89be3fb13f73e733a",
+                "Location": "I-74 at Harrison Rd",
+                "Latitude": "39.196815",
+                "Longitude": "-84.663422",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "b1e47b1896ca43bbb19c603394ce1702",
+                "Location": "I-75 at 3rd Street / Montgomery County Building",
+                "Latitude": "39.758721",
+                "Longitude": "-84.200737",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "d2f789fee5954915b8876eeaef45fbf6",
+                "Location": "74 at Corlerain",
+                "Latitude": "39.160562",
+                "Longitude": "-84.552302",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "37f58613f2014e6aa71cef8412ea79cb",
+                "Location": "74 at Corlerain",
+                "Latitude": "39.160562",
+                "Longitude": "-84.552302",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "0e4a061fa8a144f394fd573a049b037b",
+                "Location": "74 at Corlerain",
+                "Latitude": "39.160562",
+                "Longitude": "-84.552302",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "bf66ad0c6d004e1caf4fc9e4c45f9d7d",
+                "Location": "74 at Corlerain",
+                "Latitude": "39.160562",
+                "Longitude": "-84.552302",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "6e6f405875fc4504acf91485bb49adae",
+                "Location": "74 at Corlerain",
+                "Latitude": "39.160562",
+                "Longitude": "-84.552302",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "887a2848f81a46339126d534112ab8ec",
+                "Location": "74 at Corlerain",
+                "Latitude": "39.160562",
+                "Longitude": "-84.552302",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ba463c7e469246149eb2c92bc7ec08f1",
+                "Location": "I-74 at North Bend Rd",
+                "Latitude": "39.185554",
+                "Longitude": "-84.603098",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "6d522c78bbd04e40a5f24d4d9816ea2d",
+                "Location": "I-75 South of I-74",
+                "Latitude": "39.146418",
+                "Longitude": "-84.538680",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "62e806e36dcd4e5b9305fa4ef64662d5",
+                "Location": "I-275 at Taylor Mill",
+                "Latitude": "39.021470",
+                "Longitude": "-84.511388",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "f64995fdaa184d4292d957cbb41e5804",
+                "Location": "I-275 at US-27 Overpass",
+                "Latitude": "39.049601",
+                "Longitude": "-84.446461",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "f1e5dab2baed41fca8312edb58c7ffae",
+                "Location": "I-71 at SR-126 (RRCC)",
+                "Latitude": "39.225567",
+                "Longitude": "-84.367353",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "621a6c287c7f48198988ff5328f44994",
+                "Location": "I-275 at I-471",
+                "Latitude": "39.046030",
+                "Longitude": "-84.458049",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "039a508155604ce7b0c66a35557f0d0a",
+                "Location": "I-71 Tunnel",
+                "Latitude": "39.101641",
+                "Longitude": "-84.504030",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000001",
+                "Location": "I-275 W over US42",
+                "Latitude": "39.2891",
+                "Longitude": "-84.3952",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000003",
+                "Location": "I-75 at I-275 (N)",
+                "Latitude": "39.2902",
+                "Longitude": "-84.4416",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000005",
+                "Location": "I-275 at SR-747",
+                "Latitude": "39.2948",
+                "Longitude": "-84.4661",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000007",
+                "Location": "I-75 N over Sharon",
+                "Latitude": "39.2703",
+                "Longitude": "-84.4404",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000009",
+                "Location": "I-75 N at Neumann",
+                "Latitude": "39.2469",
+                "Longitude": "-84.4468",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000011",
+                "Location": "I-75 S at Lockland",
+                "Latitude": "39.23",
+                "Longitude": "-84.45",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000013",
+                "Location": "I-75 N over Davis",
+                "Latitude": "39.2205",
+                "Longitude": "-84.4480",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000015",
+                "Location": "I-75 S at Galraith",
+                "Latitude": "39.2118",
+                "Longitude": "-84.4618",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000017",
+                "Location": "RRCC W over I-75",
+                "Latitude": "39.2049",
+                "Longitude": "-84.4658",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000019",
+                "Location": "I-75 N N of Paddock",
+                "Latitude": "39.1944",
+                "Longitude": "-84.4754",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000021",
+                "Location": "I-75 S N of Towne",
+                "Latitude": "39.1836",
+                "Longitude": "-84.4837",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000023",
+                "Location": "562 W over I-75",
+                "Latitude": "39.1749",
+                "Longitude": "-84.4884",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000025",
+                "Location": "I-75 N over Vine",
+                "Latitude": "39.171436",
+                "Longitude": "-84.496523",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000029",
+                "Location": "I-75 N over Mitchell",
+                "Latitude": "39.162735",
+                "Longitude": "-84.508998",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000031",
+                "Location": "I-75 S near Ludlow",
+                "Latitude": "39.1603",
+                "Longitude": "-84.5246",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000033",
+                "Location": "I-75 N at Hopple",
+                "Latitude": "39.137868",
+                "Longitude": "-84.533299",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000035",
+                "Location": "I-75 S at WHV",
+                "Latitude": "39.124561",
+                "Longitude": "-84.535643",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000037",
+                "Location": "I-75 N at Ezzard",
+                "Latitude": "39.1095",
+                "Longitude": "-84.5314",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000039",
+                "Location": "I-75 S at 6th",
+                "Latitude": "39.1016",
+                "Longitude": "-84.5227",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000041",
+                "Location": "I-75 S at OCC",
+                "Latitude": "39.098727",
+                "Longitude": "-84.5222",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000043",
+                "Location": "I-71/5 N on BSB",
+                "Latitude": "39.081123",
+                "Longitude": "-84.522350",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000045",
+                "Location": "I-71/5 S at 12th",
+                "Latitude": "39.076026",
+                "Longitude": "-84.519582",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000049",
+                "Location": "I-71/75 at Kyles Ln",
+                "Latitude": "39.058983",
+                "Longitude": "-84.538507",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000051",
+                "Location": "I-71/5 N at Dixie",
+                "Latitude": "39.051052",
+                "Longitude": "-84.551167",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000053",
+                "Location": "I-71/5 S S of Buttermilk",
+                "Latitude": "39.040920",
+                "Longitude": "-84.583569",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000055",
+                "Location": "I-71/75 at Buttermilk Pike",
+                "Latitude": "39.046853",
+                "Longitude": "-84.574814",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000057",
+                "Location": "I-71/75 at I-275",
+                "Latitude": "39.034720",
+                "Longitude": "-84.599619",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000059",
+                "Location": "I-71/5 S at Donaldson",
+                "Latitude": "39.025785",
+                "Longitude": "-84.613008",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000061",
+                "Location": "I-71/5 S at Turfway",
+                "Latitude": "39.012998",
+                "Longitude": "-84.630368",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000063",
+                "Location": "I-71/5 S at Burlington",
+                "Latitude": "39.001377",
+                "Longitude": "-84.647427",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000065",
+                "Location": "I-71/5 S at US42",
+                "Latitude": "38.985116",
+                "Longitude": "-84.641794",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000067",
+                "Location": "I-71 S at I-75",
+                "Latitude": "39.0983",
+                "Longitude": "-84.5212",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000069",
+                "Location": "I-71 at Elsinore Ave",
+                "Latitude": "39.110982",
+                "Longitude": "-84.500442",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000071",
+                "Location": "I-71 at I-471 (Van Meter St)",
+                "Latitude": "39.105634",
+                "Longitude": "-84.502212",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000073",
+                "Location": "I-275 W at Montgmry",
+                "Latitude": "39.2612",
+                "Longitude": "-84.3380",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000075",
+                "Location": "I-275 W at RH Hwy",
+                "Latitude": "39.2856",
+                "Longitude": "-84.3706",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000077",
+                "Location": "I-275 at SR-4",
+                "Latitude": "39.2951",
+                "Longitude": "-84.4848",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000079",
+                "Location": "I-71 at I-275",
+                "Latitude": "39.271092",
+                "Longitude": "-84.351834",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000081",
+                "Location": "I-71 at US-50 (Lytle Tunnel)",
+                "Latitude": "39.099383",
+                "Longitude": "-84.504052",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000089",
+                "Location": "I-75 S at I-74",
+                "Latitude": "39.151525",
+                "Longitude": "-84.540087",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000091",
+                "Location": "I-275 at Mineola Pike",
+                "Latitude": "39.055124",
+                "Longitude": "-84.626084",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000093",
+                "Location": "I-275 East of KY 212 / Airport",
+                "Latitude": "39.069690",
+                "Longitude": "-84.649610",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000095",
+                "Location": "I-275 at Petersburg Rd Overpass",
+                "Latitude": "39.073604",
+                "Longitude": "-84.670966",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000097",
+                "Location": "I-275 East of KY 237",
+                "Latitude": "39.078321",
+                "Longitude": "-84.690480",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000099",
+                "Location": "I-275 at KY 237",
+                "Latitude": "39.081008",
+                "Longitude": "-84.708573",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000101",
+                "Location": "I-275 West of KY 237",
+                "Latitude": "39.084599",
+                "Longitude": "-84.743950",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000103",
+                "Location": "I-275 at KY 8/Petersburg Exit",
+                "Latitude": "39.087752",
+                "Longitude": "-84.793139",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000108",
+                "Location": "I-71/75 N at Richwood Rd",
+                "Latitude": "38.917483",
+                "Longitude": "-84.629059",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000111",
+                "Location": "I-75 S at Allen Rd.",
+                "Latitude": "39.3151",
+                "Longitude": "-84.4311",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000113",
+                "Location": "I-75 S at Beckett",
+                "Latitude": "39.332538",
+                "Longitude": "-84.413066",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000115",
+                "Location": "I-75 S at Cin-Day Rd.",
+                "Latitude": "39.3416",
+                "Longitude": "-84.3964",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000117",
+                "Location": "I-75 N at Tylersville",
+                "Latitude": "39.3545",
+                "Longitude": "-84.3735",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000119",
+                "Location": "I-75 N at SR 129",
+                "Latitude": "39.3697",
+                "Longitude": "-84.3658",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000121",
+                "Location": "I-71 S at Deerfield",
+                "Latitude": "39.2610",
+                "Longitude": "-84.36",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000123",
+                "Location": "I-71 S at Pfeiffer",
+                "Latitude": "39.2495",
+                "Longitude": "-84.3656",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000127",
+                "Location": "I-71 at Montgomery Rd",
+                "Latitude": "39.201248",
+                "Longitude": "-84.373450",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000129",
+                "Location": "I-71 at Euclid Ave",
+                "Latitude": "39.192691",
+                "Longitude": "-84.386995",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000131",
+                "Location": "I-71 at Stewart Rd",
+                "Latitude": "39.184329",
+                "Longitude": "-84.394484",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000133",
+                "Location": "I-71 at Red Bank Rd",
+                "Latitude": "39.172570",
+                "Longitude": "-84.399628",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000135",
+                "Location": "I-71 S at Kennedy",
+                "Latitude": "39.1695",
+                "Longitude": "-84.4201",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000137",
+                "Location": "I-71 at SR-562 (Norwood Lateral)",
+                "Latitude": "39.1639",
+                "Longitude": "-84.4341",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000140",
+                "Location": "I-71 N at Smith",
+                "Latitude": "39.15",
+                "Longitude": "-84.4457",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000142",
+                "Location": "I-71 N at Dana",
+                "Latitude": "39.1447",
+                "Longitude": "-84.4572",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000144",
+                "Location": "I-71 N at Mas-Mont",
+                "Latitude": "39.2931",
+                "Longitude": "-84.3159",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000146",
+                "Location": "I-71 S over Victory",
+                "Latitude": "39.1412",
+                "Longitude": "-84.4831",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000148",
+                "Location": "I-71 S at MLK",
+                "Latitude": "39.1346",
+                "Longitude": "-84.4931",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000150",
+                "Location": "I-71 S at Taft",
+                "Latitude": "39.128490",
+                "Longitude": "-84.496668",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000152",
+                "Location": "I-71 N at McGregor",
+                "Latitude": "39.122422",
+                "Longitude": "-84.497507",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000154",
+                "Location": "I-74 E at Montana Ave",
+                "Latitude": "39.157156",
+                "Longitude": "-84.566074",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000158",
+                "Location": "I-71 S at Kings Mills",
+                "Latitude": "39.3575",
+                "Longitude": "-84.2633",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000162",
+                "Location": "I-71 S at FWW",
+                "Latitude": "39.0979",
+                "Longitude": "-84.5155",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000164",
+                "Location": "I-275 E at Mosteller",
+                "Latitude": "39.2869",
+                "Longitude": "-84.4291",
+                "IsIconVisible": ""
+            },
+            {
+                "Id": "ID000000000000000000000000000167",
+                "Location": "I-471 at Grand Ave",
+                "Latitude": "39.081178",
+                "Longitude": "-84.471483",
+                "IsIconVisible": ""
+            }
+        ],
+        "rwis": [],
+        "winter": [],
+        "roadActivities": [],
+        "wind": [],
+        "messageSigns": [],
+        "har": [],
+        "harbeacon": []
+    }
+}
