@@ -23,7 +23,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" id="gGk-f2-RIL">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" id="gGk-f2-RIL">
                                             <rect key="frame" x="10" y="2" width="50" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -78,12 +78,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="v1Z-ci-CRv">
+                                <rect key="frame" x="20" y="77" width="280" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Sic-Ji-ooP" id="5X7-kn-0vR"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Camera Detail" id="m79-rp-Ywr"/>
                     <connections>
                         <outlet property="locationLabel" destination="x8q-hW-F5m" id="g0p-VH-OHT"/>
+                        <outlet property="mapView" destination="v1Z-ci-CRv" id="DaB-2k-u4g"/>
                     </connections>
                 </viewController>
             </objects>
@@ -132,6 +140,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CTCameraViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
         <class className="CTCamerasViewController" superclassName="UITableViewController">

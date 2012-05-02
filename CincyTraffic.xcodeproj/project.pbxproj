@@ -28,6 +28,9 @@
 		9F46EF2515505516009EFE4A /* CTCamerasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46EF2415505516009EFE4A /* CTCamerasViewController.m */; };
 		9F8085C01550DBDD0014C555 /* Cameras.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F8085BF1550DBDD0014C555 /* Cameras.json */; };
 		9FE56B7515516F8500781B0F /* CTCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE56B7415516F8500781B0F /* CTCameraViewController.m */; };
+		9FE56B77155173D100781B0F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE56B76155173D100781B0F /* MapKit.framework */; };
+		9FE56B7A15517AC100781B0F /* CTCameraAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE56B7915517AC100781B0F /* CTCameraAnnotation.m */; };
+		9FE56B7C155181AD00781B0F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE56B7B155181AD00781B0F /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,10 @@
 		9F8085BF1550DBDD0014C555 /* Cameras.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Cameras.json; path = Resources/Cameras.json; sourceTree = "<group>"; };
 		9FE56B7315516F8500781B0F /* CTCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCameraViewController.h; sourceTree = "<group>"; };
 		9FE56B7415516F8500781B0F /* CTCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCameraViewController.m; sourceTree = "<group>"; };
+		9FE56B76155173D100781B0F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9FE56B7815517AC100781B0F /* CTCameraAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCameraAnnotation.h; sourceTree = "<group>"; };
+		9FE56B7915517AC100781B0F /* CTCameraAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCameraAnnotation.m; sourceTree = "<group>"; };
+		9FE56B7B155181AD00781B0F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +86,8 @@
 				9F46EEB715504919009EFE4A /* UIKit.framework in Frameworks */,
 				9F46EEB915504919009EFE4A /* Foundation.framework in Frameworks */,
 				9F46EEBB15504919009EFE4A /* CoreGraphics.framework in Frameworks */,
+				9FE56B77155173D100781B0F /* MapKit.framework in Frameworks */,
+				9FE56B7C155181AD00781B0F /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +126,8 @@
 		9F46EEB515504919009EFE4A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FE56B7B155181AD00781B0F /* CoreLocation.framework */,
+				9FE56B76155173D100781B0F /* MapKit.framework */,
 				9F46EEB615504919009EFE4A /* UIKit.framework */,
 				9F46EEB815504919009EFE4A /* Foundation.framework */,
 				9F46EEBA15504919009EFE4A /* CoreGraphics.framework */,
@@ -191,6 +202,8 @@
 		9F46EEFA15504ACC009EFE4A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9FE56B7815517AC100781B0F /* CTCameraAnnotation.h */,
+				9FE56B7915517AC100781B0F /* CTCameraAnnotation.m */,
 				9F46EEFB15504ACC009EFE4A /* CTAppDelegate.h */,
 				9F46EEFC15504ACC009EFE4A /* CTAppDelegate.m */,
 				9F46EF2315505516009EFE4A /* CTCamerasViewController.h */,
@@ -320,6 +333,7 @@
 				9F46EF0215504ACC009EFE4A /* CTAppDelegate.m in Sources */,
 				9F46EF2515505516009EFE4A /* CTCamerasViewController.m in Sources */,
 				9FE56B7515516F8500781B0F /* CTCameraViewController.m in Sources */,
+				9FE56B7A15517AC100781B0F /* CTCameraAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

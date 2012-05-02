@@ -7,10 +7,12 @@
 //
 
 #import "CTCameraViewController.h"
+#import "CTCameraAnnotation.h"
+#import <CoreLocation/CoreLocation.h>
+#import <AddressBook/AddressBook.h>
 
 @implementation CTCameraViewController
-@synthesize camera;
-@synthesize locationLabel;
+@synthesize camera, locationLabel, mapView, geocoder;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,15 +26,36 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
     self.locationLabel.text = [self.camera objectForKey:@"Location"];
+
+    // Set up MapView
+    self.mapView.delegate = self;
+    self.mapView.showsUserLocation = YES;
+    
+    CLLocationCoordinate2D coordinate;
+    coordinate.latitude = [[self.camera objectForKey:@"Latitude"] floatValue];
+    coordinate.longitude = [[self.camera objectForKey:@"Longitude"] floatValue];
+    self.mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 2000, 2000);
+    
+    CTCameraAnnotation* annotation = [[CTCameraAnnotation alloc] initWithCoordinate:coordinate];
+    [mapView addAnnotation:annotation];
+    
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+    
+    if (!self.geocoder) { self.geocoder = [[CLGeocoder alloc] init]; }
+    
+    [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        NSLog(@"I am currently at %@", placemark.administrativeArea);
+    }];
 }
 
 - (void)viewDidUnload
 {
     [self setLocationLabel:nil];
+    [self setMapView:nil];
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -40,4 +63,20 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - MapView delegate methods
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+    
+    MKPinAnnotationView *pinView = (MKPinAnnotationView*)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+    
+    if (pinView == nil) {
+        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+        pinView.pinColor = MKPinAnnotationColorPurple;
+        pinView.animatesDrop = YES;
+    } else {
+        pinView.annotation = annotation;
+    }
+    
+    return pinView;
+}
 @end
