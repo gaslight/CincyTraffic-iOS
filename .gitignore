@@ -15,3 +15,8 @@ profile
 *.moved-aside
 DerivedData
 
+# ruby
+bin
+vendor/ruby
+.bundle
+
