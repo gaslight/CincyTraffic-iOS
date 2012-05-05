@@ -1,520 +1,1377 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		9F46EEB715504919009EFE4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F46EEB615504919009EFE4A /* UIKit.framework */; };
-		9F46EEB915504919009EFE4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F46EEB815504919009EFE4A /* Foundation.framework */; };
-		9F46EEBB15504919009EFE4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F46EEBA15504919009EFE4A /* CoreGraphics.framework */; };
-		9F46EEC115504919009EFE4A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EEBF15504919009EFE4A /* InfoPlist.strings */; };
-		9F46EEC315504919009EFE4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46EEC215504919009EFE4A /* main.m */; };
-		9F46EECA15504919009EFE4A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EEC815504919009EFE4A /* MainStoryboard.storyboard */; };
-		9F46EEE015504919009EFE4A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F46EEDF15504919009EFE4A /* SenTestingKit.framework */; };
-		9F46EEE115504919009EFE4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F46EEB615504919009EFE4A /* UIKit.framework */; };
-		9F46EEE215504919009EFE4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F46EEB815504919009EFE4A /* Foundation.framework */; };
-		9F46EEEA15504919009EFE4A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EEE815504919009EFE4A /* InfoPlist.strings */; };
-		9F46EEED15504919009EFE4A /* CincyTrafficTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46EEEC15504919009EFE4A /* CincyTrafficTests.m */; };
-		9F46EF0215504ACC009EFE4A /* CTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46EEFC15504ACC009EFE4A /* CTAppDelegate.m */; };
-		9F46EF1615504AFD009EFE4A /* CCTV073.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EF1115504AFD009EFE4A /* CCTV073.jpeg */; };
-		9F46EF1715504AFD009EFE4A /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EF1215504AFD009EFE4A /* first.png */; };
-		9F46EF1815504AFD009EFE4A /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EF1315504AFD009EFE4A /* first@2x.png */; };
-		9F46EF1915504AFD009EFE4A /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EF1415504AFD009EFE4A /* second.png */; };
-		9F46EF1A15504AFD009EFE4A /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EF1515504AFD009EFE4A /* second@2x.png */; };
-		9F46EF201550533F009EFE4A /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EF1F1550533F009EFE4A /* 86-camera.png */; };
-		9F46EF2515505516009EFE4A /* CTCamerasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46EF2415505516009EFE4A /* CTCamerasViewController.m */; };
-		9F8085C01550DBDD0014C555 /* Cameras.json in Resources */ = {isa = PBXBuildFile; fileRef = 9F8085BF1550DBDD0014C555 /* Cameras.json */; };
-		9FE56B7515516F8500781B0F /* CTCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE56B7415516F8500781B0F /* CTCameraViewController.m */; };
-		9FE56B77155173D100781B0F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE56B76155173D100781B0F /* MapKit.framework */; };
-		9FE56B7A15517AC100781B0F /* CTCameraAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE56B7915517AC100781B0F /* CTCameraAnnotation.m */; };
-		9FE56B7C155181AD00781B0F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE56B7B155181AD00781B0F /* CoreLocation.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9F46EEE315504919009EFE4A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9F46EEA915504919009EFE4A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9F46EEB115504919009EFE4A;
-			remoteInfo = CincyTraffic;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		9F46EEB215504919009EFE4A /* CincyTraffic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CincyTraffic.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F46EEB615504919009EFE4A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		9F46EEB815504919009EFE4A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		9F46EEBA15504919009EFE4A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9F46EEBE15504919009EFE4A /* CincyTraffic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CincyTraffic-Info.plist"; sourceTree = "<group>"; };
-		9F46EEC015504919009EFE4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9F46EEC215504919009EFE4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9F46EEC415504919009EFE4A /* CincyTraffic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CincyTraffic-Prefix.pch"; sourceTree = "<group>"; };
-		9F46EEC915504919009EFE4A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		9F46EEDE15504919009EFE4A /* CincyTrafficTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CincyTrafficTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9F46EEDF15504919009EFE4A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		9F46EEE715504919009EFE4A /* CincyTrafficTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CincyTrafficTests-Info.plist"; sourceTree = "<group>"; };
-		9F46EEE915504919009EFE4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9F46EEEB15504919009EFE4A /* CincyTrafficTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CincyTrafficTests.h; sourceTree = "<group>"; };
-		9F46EEEC15504919009EFE4A /* CincyTrafficTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CincyTrafficTests.m; sourceTree = "<group>"; };
-		9F46EEFB15504ACC009EFE4A /* CTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTAppDelegate.h; sourceTree = "<group>"; };
-		9F46EEFC15504ACC009EFE4A /* CTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTAppDelegate.m; sourceTree = "<group>"; };
-		9F46EF1115504AFD009EFE4A /* CCTV073.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = CCTV073.jpeg; path = Resources/Images/CCTV073.jpeg; sourceTree = "<group>"; };
-		9F46EF1215504AFD009EFE4A /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = Resources/Images/first.png; sourceTree = "<group>"; };
-		9F46EF1315504AFD009EFE4A /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "Resources/Images/first@2x.png"; sourceTree = "<group>"; };
-		9F46EF1415504AFD009EFE4A /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = Resources/Images/second.png; sourceTree = "<group>"; };
-		9F46EF1515504AFD009EFE4A /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "Resources/Images/second@2x.png"; sourceTree = "<group>"; };
-		9F46EF1F1550533F009EFE4A /* 86-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera.png"; sourceTree = "<group>"; };
-		9F46EF2315505516009EFE4A /* CTCamerasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCamerasViewController.h; sourceTree = "<group>"; };
-		9F46EF2415505516009EFE4A /* CTCamerasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCamerasViewController.m; sourceTree = "<group>"; };
-		9F8085BF1550DBDD0014C555 /* Cameras.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Cameras.json; path = Resources/Cameras.json; sourceTree = "<group>"; };
-		9FE56B7315516F8500781B0F /* CTCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCameraViewController.h; sourceTree = "<group>"; };
-		9FE56B7415516F8500781B0F /* CTCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCameraViewController.m; sourceTree = "<group>"; };
-		9FE56B76155173D100781B0F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		9FE56B7815517AC100781B0F /* CTCameraAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCameraAnnotation.h; sourceTree = "<group>"; };
-		9FE56B7915517AC100781B0F /* CTCameraAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCameraAnnotation.m; sourceTree = "<group>"; };
-		9FE56B7B155181AD00781B0F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		9F46EEAF15504919009EFE4A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9F46EEB715504919009EFE4A /* UIKit.framework in Frameworks */,
-				9F46EEB915504919009EFE4A /* Foundation.framework in Frameworks */,
-				9F46EEBB15504919009EFE4A /* CoreGraphics.framework in Frameworks */,
-				9FE56B77155173D100781B0F /* MapKit.framework in Frameworks */,
-				9FE56B7C155181AD00781B0F /* CoreLocation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9F46EEDA15504919009EFE4A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9F46EEE015504919009EFE4A /* SenTestingKit.framework in Frameworks */,
-				9F46EEE115504919009EFE4A /* UIKit.framework in Frameworks */,
-				9F46EEE215504919009EFE4A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		9F46EEA715504919009EFE4A = {
-			isa = PBXGroup;
-			children = (
-				9F46EEBC15504919009EFE4A /* CincyTraffic */,
-				9F46EEE515504919009EFE4A /* CincyTrafficTests */,
-				9F46EEB515504919009EFE4A /* Frameworks */,
-				9F46EEB315504919009EFE4A /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		9F46EEB315504919009EFE4A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9F46EEB215504919009EFE4A /* CincyTraffic.app */,
-				9F46EEDE15504919009EFE4A /* CincyTrafficTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9F46EEB515504919009EFE4A /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9FE56B7B155181AD00781B0F /* CoreLocation.framework */,
-				9FE56B76155173D100781B0F /* MapKit.framework */,
-				9F46EEB615504919009EFE4A /* UIKit.framework */,
-				9F46EEB815504919009EFE4A /* Foundation.framework */,
-				9F46EEBA15504919009EFE4A /* CoreGraphics.framework */,
-				9F46EEDF15504919009EFE4A /* SenTestingKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9F46EEBC15504919009EFE4A /* CincyTraffic */ = {
-			isa = PBXGroup;
-			children = (
-				9F46EEC215504919009EFE4A /* main.m */,
-				9F46EEFA15504ACC009EFE4A /* Classes */,
-				9F46EEF615504A58009EFE4A /* Resources */,
-				9F46EEC815504919009EFE4A /* MainStoryboard.storyboard */,
-				9F46EEBD15504919009EFE4A /* Supporting Files */,
-			);
-			path = CincyTraffic;
-			sourceTree = "<group>";
-		};
-		9F46EEBD15504919009EFE4A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9F46EEBE15504919009EFE4A /* CincyTraffic-Info.plist */,
-				9F46EEBF15504919009EFE4A /* InfoPlist.strings */,
-				9F46EEC415504919009EFE4A /* CincyTraffic-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9F46EEE515504919009EFE4A /* CincyTrafficTests */ = {
-			isa = PBXGroup;
-			children = (
-				9F46EEEB15504919009EFE4A /* CincyTrafficTests.h */,
-				9F46EEEC15504919009EFE4A /* CincyTrafficTests.m */,
-				9F46EEE615504919009EFE4A /* Supporting Files */,
-			);
-			path = CincyTrafficTests;
-			sourceTree = "<group>";
-		};
-		9F46EEE615504919009EFE4A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				9F46EEE715504919009EFE4A /* CincyTrafficTests-Info.plist */,
-				9F46EEE815504919009EFE4A /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9F46EEF615504A58009EFE4A /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9F8085BF1550DBDD0014C555 /* Cameras.json */,
-				9F46EEF715504A5E009EFE4A /* Images */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		9F46EEF715504A5E009EFE4A /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				9F46EF1F1550533F009EFE4A /* 86-camera.png */,
-				9F46EF1115504AFD009EFE4A /* CCTV073.jpeg */,
-				9F46EF1215504AFD009EFE4A /* first.png */,
-				9F46EF1315504AFD009EFE4A /* first@2x.png */,
-				9F46EF1415504AFD009EFE4A /* second.png */,
-				9F46EF1515504AFD009EFE4A /* second@2x.png */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
-		9F46EEFA15504ACC009EFE4A /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				9FE56B7815517AC100781B0F /* CTCameraAnnotation.h */,
-				9FE56B7915517AC100781B0F /* CTCameraAnnotation.m */,
-				9F46EEFB15504ACC009EFE4A /* CTAppDelegate.h */,
-				9F46EEFC15504ACC009EFE4A /* CTAppDelegate.m */,
-				9F46EF2315505516009EFE4A /* CTCamerasViewController.h */,
-				9F46EF2415505516009EFE4A /* CTCamerasViewController.m */,
-				9FE56B7315516F8500781B0F /* CTCameraViewController.h */,
-				9FE56B7415516F8500781B0F /* CTCameraViewController.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		9F46EEB115504919009EFE4A /* CincyTraffic */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9F46EEF015504919009EFE4A /* Build configuration list for PBXNativeTarget "CincyTraffic" */;
-			buildPhases = (
-				9F46EEAE15504919009EFE4A /* Sources */,
-				9F46EEAF15504919009EFE4A /* Frameworks */,
-				9F46EEB015504919009EFE4A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = CincyTraffic;
-			productName = CincyTraffic;
-			productReference = 9F46EEB215504919009EFE4A /* CincyTraffic.app */;
-			productType = "com.apple.product-type.application";
-		};
-		9F46EEDD15504919009EFE4A /* CincyTrafficTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9F46EEF315504919009EFE4A /* Build configuration list for PBXNativeTarget "CincyTrafficTests" */;
-			buildPhases = (
-				9F46EED915504919009EFE4A /* Sources */,
-				9F46EEDA15504919009EFE4A /* Frameworks */,
-				9F46EEDB15504919009EFE4A /* Resources */,
-				9F46EEDC15504919009EFE4A /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9F46EEE415504919009EFE4A /* PBXTargetDependency */,
-			);
-			name = CincyTrafficTests;
-			productName = CincyTrafficTests;
-			productReference = 9F46EEDE15504919009EFE4A /* CincyTrafficTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		9F46EEA915504919009EFE4A /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				CLASSPREFIX = CT;
-				LastUpgradeCheck = 0430;
-				ORGANIZATIONNAME = "26Webs LLC";
-			};
-			buildConfigurationList = 9F46EEAC15504919009EFE4A /* Build configuration list for PBXProject "CincyTraffic" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 9F46EEA715504919009EFE4A;
-			productRefGroup = 9F46EEB315504919009EFE4A /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				9F46EEB115504919009EFE4A /* CincyTraffic */,
-				9F46EEDD15504919009EFE4A /* CincyTrafficTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		9F46EEB015504919009EFE4A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9F46EEC115504919009EFE4A /* InfoPlist.strings in Resources */,
-				9F46EECA15504919009EFE4A /* MainStoryboard.storyboard in Resources */,
-				9F46EF1615504AFD009EFE4A /* CCTV073.jpeg in Resources */,
-				9F46EF1715504AFD009EFE4A /* first.png in Resources */,
-				9F46EF1815504AFD009EFE4A /* first@2x.png in Resources */,
-				9F46EF1915504AFD009EFE4A /* second.png in Resources */,
-				9F46EF1A15504AFD009EFE4A /* second@2x.png in Resources */,
-				9F46EF201550533F009EFE4A /* 86-camera.png in Resources */,
-				9F8085C01550DBDD0014C555 /* Cameras.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9F46EEDB15504919009EFE4A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9F46EEEA15504919009EFE4A /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		9F46EEDC15504919009EFE4A /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		9F46EEAE15504919009EFE4A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9F46EEC315504919009EFE4A /* main.m in Sources */,
-				9F46EF0215504ACC009EFE4A /* CTAppDelegate.m in Sources */,
-				9F46EF2515505516009EFE4A /* CTCamerasViewController.m in Sources */,
-				9FE56B7515516F8500781B0F /* CTCameraViewController.m in Sources */,
-				9FE56B7A15517AC100781B0F /* CTCameraAnnotation.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9F46EED915504919009EFE4A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9F46EEED15504919009EFE4A /* CincyTrafficTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9F46EEE415504919009EFE4A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9F46EEB115504919009EFE4A /* CincyTraffic */;
-			targetProxy = 9F46EEE315504919009EFE4A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		9F46EEBF15504919009EFE4A /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F46EEC015504919009EFE4A /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		9F46EEC815504919009EFE4A /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F46EEC915504919009EFE4A /* en */,
-			);
-			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
-		9F46EEE815504919009EFE4A /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9F46EEE915504919009EFE4A /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		9F46EEEE15504919009EFE4A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		9F46EEEF15504919009EFE4A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		9F46EEF115504919009EFE4A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CincyTraffic/CincyTraffic-Prefix.pch";
-				INFOPLIST_FILE = "CincyTraffic/CincyTraffic-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		9F46EEF215504919009EFE4A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CincyTraffic/CincyTraffic-Prefix.pch";
-				INFOPLIST_FILE = "CincyTraffic/CincyTraffic-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		9F46EEF415504919009EFE4A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CincyTraffic.app/CincyTraffic";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CincyTraffic/CincyTraffic-Prefix.pch";
-				INFOPLIST_FILE = "CincyTrafficTests/CincyTrafficTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		9F46EEF515504919009EFE4A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CincyTraffic.app/CincyTraffic";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CincyTraffic/CincyTraffic-Prefix.pch";
-				INFOPLIST_FILE = "CincyTrafficTests/CincyTrafficTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		9F46EEAC15504919009EFE4A /* Build configuration list for PBXProject "CincyTraffic" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9F46EEEE15504919009EFE4A /* Debug */,
-				9F46EEEF15504919009EFE4A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9F46EEF015504919009EFE4A /* Build configuration list for PBXNativeTarget "CincyTraffic" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9F46EEF115504919009EFE4A /* Debug */,
-				9F46EEF215504919009EFE4A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9F46EEF315504919009EFE4A /* Build configuration list for PBXNativeTarget "CincyTrafficTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9F46EEF415504919009EFE4A /* Debug */,
-				9F46EEF515504919009EFE4A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 9F46EEA915504919009EFE4A /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>1F7ACB52814B4390946C3AC3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EE53C77DC7104554A5F1503F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>60914D1B73CC4F35ABCE9585</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>9F46EEA715504919009EFE4A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9F46EEBC15504919009EFE4A</string>
+				<string>9F46EEE515504919009EFE4A</string>
+				<string>9F46EEB515504919009EFE4A</string>
+				<string>9F46EEB315504919009EFE4A</string>
+				<string>60914D1B73CC4F35ABCE9585</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEA915504919009EFE4A</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>CLASSPREFIX</key>
+				<string>CT</string>
+				<key>LastUpgradeCheck</key>
+				<string>0430</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>26Webs LLC</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>9F46EEAC15504919009EFE4A</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>9F46EEA715504919009EFE4A</string>
+			<key>productRefGroup</key>
+			<string>9F46EEB315504919009EFE4A</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>9F46EEB115504919009EFE4A</string>
+				<string>9F46EEDD15504919009EFE4A</string>
+			</array>
+		</dict>
+		<key>9F46EEAC15504919009EFE4A</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>9F46EEEE15504919009EFE4A</string>
+				<string>9F46EEEF15504919009EFE4A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>9F46EEAE15504919009EFE4A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9F46EEC315504919009EFE4A</string>
+				<string>9F46EF0215504ACC009EFE4A</string>
+				<string>9F46EF2515505516009EFE4A</string>
+				<string>9FE56B7515516F8500781B0F</string>
+				<string>9FE56B7A15517AC100781B0F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>9F46EEAF15504919009EFE4A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9F46EEB715504919009EFE4A</string>
+				<string>9F46EEB915504919009EFE4A</string>
+				<string>9F46EEBB15504919009EFE4A</string>
+				<string>9FE56B77155173D100781B0F</string>
+				<string>9FE56B7C155181AD00781B0F</string>
+				<string>1F7ACB52814B4390946C3AC3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>9F46EEB015504919009EFE4A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9F46EEC115504919009EFE4A</string>
+				<string>9F46EECA15504919009EFE4A</string>
+				<string>9F46EF1615504AFD009EFE4A</string>
+				<string>9F46EF1715504AFD009EFE4A</string>
+				<string>9F46EF1815504AFD009EFE4A</string>
+				<string>9F46EF1915504AFD009EFE4A</string>
+				<string>9F46EF1A15504AFD009EFE4A</string>
+				<string>9F46EF201550533F009EFE4A</string>
+				<string>9F8085C01550DBDD0014C555</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>9F46EEB115504919009EFE4A</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>9F46EEF015504919009EFE4A</string>
+			<key>buildPhases</key>
+			<array>
+				<string>9F46EEAE15504919009EFE4A</string>
+				<string>9F46EEAF15504919009EFE4A</string>
+				<string>9F46EEB015504919009EFE4A</string>
+				<string>C076937FB625442A93F4BB20</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>CincyTraffic</string>
+			<key>productName</key>
+			<string>CincyTraffic</string>
+			<key>productReference</key>
+			<string>9F46EEB215504919009EFE4A</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>9F46EEB215504919009EFE4A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>CincyTraffic.app</string>
+			<key>path</key>
+			<string>CincyTraffic.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>9F46EEB315504919009EFE4A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9F46EEB215504919009EFE4A</string>
+				<string>9F46EEDE15504919009EFE4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEB515504919009EFE4A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9FE56B7B155181AD00781B0F</string>
+				<string>9FE56B76155173D100781B0F</string>
+				<string>9F46EEB615504919009EFE4A</string>
+				<string>9F46EEB815504919009EFE4A</string>
+				<string>9F46EEBA15504919009EFE4A</string>
+				<string>9F46EEDF15504919009EFE4A</string>
+				<string>EE53C77DC7104554A5F1503F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEB615504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>9F46EEB715504919009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EEB615504919009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EEB815504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>9F46EEB915504919009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EEB815504919009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EEBA15504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>9F46EEBB15504919009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EEBA15504919009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EEBC15504919009EFE4A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9F46EEC215504919009EFE4A</string>
+				<string>9F46EEFA15504ACC009EFE4A</string>
+				<string>9F46EEF615504A58009EFE4A</string>
+				<string>9F46EEC815504919009EFE4A</string>
+				<string>9F46EEBD15504919009EFE4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>CincyTraffic</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEBD15504919009EFE4A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9F46EEBE15504919009EFE4A</string>
+				<string>9F46EEBF15504919009EFE4A</string>
+				<string>9F46EEC415504919009EFE4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEBE15504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>name</key>
+			<string>CincyTraffic-Info.plist</string>
+			<key>path</key>
+			<string>CincyTraffic-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEBF15504919009EFE4A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9F46EEC015504919009EFE4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEC015504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEC115504919009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EEBF15504919009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EEC215504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>main.m</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEC315504919009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EEC215504919009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EEC415504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CincyTraffic-Prefix.pch</string>
+			<key>path</key>
+			<string>CincyTraffic-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEC815504919009EFE4A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9F46EEC915504919009EFE4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>MainStoryboard.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEC915504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/MainStoryboard.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EECA15504919009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EEC815504919009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EED915504919009EFE4A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9F46EEED15504919009EFE4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>9F46EEDA15504919009EFE4A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9F46EEE015504919009EFE4A</string>
+				<string>9F46EEE115504919009EFE4A</string>
+				<string>9F46EEE215504919009EFE4A</string>
+				<string>CDD9786BD7FD4E5BB6725D30</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>9F46EEDB15504919009EFE4A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9F46EEEA15504919009EFE4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>9F46EEDC15504919009EFE4A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string># Run the unit tests in this test bundle.
+"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests"
+</string>
+		</dict>
+		<key>9F46EEDD15504919009EFE4A</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>9F46EEF315504919009EFE4A</string>
+			<key>buildPhases</key>
+			<array>
+				<string>9F46EED915504919009EFE4A</string>
+				<string>9F46EEDA15504919009EFE4A</string>
+				<string>9F46EEDB15504919009EFE4A</string>
+				<string>9F46EEDC15504919009EFE4A</string>
+				<string>C076937FB625442A93F4BB20</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>9F46EEE415504919009EFE4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>CincyTrafficTests</string>
+			<key>productName</key>
+			<string>CincyTrafficTests</string>
+			<key>productReference</key>
+			<string>9F46EEDE15504919009EFE4A</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>9F46EEDE15504919009EFE4A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>CincyTrafficTests.octest</string>
+			<key>path</key>
+			<string>CincyTrafficTests.octest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>9F46EEDF15504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>SenTestingKit.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/SenTestingKit.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>9F46EEE015504919009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EEDF15504919009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EEE115504919009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EEB615504919009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EEE215504919009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EEB815504919009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EEE315504919009EFE4A</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>9F46EEA915504919009EFE4A</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>9F46EEB115504919009EFE4A</string>
+			<key>remoteInfo</key>
+			<string>CincyTraffic</string>
+		</dict>
+		<key>9F46EEE415504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>9F46EEB115504919009EFE4A</string>
+			<key>targetProxy</key>
+			<string>9F46EEE315504919009EFE4A</string>
+		</dict>
+		<key>9F46EEE515504919009EFE4A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9F46EEEB15504919009EFE4A</string>
+				<string>9F46EEEC15504919009EFE4A</string>
+				<string>9F46EEE615504919009EFE4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>CincyTrafficTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEE615504919009EFE4A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9F46EEE715504919009EFE4A</string>
+				<string>9F46EEE815504919009EFE4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEE715504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>name</key>
+			<string>CincyTrafficTests-Info.plist</string>
+			<key>path</key>
+			<string>CincyTrafficTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEE815504919009EFE4A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9F46EEE915504919009EFE4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEE915504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEEA15504919009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EEE815504919009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EEEB15504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CincyTrafficTests.h</string>
+			<key>path</key>
+			<string>CincyTrafficTests.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEEC15504919009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CincyTrafficTests.m</string>
+			<key>path</key>
+			<string>CincyTrafficTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEED15504919009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EEEC15504919009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EEEE15504919009EFE4A</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>5.1</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>9F46EEEF15504919009EFE4A</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>5.1</string>
+				<key>OTHER_CFLAGS</key>
+				<string>-DNS_BLOCK_ASSERTIONS=1</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>9F46EEF015504919009EFE4A</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>9F46EEF115504919009EFE4A</string>
+				<string>9F46EEF215504919009EFE4A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>9F46EEF115504919009EFE4A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>60914D1B73CC4F35ABCE9585</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>CincyTraffic/CincyTraffic-Prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INFOPLIST_FILE</key>
+				<string>CincyTraffic/CincyTraffic-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>9F46EEF215504919009EFE4A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>60914D1B73CC4F35ABCE9585</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>CincyTraffic/CincyTraffic-Prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INFOPLIST_FILE</key>
+				<string>CincyTraffic/CincyTraffic-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>9F46EEF315504919009EFE4A</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>9F46EEF415504919009EFE4A</string>
+				<string>9F46EEF515504919009EFE4A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>9F46EEF415504919009EFE4A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>60914D1B73CC4F35ABCE9585</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/CincyTraffic.app/CincyTraffic</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(DEVELOPER_LIBRARY_DIR)/Frameworks</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>CincyTraffic/CincyTraffic-Prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INFOPLIST_FILE</key>
+				<string>CincyTrafficTests/CincyTrafficTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>octest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>9F46EEF515504919009EFE4A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>60914D1B73CC4F35ABCE9585</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/CincyTraffic.app/CincyTraffic</string>
+				<key>DSTROOT</key>
+				<string>/tmp/xcodeproj.dst</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(DEVELOPER_LIBRARY_DIR)/Frameworks</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>CincyTraffic/CincyTraffic-Prefix.pch</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>INFOPLIST_FILE</key>
+				<string>CincyTrafficTests/CincyTrafficTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>octest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>9F46EEF615504A58009EFE4A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9F8085BF1550DBDD0014C555</string>
+				<string>9F46EEF715504A5E009EFE4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Resources</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEF715504A5E009EFE4A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9F46EF1F1550533F009EFE4A</string>
+				<string>9F46EF1115504AFD009EFE4A</string>
+				<string>9F46EF1215504AFD009EFE4A</string>
+				<string>9F46EF1315504AFD009EFE4A</string>
+				<string>9F46EF1415504AFD009EFE4A</string>
+				<string>9F46EF1515504AFD009EFE4A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Images</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEFA15504ACC009EFE4A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9FE56B7815517AC100781B0F</string>
+				<string>9FE56B7915517AC100781B0F</string>
+				<string>9F46EEFB15504ACC009EFE4A</string>
+				<string>9F46EEFC15504ACC009EFE4A</string>
+				<string>9F46EF2315505516009EFE4A</string>
+				<string>9F46EF2415505516009EFE4A</string>
+				<string>9FE56B7315516F8500781B0F</string>
+				<string>9FE56B7415516F8500781B0F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Classes</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEFB15504ACC009EFE4A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CTAppDelegate.h</string>
+			<key>path</key>
+			<string>CTAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EEFC15504ACC009EFE4A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CTAppDelegate.m</string>
+			<key>path</key>
+			<string>CTAppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EF0215504ACC009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EEFC15504ACC009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EF1115504AFD009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.jpeg</string>
+			<key>name</key>
+			<string>CCTV073.jpeg</string>
+			<key>path</key>
+			<string>Resources/Images/CCTV073.jpeg</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EF1215504AFD009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>name</key>
+			<string>first.png</string>
+			<key>path</key>
+			<string>Resources/Images/first.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EF1315504AFD009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>name</key>
+			<string>first@2x.png</string>
+			<key>path</key>
+			<string>Resources/Images/first@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EF1415504AFD009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>name</key>
+			<string>second.png</string>
+			<key>path</key>
+			<string>Resources/Images/second.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EF1515504AFD009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>name</key>
+			<string>second@2x.png</string>
+			<key>path</key>
+			<string>Resources/Images/second@2x.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EF1615504AFD009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EF1115504AFD009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EF1715504AFD009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EF1215504AFD009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EF1815504AFD009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EF1315504AFD009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EF1915504AFD009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EF1415504AFD009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EF1A15504AFD009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EF1515504AFD009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EF1F1550533F009EFE4A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>image.png</string>
+			<key>name</key>
+			<string>86-camera.png</string>
+			<key>path</key>
+			<string>86-camera.png</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EF201550533F009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EF1F1550533F009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F46EF2315505516009EFE4A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CTCamerasViewController.h</string>
+			<key>path</key>
+			<string>CTCamerasViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EF2415505516009EFE4A</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CTCamerasViewController.m</string>
+			<key>path</key>
+			<string>CTCamerasViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F46EF2515505516009EFE4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F46EF2415505516009EFE4A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F8085BF1550DBDD0014C555</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.json</string>
+			<key>name</key>
+			<string>Cameras.json</string>
+			<key>path</key>
+			<string>Resources/Cameras.json</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9F8085C01550DBDD0014C555</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F8085BF1550DBDD0014C555</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9FE56B7315516F8500781B0F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CTCameraViewController.h</string>
+			<key>path</key>
+			<string>CTCameraViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9FE56B7415516F8500781B0F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CTCameraViewController.m</string>
+			<key>path</key>
+			<string>CTCameraViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9FE56B7515516F8500781B0F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9FE56B7415516F8500781B0F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9FE56B76155173D100781B0F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>MapKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/MapKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>9FE56B77155173D100781B0F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9FE56B76155173D100781B0F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9FE56B7815517AC100781B0F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>CTCameraAnnotation.h</string>
+			<key>path</key>
+			<string>CTCameraAnnotation.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9FE56B7915517AC100781B0F</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>CTCameraAnnotation.m</string>
+			<key>path</key>
+			<string>CTCameraAnnotation.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9FE56B7A15517AC100781B0F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9FE56B7915517AC100781B0F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9FE56B7B155181AD00781B0F</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreLocation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreLocation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>9FE56B7C155181AD00781B0F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9FE56B7B155181AD00781B0F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C076937FB625442A93F4BB20</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+		</dict>
+		<key>CDD9786BD7FD4E5BB6725D30</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EE53C77DC7104554A5F1503F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>EE53C77DC7104554A5F1503F</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods.a</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>9F46EEA915504919009EFE4A</string>
+</dict>
+</plist>

@@ -1,0 +1,42 @@
+PODS:
+  - FileMD5Hash (0.0.1)
+  - ISO8601DateFormatter (0.6)
+  - LibComponentLogging-Core (1.1.6)
+  - LibComponentLogging-NSLog (1.0.4):
+    - LibComponentLogging-Core (>= 1.1.6)
+  - NSData+Base64 (1.0.0)
+  - RestKit/Network (0.10.0):
+    - FileMD5Hash
+    - LibComponentLogging-NSLog (>= 1.0.4)
+    - RestKit (= 0.10.0)
+    - SOCKit
+    - cocoa-oauth
+  - RestKit/ObjectMapping (0.10.0):
+    - ISO8601DateFormatter (>= 0.6)
+    - RestKit (= 0.10.0)
+    - RestKit/Network
+  - RestKit/ObjectMapping/CoreData (0.10.0):
+    - RestKit (= 0.10.0)
+    - RestKit/ObjectMapping (= 0.10.0)
+  - RestKit/ObjectMapping/XML (0.10.0):
+    - RestKit (= 0.10.0)
+    - RestKit/ObjectMapping (= 0.10.0)
+    - XMLReader
+  - RestKit/UI (0.10.0):
+    - RestKit (= 0.10.0)
+    - UDTableView
+  - SOCKit (1.0)
+  - UDTableView (1.0.0)
+  - XMLReader (0.0.1)
+  - cocoa-oauth (0.0.1):
+    - NSData+Base64 (~> 1.0)
+
+DOWNLOAD_ONLY:
+  - RestKit (0.10.0)
+
+DEPENDENCIES:
+  - RestKit/Network
+  - RestKit/ObjectMapping
+  - RestKit/ObjectMapping/CoreData
+  - RestKit/ObjectMapping/XML
+  - RestKit/UI
