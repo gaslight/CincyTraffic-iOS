@@ -78,15 +78,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="v1Z-ci-CRv">
-                                <rect key="frame" x="20" y="244" width="280" height="103"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" showsUserLocation="YES" id="v1Z-ci-CRv">
+                                <rect key="frame" x="20" y="259" width="280" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Sic-Ji-ooP" id="5X7-kn-0vR"/>
                                 </connections>
                             </mapView>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" id="cat-HW-3Z3">
-                                <rect key="frame" x="20" y="65" width="280" height="171"/>
+                            <webView userInteractionEnabled="NO" contentMode="scaleToFill" scalesPageToFit="YES" id="cat-HW-3Z3">
+                                <rect key="frame" x="20" y="55" width="280" height="196"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
