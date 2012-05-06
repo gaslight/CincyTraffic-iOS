@@ -9,6 +9,7 @@
 #import "CTCamerasViewController.h"
 #import "CTCameraViewController.h"
 #import "CTCameraSite.h"
+#import "TDBadgedCell.h"
 
 @implementation CTCamerasViewController
 
@@ -59,11 +60,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CameraCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    TDBadgedCell *cell = (TDBadgedCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+    if (!cell) {
+        cell = [[TDBadgedCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
+
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     CTCameraSite *camera = [self.cameras objectAtIndex:indexPath.row];
     cell.textLabel.text = camera.location;
-    cell.detailTextLabel.text = [camera.latitude stringValue];
+    cell.badgeString = [NSString stringWithFormat:@"%d", camera.cameraFeeds.count];
     
     return cell;
 }

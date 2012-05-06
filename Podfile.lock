@@ -26,6 +26,7 @@ PODS:
     - RestKit (= 0.10.0)
     - UDTableView
   - SOCKit (1.0)
+  - TDBadgedCell (2.0)
   - UDTableView (1.0.0)
   - XMLReader (0.0.1)
   - cocoa-oauth (0.0.1):
@@ -40,3 +41,4 @@ DEPENDENCIES:
   - RestKit/ObjectMapping/CoreData
   - RestKit/ObjectMapping/XML
   - RestKit/UI
+  - TDBadgedCell

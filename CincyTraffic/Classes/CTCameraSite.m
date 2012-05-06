@@ -6,18 +6,19 @@
 //  Copyright (c) 2012 26Webs LLC. All rights reserved.
 //
 
-#import "CTCameraSite.h"
 #import "RKObjectManager.h"
+#import "CTCameraSite.h"
+#import "CTCameraFeed.h"
 
 @implementation CTCameraSite
 @synthesize location, latitude, longitude, cameraFeeds;
 
 + (RKObjectMapping *)mapping {
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[CTCameraSite class]];
-    //[mapping mapAttributes:@"location", @"latitude", @"longitude", @"cameraFeeds", nil];
     [mapping mapKeyPath:@"Location" toAttribute:@"location"];
     [mapping mapKeyPath:@"Latitude" toAttribute:@"latitude"];
     [mapping mapKeyPath:@"Longitude" toAttribute:@"longitude"];
+    [mapping mapKeyPath:@"CameraFeeds.CameraFeed" toRelationship:@"cameraFeeds" withMapping:[CTCameraFeed mapping]];
     return mapping;
 }
 

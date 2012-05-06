@@ -13,7 +13,7 @@
 
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSNumber *latitude, *longitude;
-@property (nonatomic, copy) NSArray *cameraFeeds;
+@property (nonatomic, copy) NSMutableArray *cameraFeeds;
 
 + (RKObjectMapping *)mapping;
 @end
