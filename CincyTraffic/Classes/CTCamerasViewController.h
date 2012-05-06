@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "RKObjectManager.h"
 
-@interface CTCamerasViewController : UITableViewController <RKObjectLoaderDelegate> {
-    NSMutableArray* _cameras;
-}
-
+@interface CTCamerasViewController : UITableViewController <RKObjectLoaderDelegate, UISearchBarDelegate>
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSMutableArray *cameras;
+@property (strong, nonatomic) NSMutableArray *tableData;
+
+- (IBAction)loadCameras:(id)sender;
 @end

@@ -13,7 +13,9 @@
 
 @implementation CTCamerasViewController
 
+@synthesize searchBar = _searchBar;
 @synthesize cameras = _cameras;
+@synthesize tableData = _tableData;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,11 +29,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadCameras];
+    [self loadCameras:nil];
 }
 
 - (void)viewDidUnload
 {
+    [self setSearchBar:nil];
     [super viewDidUnload];
 }
 
@@ -43,7 +46,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ShowCameraDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        [[segue destinationViewController] setCamera:[self.cameras objectAtIndex:indexPath.row]];
+        [[segue destinationViewController] setCamera:[self.tableData objectAtIndex:indexPath.row]];
     }
 }
 
@@ -54,7 +57,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.cameras count];
+    return [self.tableData count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,7 +71,7 @@
 
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    CTCameraSite *camera = [self.cameras objectAtIndex:indexPath.row];
+    CTCameraSite *camera = [self.tableData objectAtIndex:indexPath.row];
     cell.textLabel.text = camera.location;
     cell.badgeString = [NSString stringWithFormat:@"%d", camera.cameraFeeds.count];
     
@@ -77,7 +80,7 @@
 
 #pragma mark - Cameras
 
-- (void)loadCameras {
+- (IBAction)loadCameras:(id)sender {
     [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/Cameras.aspx" delegate:self];
 }
 
@@ -85,6 +88,9 @@
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
     self.cameras = [NSMutableArray arrayWithArray:objects];
+    self.tableData = [NSMutableArray arrayWithArray:objects];
+    NSLog(@"table data: %d", self.tableData.count);
+    NSLog(@"cameras: %d", self.cameras.count);
     [self.tableView reloadData];
 }
 
@@ -101,4 +107,31 @@
                         totalBytesExpectedToReceive:(NSInteger)totalBytesExpectedToReceive {
     NSLog(@"bytes recieved: %d of %d", totalBytesReceived, totalBytesExpectedToReceive);
 }
+
+#pragma mark - Search bar
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    self.tableData = [[NSMutableArray alloc] initWithArray:self.cameras];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K like[cd] %@", @"location", [NSString stringWithFormat:@"*%@*", searchText]];
+    [self.tableData filterUsingPredicate:predicate];
+    [self.tableView reloadData];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [searchBar setShowsCancelButton:YES animated:YES];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.tableData = self.cameras;
+    
+    searchBar.text = nil;
+    [searchBar setShowsCancelButton:NO animated:YES];
+    [searchBar resignFirstResponder];
+    
+    NSLog(@"table data: %d", self.tableData.count);
+    NSLog(@"cameras: %d", self.cameras.count);
+    
+    [self.tableView reloadData];
+}
+
 @end
