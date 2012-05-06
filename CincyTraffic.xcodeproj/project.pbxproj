@@ -27,6 +27,8 @@
 		9F46EF1A15504AFD009EFE4A /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EF1515504AFD009EFE4A /* second@2x.png */; };
 		9F46EF201550533F009EFE4A /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F46EF1F1550533F009EFE4A /* 86-camera.png */; };
 		9F46EF2515505516009EFE4A /* CTCamerasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F46EF2415505516009EFE4A /* CTCamerasViewController.m */; };
+		9FAF2A4A1556CD1A00948F2A /* 71-compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FAF2A491556CD1A00948F2A /* 71-compass.png */; };
+		9FAF2A4C1556CD7500948F2A /* 07-map-marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FAF2A4B1556CD7500948F2A /* 07-map-marker.png */; };
 		9FB3BE78155617BF0046BF3A /* CTCameraFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FB3BE77155617BF0046BF3A /* CTCameraFeed.m */; };
 		9FE56B7515516F8500781B0F /* CTCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE56B7415516F8500781B0F /* CTCameraViewController.m */; };
 		9FE56B77155173D100781B0F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE56B76155173D100781B0F /* MapKit.framework */; };
@@ -73,6 +75,8 @@
 		9F46EF1F1550533F009EFE4A /* 86-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera.png"; sourceTree = "<group>"; };
 		9F46EF2315505516009EFE4A /* CTCamerasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCamerasViewController.h; sourceTree = "<group>"; };
 		9F46EF2415505516009EFE4A /* CTCamerasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCamerasViewController.m; sourceTree = "<group>"; };
+		9FAF2A491556CD1A00948F2A /* 71-compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "71-compass.png"; path = "Resources/Images/71-compass.png"; sourceTree = "<group>"; };
+		9FAF2A4B1556CD7500948F2A /* 07-map-marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "07-map-marker.png"; path = "Resources/Images/07-map-marker.png"; sourceTree = "<group>"; };
 		9FB3BE76155617BF0046BF3A /* CTCameraFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCameraFeed.h; sourceTree = "<group>"; };
 		9FB3BE77155617BF0046BF3A /* CTCameraFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCameraFeed.m; sourceTree = "<group>"; };
 		9FE56B7315516F8500781B0F /* CTCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCameraViewController.h; sourceTree = "<group>"; };
@@ -200,6 +204,8 @@
 		9F46EEF715504A5E009EFE4A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9FAF2A4B1556CD7500948F2A /* 07-map-marker.png */,
+				9FAF2A491556CD1A00948F2A /* 71-compass.png */,
 				9F46EF1F1550533F009EFE4A /* 86-camera.png */,
 				9F46EF1115504AFD009EFE4A /* CCTV073.jpeg */,
 				9F46EF1215504AFD009EFE4A /* first.png */,
@@ -311,6 +317,8 @@
 				9F46EF1915504AFD009EFE4A /* second.png in Resources */,
 				9F46EF1A15504AFD009EFE4A /* second@2x.png in Resources */,
 				9F46EF201550533F009EFE4A /* 86-camera.png in Resources */,
+				9FAF2A4A1556CD1A00948F2A /* 71-compass.png in Resources */,
+				9FAF2A4C1556CD7500948F2A /* 07-map-marker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

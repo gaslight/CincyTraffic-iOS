@@ -15,22 +15,34 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="ggI-0o-Alo">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
+                            <connections>
+                                <outlet property="delegate" destination="dNi-dz-6U7" id="lhW-Ry-XA2"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CameraCell" textLabel="gGk-f2-RIL" detailTextLabel="WLA-XP-yKX" style="IBUITableViewCellStyleSubtitle" id="BKj-2A-cpE" customClass="TDBadgedCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" id="gGk-f2-RIL">
-                                            <rect key="frame" x="10" y="2" width="50" height="22"/>
+                                            <rect key="frame" x="10" y="11" width="50" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="left" text="State" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WLA-XP-yKX">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WLA-XP-yKX">
                                             <rect key="frame" x="10" y="24" width="33" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -50,7 +62,16 @@
                             <outlet property="delegate" destination="dNi-dz-6U7" id="gMN-uI-nuW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cameras" id="sVO-lJ-T0Z"/>
+                    <navigationItem key="navigationItem" title="Cameras" id="sVO-lJ-T0Z">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="nRg-p7-NiO">
+                            <connections>
+                                <action selector="loadCameras:" destination="dNi-dz-6U7" id="2wo-LV-HTs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="ggI-0o-Alo" id="KvE-vN-Kqq"/>
+                    </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1188" y="422"/>
@@ -104,6 +125,37 @@
             </objects>
             <point key="canvasLocation" x="1718" y="410"/>
         </scene>
+        <!--Navigation Controller - My Routes-->
+        <scene sceneID="muC-H0-A5J">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4U-AB-cRK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="ofz-M5-UMp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="My Routes" image="07-map-marker.png" id="Qu1-je-y5C"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ZLO-oC-GpC">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mjD-Js-BBb" kind="push" id="HBO-NM-z1E"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="652" y="1074"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rMS-US-Fa8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ENd-K9-W2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="mjD-Js-BBb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZPX-N2-oiT">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ohg-We-Z2U"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1096" y="1076"/>
+        </scene>
         <!--Navigation Controller - Cameras-->
         <scene sceneID="IuS-kp-4tJ">
             <objects>
@@ -133,13 +185,55 @@
                     </tabBar>
                     <connections>
                         <segue destination="cFu-tg-8VL" kind="relationship" relationship="viewControllers" id="US5-oK-VM6"/>
+                        <segue destination="Fs3-kT-HVa" kind="relationship" relationship="viewControllers" id="G2B-x2-DZt"/>
+                        <segue destination="ofz-M5-UMp" kind="relationship" relationship="viewControllers" id="V3f-TG-O3N"/>
                     </connections>
                 </tabBarController>
             </objects>
             <point key="canvasLocation" x="132" y="180"/>
         </scene>
+        <!--Navigation Controller - Map-->
+        <scene sceneID="myS-nf-bH5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iq1-m2-xeZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController definesPresentationContext="YES" id="Fs3-kT-HVa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" image="71-compass.png" id="ujf-j4-bCO"/>
+                    <navigationItem key="navigationItem" id="UV3-pK-nvU"/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="lz3-QK-tjh">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RAw-Kz-RLK" kind="push" id="Xw7-0K-W88"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="654" y="-298"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PFd-jJ-4Et">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="78F-6c-SYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="RAw-Kz-RLK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F7I-1i-pxg">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="cd1-ZC-hB3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jYc-LC-3RG"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1052" y="-298"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="07-map-marker.png" width="16" height="26"/>
+        <image name="71-compass.png" width="24" height="24"/>
         <image name="86-camera.png" width="24" height="18"/>
     </resources>
     <classes>
@@ -153,6 +247,10 @@
         </class>
         <class className="CTCamerasViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CTCamerasViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="loadCameras:"/>
+                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
         </class>
         <class className="TDBadgedCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TDBadgedCell.h"/>
