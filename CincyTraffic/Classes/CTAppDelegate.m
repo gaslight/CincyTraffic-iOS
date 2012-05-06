@@ -21,6 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [TestFlight takeOff:@"44e14a3879aa66d2321f385deac7c497_ODc1MzgyMDEyLTA1LTA2IDAyOjUwOjMyLjgxMjUyNA"];
     [self setupRestKit];
     return YES;
 }
