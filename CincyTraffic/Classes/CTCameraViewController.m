@@ -27,15 +27,15 @@
 {
     [super viewDidLoad];
 
-    self.locationLabel.text = [self.camera objectForKey:@"Location"];
+    self.locationLabel.text = self.camera.location;
 
     // Set up MapView
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
     
     CLLocationCoordinate2D coordinate;
-    coordinate.latitude = [[self.camera objectForKey:@"Latitude"] floatValue];
-    coordinate.longitude = [[self.camera objectForKey:@"Longitude"] floatValue];
+    coordinate.latitude = [self.camera.latitude floatValue];
+    coordinate.longitude = [self.camera.longitude floatValue];
     self.mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 2000, 2000);
     
     CTCameraAnnotation* annotation = [[CTCameraAnnotation alloc] initWithCoordinate:coordinate];

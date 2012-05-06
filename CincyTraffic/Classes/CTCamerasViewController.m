@@ -8,6 +8,7 @@
 
 #import "CTCamerasViewController.h"
 #import "CTCameraViewController.h"
+#import "CTCameraSite.h"
 
 @implementation CTCamerasViewController
 
@@ -60,9 +61,9 @@
     static NSString *CellIdentifier = @"CameraCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    NSDictionary *camera = [self.cameras objectAtIndex:indexPath.row];
-    cell.textLabel.text = [camera objectForKey:@"Location"];
-    cell.detailTextLabel.text = [camera objectForKey:@"State"];
+    CTCameraSite *camera = [self.cameras objectAtIndex:indexPath.row];
+    cell.textLabel.text = camera.location;
+    cell.detailTextLabel.text = [camera.latitude stringValue];
     
     return cell;
 }
@@ -70,14 +71,30 @@
 #pragma mark - Cameras
 
 - (void)loadCameras {
-    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"Cameras" ofType:@"json"];
-    NSData *jsonData = [NSData dataWithContentsOfFile:jsonPath];
-    NSDictionary *jsonCameras = [NSJSONSerialization JSONObjectWithData:jsonData 
-                                                            options:kNilOptions 
-                                                              error:nil];
-    
-    self.cameras = [[jsonCameras objectForKey:@"poi"] objectForKey:@"cameras"];
-    [self.tableView reloadData];
+    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/Cameras.aspx" delegate:self];
 }
 
+#pragma mark - RestKit
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
+    self.cameras = [NSMutableArray arrayWithArray:objects];
+    [self.tableView reloadData];
+    NSLog(@"loaded %d camera sites", objects.count);
+    // Contact *contact = [objects objectAtIndex:0];
+    // NSLog(@"Loaded Contact ID #%@ -> Name: %@, Company: %@", contact.id, contact.name, contact.company);
+}
+
+- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
+    [[[UIAlertView alloc] initWithTitle:@"Network Error"
+                                message:@"There was an issue connecting to the server."
+                               delegate:self
+                      cancelButtonTitle:@"Cancel"
+                      otherButtonTitles:nil] show];
+}
+
+- (void)request:(RKRequest *)request didReceiveData:(NSInteger)bytesReceived
+                                 totalBytesReceived:(NSInteger)totalBytesReceived 
+                        totalBytesExpectedToReceive:(NSInteger)totalBytesExpectedToReceive {
+    NSLog(@"bytes recieved: %d of %d", totalBytesReceived, totalBytesExpectedToReceive);
+}
 @end

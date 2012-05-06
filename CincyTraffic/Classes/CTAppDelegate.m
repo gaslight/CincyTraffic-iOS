@@ -6,7 +6,13 @@
 //  Copyright (c) 2012 26Webs LLC. All rights reserved.
 //
 
+#import <RestKit/RestKit.h>
 #import "CTAppDelegate.h"
+#import "CTCameraSite.h"
+
+@interface CTAppDelegate ()
+- (void)setupRestKit;
+@end
 
 @implementation CTAppDelegate
 
@@ -14,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [self setupRestKit];
     return YES;
 }
 							
@@ -45,4 +51,15 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)setupRestKit {
+    RKLogConfigureByName("RestKit/Network", RKLogLevelError);
+    RKLogConfigureByName("RestKit/Network/Queue", RKLogLevelError);
+    RKLogConfigureByName("RestKit/Network/Reachability", RKLogLevelError);
+
+    NSURL *root = [NSURL URLWithString:@"http://www.buckeyetraffic.org/services/"];
+    RKObjectManager *manager = [RKObjectManager objectManagerWithBaseURL:root];
+    manager.acceptMIMEType = @"text/xml";
+
+    [manager.mappingProvider setMapping:[CTCameraSite mapping] forKeyPath:@"CameraSites.CameraSite"];
+}
 @end

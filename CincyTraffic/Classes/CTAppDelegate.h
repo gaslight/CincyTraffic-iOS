@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RKObjectLoader.h"
 
 @interface CTAppDelegate : UIResponder <UIApplicationDelegate>
 

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RKObjectManager.h"
 
-@interface CTCamerasViewController : UITableViewController {
+@interface CTCamerasViewController : UITableViewController <RKObjectLoaderDelegate> {
     NSMutableArray* _cameras;
 }
 

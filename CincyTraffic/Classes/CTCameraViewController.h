@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "CTCameraSite.h"
 
 @interface CTCameraViewController : UIViewController <MKMapViewDelegate>
-@property (nonatomic, strong) NSDictionary *camera;
+@property (nonatomic, strong) CTCameraSite *camera;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLGeocoder *geocoder;
