@@ -18,7 +18,8 @@
     [mapping mapKeyPath:@"Location" toAttribute:@"location"];
     [mapping mapKeyPath:@"Latitude" toAttribute:@"latitude"];
     [mapping mapKeyPath:@"Longitude" toAttribute:@"longitude"];
-    [mapping mapKeyPath:@"CameraFeeds.CameraFeed" toRelationship:@"cameraFeeds" withMapping:[CTCameraFeed mapping]];
+    [mapping mapKeyPath:@"CameraFeeds.CameraFeed" toRelationship:@"cameraFeeds" 
+            withMapping:[CTCameraFeed mapping]];
     return mapping;
 }
 

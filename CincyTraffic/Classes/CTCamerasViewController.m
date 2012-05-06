@@ -6,10 +6,10 @@
 //  Copyright (c) 2012 26Webs LLC. All rights reserved.
 //
 
+#import "TDBadgedCell.h"
 #import "CTCamerasViewController.h"
 #import "CTCameraViewController.h"
 #import "CTCameraSite.h"
-#import "TDBadgedCell.h"
 
 @implementation CTCamerasViewController
 
@@ -86,9 +86,6 @@
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
     self.cameras = [NSMutableArray arrayWithArray:objects];
     [self.tableView reloadData];
-    NSLog(@"loaded %d camera sites", objects.count);
-    // Contact *contact = [objects objectAtIndex:0];
-    // NSLog(@"Loaded Contact ID #%@ -> Name: %@, Company: %@", contact.id, contact.name, contact.company);
 }
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {

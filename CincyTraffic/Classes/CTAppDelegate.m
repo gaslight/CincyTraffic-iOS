@@ -9,6 +9,7 @@
 #import <RestKit/RestKit.h>
 #import "CTAppDelegate.h"
 #import "CTCameraSite.h"
+#import "CTCameraFeed.h"
 
 @interface CTAppDelegate ()
 - (void)setupRestKit;
@@ -61,5 +62,6 @@
     manager.acceptMIMEType = @"text/xml";
 
     [manager.mappingProvider setMapping:[CTCameraSite mapping] forKeyPath:@"CameraSites.CameraSite"];
+    [manager.mappingProvider setMapping:[CTCameraFeed mapping] forKeyPath:@"CameraFeeds.CameraFeed"];
 }
 @end

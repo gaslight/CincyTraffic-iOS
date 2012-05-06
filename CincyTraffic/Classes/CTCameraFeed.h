@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *description;
 @property (nonatomic, copy) NSString *smallImageURL;
 @property (nonatomic, copy) NSString *largeImageURL;
-@property (nonatomic) NSInteger *updateInterval;
+@property (nonatomic, copy) NSNumber *updateInterval;
 
 + (RKObjectMapping *)mapping;
 @end
