@@ -6,13 +6,14 @@
 //  Copyright (c) 2012 26Webs LLC. All rights reserved.
 //
 
-#import "CTCameraViewController.h"
-#import "CTCameraAnnotation.h"
 #import <CoreLocation/CoreLocation.h>
 #import <AddressBook/AddressBook.h>
+#import "CTCameraViewController.h"
+#import "CTCameraAnnotation.h"
+#import "CTCameraFeed.h"
 
 @implementation CTCameraViewController
-@synthesize camera, locationLabel, mapView, geocoder;
+@synthesize webView, camera, locationLabel, mapView, geocoder, repeatingTimer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,6 +30,16 @@
 
     self.locationLabel.text = self.camera.location;
 
+    for (CTCameraFeed *feed in self.camera.cameraFeeds) {
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.smallImageURL]];
+        if (feed) { [self.webView loadRequest:request]; }
+        self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval:[feed.updateInterval floatValue]
+                                                 target:self
+                                               selector:@selector(timerFireMethod:)
+                                               userInfo:nil
+                                                repeats:YES];
+    }
+    
     // Set up MapView
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
@@ -47,20 +58,27 @@
     
     [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
         CLPlacemark *placemark = [placemarks objectAtIndex:0];
-        NSLog(@"I am currently at %@", placemark.administrativeArea);
+        NSLog(@"Camera location: %@", placemark.administrativeArea);
     }];
 }
 
 - (void)viewDidUnload
 {
+    [self.repeatingTimer invalidate];
+    [self setRepeatingTimer:nil];
     [self setLocationLabel:nil];
     [self setMapView:nil];
+    [self setWebView:nil];
     [super viewDidUnload];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)timerFireMethod:(NSTimer*)theTimer {
+    [self.webView reload];
 }
 
 #pragma mark - MapView delegate methods
@@ -78,5 +96,11 @@
     }
     
     return pinView;
+}
+
+#pragma mark - MapView delegate methods
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"something finished");
 }
 @end

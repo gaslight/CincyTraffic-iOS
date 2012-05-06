@@ -65,26 +65,32 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Location:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="NFC-qo-hbY">
-                                <rect key="frame" x="20" y="35" width="90" height="34"/>
+                                <rect key="frame" x="20" y="20" width="90" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="18"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="x8q-hW-F5m">
-                                <rect key="frame" x="118" y="35" width="182" height="34"/>
+                                <rect key="frame" x="118" y="20" width="182" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="v1Z-ci-CRv">
-                                <rect key="frame" x="20" y="77" width="280" height="270"/>
+                                <rect key="frame" x="20" y="244" width="280" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Sic-Ji-ooP" id="5X7-kn-0vR"/>
                                 </connections>
                             </mapView>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" id="cat-HW-3Z3">
+                                <rect key="frame" x="20" y="65" width="280" height="171"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -92,6 +98,7 @@
                     <connections>
                         <outlet property="locationLabel" destination="x8q-hW-F5m" id="g0p-VH-OHT"/>
                         <outlet property="mapView" destination="v1Z-ci-CRv" id="DaB-2k-u4g"/>
+                        <outlet property="webView" destination="cat-HW-3Z3" id="9VQ-UC-xQN"/>
                     </connections>
                 </viewController>
             </objects>
@@ -135,6 +142,22 @@
     <resources>
         <image name="86-camera.png" width="24" height="18"/>
     </resources>
+    <classes>
+        <class className="CTCameraViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTCameraViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="CTCamerasViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTCamerasViewController.h"/>
+        </class>
+        <class className="TDBadgedCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TDBadgedCell.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
