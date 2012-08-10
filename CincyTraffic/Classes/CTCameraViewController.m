@@ -81,24 +81,7 @@
     [self.webView reload];
 }
 
-#pragma mark - MapView delegate methods
-
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
-    
-    MKPinAnnotationView *pinView = (MKPinAnnotationView*)[self.mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
-    
-    if (pinView == nil) {
-        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
-        pinView.pinColor = MKPinAnnotationColorPurple;
-        pinView.animatesDrop = YES;
-    } else {
-        pinView.annotation = annotation;
-    }
-    
-    return pinView;
-}
-
-#pragma mark - MapView delegate methods
+#pragma mark - WebView delegate methods
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     NSLog(@"something finished");
