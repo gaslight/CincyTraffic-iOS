@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
         <!--Cameras View Controller - Cameras-->
@@ -196,24 +195,24 @@
         <scene sceneID="myS-nf-bH5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iq1-m2-xeZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController definesPresentationContext="YES" id="Fs3-kT-HVa" sceneMemberID="viewController">
+                <navigationController title="Map" definesPresentationContext="YES" id="Fs3-kT-HVa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="71-compass.png" id="ujf-j4-bCO"/>
                     <navigationItem key="navigationItem" id="UV3-pK-nvU"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="lz3-QK-tjh">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="RAw-Kz-RLK" kind="push" id="Xw7-0K-W88"/>
+                        <segue destination="RAw-Kz-RLK" kind="relationship" relationship="rootViewController" id="vBf-M1-2mX"/>
                     </connections>
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="654" y="-298"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller - Map-->
         <scene sceneID="PFd-jJ-4Et">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78F-6c-SYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="RAw-Kz-RLK" sceneMemberID="viewController">
+                <viewController title="Map" id="RAw-Kz-RLK" customClass="CTMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F7I-1i-pxg">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -221,11 +220,17 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="cd1-ZC-hB3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="78F-6c-SYA" id="kxb-FR-XZX"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="jYc-LC-3RG"/>
+                    <connections>
+                        <outlet property="mapView" destination="cd1-ZC-hB3" id="sKa-OF-fbF"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1052" y="-298"/>
@@ -250,6 +255,12 @@
             <relationships>
                 <relationship kind="action" name="loadCameras:"/>
                 <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
+            </relationships>
+        </class>
+        <class className="CTMapViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTMapViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
         <class className="TDBadgedCell" superclassName="UITableViewCell">
