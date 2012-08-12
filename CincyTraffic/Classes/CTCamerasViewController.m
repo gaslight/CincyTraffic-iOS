@@ -72,7 +72,7 @@
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     CTCameraSite *camera = [self.tableData objectAtIndex:indexPath.row];
-    cell.textLabel.text = camera.location;
+    cell.textLabel.text = camera.description;
     cell.badgeString = [NSString stringWithFormat:@"%d", camera.cameraFeeds.count];
     
     return cell;
@@ -112,7 +112,7 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     self.tableData = [[NSMutableArray alloc] initWithArray:self.cameras];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K like[cd] %@", @"location", [NSString stringWithFormat:@"*%@*", searchText]];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K like[cd] %@", @"description", [NSString stringWithFormat:@"*%@*", searchText]];
     [self.tableData filterUsingPredicate:predicate];
     [self.tableView reloadData];
 }

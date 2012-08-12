@@ -10,6 +10,9 @@
 #import <MapKit/MapKit.h>
 
 @interface CTMapViewController : UIViewController <MKMapViewDelegate>
+@property (nonatomic, retain) CLLocation *initialLocation;
+@property (copy, nonatomic) NSArray *cameras;
+@property (strong, nonatomic) NSMutableArray *annotations;
+@property (strong, nonatomic) NSMutableArray *mappedCameras;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
 @end

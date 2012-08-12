@@ -134,7 +134,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="mjD-Js-BBb" kind="push" id="HBO-NM-z1E"/>
+                        <segue destination="mjD-Js-BBb" kind="push" identifier="MyRoutes" id="HBO-NM-z1E"/>
                     </connections>
                 </navigationController>
             </objects>

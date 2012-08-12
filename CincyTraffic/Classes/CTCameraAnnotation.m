@@ -9,14 +9,20 @@
 #import "CTCameraAnnotation.h"
 
 @implementation CTCameraAnnotation
-@synthesize coordinate = _coordinate;
+@synthesize cameraSite;
 
-- (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate {
+- (id)initWithCameraSite:(CTCameraSite *)site
+{
     self = [super init];
     if (self != nil) {
-        _coordinate = coordinate;
+        self.cameraSite = site;
     }
     return self;
+}
+
+- (CLLocationCoordinate2D)coordinate
+{
+    return self.cameraSite.coordinate;
 }
 
 @end

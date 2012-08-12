@@ -11,11 +11,11 @@
 #import "CTCameraFeed.h"
 
 @implementation CTCameraSite
-@synthesize location, latitude, longitude, cameraFeeds;
+@synthesize description, latitude, longitude, cameraFeeds;
 
 + (RKObjectMapping *)mapping {
     RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[CTCameraSite class]];
-    [mapping mapKeyPath:@"Location" toAttribute:@"location"];
+    [mapping mapKeyPath:@"Location" toAttribute:@"description"];
     [mapping mapKeyPath:@"Latitude" toAttribute:@"latitude"];
     [mapping mapKeyPath:@"Longitude" toAttribute:@"longitude"];
     [mapping mapKeyPath:@"CameraFeeds.CameraFeed" toRelationship:@"cameraFeeds" 
@@ -23,4 +23,16 @@
     return mapping;
 }
 
+- (CLLocation *)location
+{
+    return [[CLLocation alloc] initWithLatitude:[self.latitude floatValue]
+                                      longitude:[self.longitude floatValue]];
+}
+
+- (CLLocationCoordinate2D)coordinate
+{
+    CLLocationCoordinate2D coord = CLLocationCoordinate2DMake([self.latitude floatValue],
+                                                              [self.longitude floatValue]);
+    return coord;
+}
 @end

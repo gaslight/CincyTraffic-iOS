@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
 
-    self.locationLabel.text = self.camera.location;
+    self.locationLabel.text = self.camera.description;
 
     for (CTCameraFeed *feed in self.camera.cameraFeeds) {
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.smallImageURL]];
@@ -49,7 +49,7 @@
     coordinate.longitude = [self.camera.longitude floatValue];
     self.mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 2000, 2000);
     
-    CTCameraAnnotation* annotation = [[CTCameraAnnotation alloc] initWithCoordinate:coordinate];
+    CTCameraAnnotation* annotation = [[CTCameraAnnotation alloc] initWithCameraSite:self.camera];
     [mapView addAnnotation:annotation];
     
     CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
