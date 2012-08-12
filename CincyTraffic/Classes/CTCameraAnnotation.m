@@ -9,13 +9,15 @@
 #import "CTCameraAnnotation.h"
 
 @implementation CTCameraAnnotation
-@synthesize cameraSite;
+@synthesize cameraSite, title, subtitle;
 
 - (id)initWithCameraSite:(CTCameraSite *)site
 {
     self = [super init];
     if (self != nil) {
         self.cameraSite = site;
+        self.title = self.cameraSite.description;
+        self.subtitle = @"";
     }
     return self;
 }

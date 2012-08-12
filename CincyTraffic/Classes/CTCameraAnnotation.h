@@ -12,6 +12,8 @@
 
 @interface CTCameraAnnotation : NSObject <MKAnnotation>
 @property (weak, nonatomic) CTCameraSite *cameraSite;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *subtitle;
 
 - (id)initWithCameraSite:(CTCameraSite *)site;
 - (CLLocationCoordinate2D)coordinate;

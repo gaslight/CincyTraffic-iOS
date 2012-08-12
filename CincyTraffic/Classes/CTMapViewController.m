@@ -97,6 +97,7 @@
         annotationView = [[CTCameraSiteAnnotationView alloc] initWithAnnotation:annotation
                                                                 reuseIdentifier:AnnotationViewID];
         annotationView.animatesDrop = YES;
+        annotationView.canShowCallout = YES;
     }
 
     annotationView.annotation = annotation;
