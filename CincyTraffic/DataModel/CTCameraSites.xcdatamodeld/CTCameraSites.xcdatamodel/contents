@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="12A269" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CameraFeed" representedClassName="CameraFeed" syncable="YES">
+        <attribute name="location" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="cameraSite" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="CameraSite" inverseName="cameraFeeds" inverseEntity="CameraSite" syncable="YES"/>
+    </entity>
+    <entity name="CameraSite" representedClassName="CameraSite" syncable="YES">
+        <attribute name="location" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="cameraFeeds" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CameraFeed" inverseName="cameraSite" inverseEntity="CameraFeed" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CameraSite" positionX="-0" positionY="-22" width="128" height="73"/>
+        <element name="CameraFeed" positionX="171" positionY="-9" width="128" height="73"/>
+    </elements>
+</model>

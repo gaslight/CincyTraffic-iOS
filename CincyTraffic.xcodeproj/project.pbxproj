@@ -12,6 +12,19 @@
 		9F3606BA15DC8B0C0083DFBE /* CTApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606B815DC8B0C0083DFBE /* CTApiClient.m */; };
 		9F36079415DEEF1F0083DFBE /* CTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F36079315DEEF1F0083DFBE /* CTLocationManager.m */; };
 		9F36079515DEEF1F0083DFBE /* CTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F36079315DEEF1F0083DFBE /* CTLocationManager.m */; };
+		9F3606DC15DD9E0E0083DFBE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3606DB15DD9E0E0083DFBE /* CoreData.framework */; };
+		9F3606E015DD9EE50083DFBE /* CTCameraSites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606DE15DD9EE50083DFBE /* CTCameraSites.xcdatamodeld */; };
+		9F3606E115DD9EE50083DFBE /* CTCameraSites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606DE15DD9EE50083DFBE /* CTCameraSites.xcdatamodeld */; };
+		9F3606EA15DDA1000083DFBE /* _CameraFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606E315DDA1000083DFBE /* _CameraFeed.m */; };
+		9F3606EB15DDA1000083DFBE /* _CameraFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606E315DDA1000083DFBE /* _CameraFeed.m */; };
+		9F3606EC15DDA1000083DFBE /* _CameraSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606E515DDA1000083DFBE /* _CameraSite.m */; };
+		9F3606ED15DDA1000083DFBE /* _CameraSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606E515DDA1000083DFBE /* _CameraSite.m */; };
+		9F3606EE15DDA1000083DFBE /* CameraFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606E715DDA1000083DFBE /* CameraFeed.m */; };
+		9F3606EF15DDA1000083DFBE /* CameraFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606E715DDA1000083DFBE /* CameraFeed.m */; };
+		9F3606F015DDA1000083DFBE /* CameraSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606E915DDA1000083DFBE /* CameraSite.m */; };
+		9F3606F115DDA1000083DFBE /* CameraSite.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606E915DDA1000083DFBE /* CameraSite.m */; };
+		9F3606F415DDA18E0083DFBE /* CTCamerasDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606F315DDA18E0083DFBE /* CTCamerasDataModel.m */; };
+		9F3606F515DDA18E0083DFBE /* CTCamerasDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606F315DDA18E0083DFBE /* CTCamerasDataModel.m */; };
 		9F42BD3C15D5B3530058CBFC /* CTMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42BD3B15D5B3530058CBFC /* CTMapViewController.m */; };
 		9F42BD3D15D5B3530058CBFC /* CTMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42BD3B15D5B3530058CBFC /* CTMapViewController.m */; };
 		9F46EEB715504919009EFE4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F46EEB615504919009EFE4A /* UIKit.framework */; };
@@ -62,6 +75,18 @@
 		9F3606B815DC8B0C0083DFBE /* CTApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTApiClient.m; path = Classes/CTApiClient.m; sourceTree = "<group>"; };
 		9F36079215DEEF1F0083DFBE /* CTLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLocationManager.h; path = Classes/CTLocationManager.h; sourceTree = "<group>"; };
 		9F36079315DEEF1F0083DFBE /* CTLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTLocationManager.m; path = Classes/CTLocationManager.m; sourceTree = "<group>"; };
+		9F3606DB15DD9E0E0083DFBE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9F3606DF15DD9EE50083DFBE /* CTCameraSites.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CTCameraSites.xcdatamodel; sourceTree = "<group>"; };
+		9F3606E215DDA1000083DFBE /* _CameraFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CameraFeed.h; sourceTree = "<group>"; };
+		9F3606E315DDA1000083DFBE /* _CameraFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CameraFeed.m; sourceTree = "<group>"; };
+		9F3606E415DDA1000083DFBE /* _CameraSite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CameraSite.h; sourceTree = "<group>"; };
+		9F3606E515DDA1000083DFBE /* _CameraSite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CameraSite.m; sourceTree = "<group>"; };
+		9F3606E615DDA1000083DFBE /* CameraFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraFeed.h; sourceTree = "<group>"; };
+		9F3606E715DDA1000083DFBE /* CameraFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraFeed.m; sourceTree = "<group>"; };
+		9F3606E815DDA1000083DFBE /* CameraSite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSite.h; sourceTree = "<group>"; };
+		9F3606E915DDA1000083DFBE /* CameraSite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSite.m; sourceTree = "<group>"; };
+		9F3606F215DDA18D0083DFBE /* CTCamerasDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCamerasDataModel.h; sourceTree = "<group>"; };
+		9F3606F315DDA18E0083DFBE /* CTCamerasDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCamerasDataModel.m; sourceTree = "<group>"; };
 		9F42BD3A15D5B3530058CBFC /* CTMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTMapViewController.h; path = Classes/CTMapViewController.h; sourceTree = "<group>"; };
 		9F42BD3B15D5B3530058CBFC /* CTMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTMapViewController.m; path = Classes/CTMapViewController.m; sourceTree = "<group>"; };
 		9F46EEB215504919009EFE4A /* CincyTraffic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CincyTraffic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F3606DC15DD9E0E0083DFBE /* CoreData.framework in Frameworks */,
 				1F7ACB52814B4390946C3AC3 /* libPods.a in Frameworks */,
 				9F46EEB715504919009EFE4A /* UIKit.framework in Frameworks */,
 				9F46EEB915504919009EFE4A /* Foundation.framework in Frameworks */,
@@ -168,9 +194,28 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		9F3606DD15DD9E1A0083DFBE /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				9F3606E215DDA1000083DFBE /* _CameraFeed.h */,
+				9F3606E315DDA1000083DFBE /* _CameraFeed.m */,
+				9F3606E415DDA1000083DFBE /* _CameraSite.h */,
+				9F3606E515DDA1000083DFBE /* _CameraSite.m */,
+				9F3606E615DDA1000083DFBE /* CameraFeed.h */,
+				9F3606E715DDA1000083DFBE /* CameraFeed.m */,
+				9F3606E815DDA1000083DFBE /* CameraSite.h */,
+				9F3606E915DDA1000083DFBE /* CameraSite.m */,
+				9F3606DE15DD9EE50083DFBE /* CTCameraSites.xcdatamodeld */,
+				9F3606F215DDA18D0083DFBE /* CTCamerasDataModel.h */,
+				9F3606F315DDA18E0083DFBE /* CTCamerasDataModel.m */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		9F46EEA715504919009EFE4A = {
 			isa = PBXGroup;
 			children = (
+				9F3606DB15DD9E0E0083DFBE /* CoreData.framework */,
 				9F46EEBC15504919009EFE4A /* CincyTraffic */,
 				9F46EEE515504919009EFE4A /* CincyTrafficTests */,
 				9F46EEB515504919009EFE4A /* Frameworks */,
@@ -205,6 +250,7 @@
 		9F46EEBC15504919009EFE4A /* CincyTraffic */ = {
 			isa = PBXGroup;
 			children = (
+				9F3606DD15DD9E1A0083DFBE /* DataModel */,
 				9F1B051915DC88C8001E432C /* Controllers */,
 				9F1B051715DC88B7001E432C /* Models */,
 				9F46EEC215504919009EFE4A /* main.m */,
@@ -410,6 +456,12 @@
 				9F5C734915D6057F007201A2 /* CTCameraSiteAnnotationView.m in Sources */,
 				9F3606B915DC8B0C0083DFBE /* CTApiClient.m in Sources */,
 				9F36079415DEEF1F0083DFBE /* CTLocationManager.m in Sources */,
+				9F3606E015DD9EE50083DFBE /* CTCameraSites.xcdatamodeld in Sources */,
+				9F3606EA15DDA1000083DFBE /* _CameraFeed.m in Sources */,
+				9F3606EC15DDA1000083DFBE /* _CameraSite.m in Sources */,
+				9F3606EE15DDA1000083DFBE /* CameraFeed.m in Sources */,
+				9F3606F015DDA1000083DFBE /* CameraSite.m in Sources */,
+				9F3606F415DDA18E0083DFBE /* CTCamerasDataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +474,12 @@
 				9F5C734A15D6057F007201A2 /* CTCameraSiteAnnotationView.m in Sources */,
 				9F3606BA15DC8B0C0083DFBE /* CTApiClient.m in Sources */,
 				9F36079515DEEF1F0083DFBE /* CTLocationManager.m in Sources */,
+				9F3606E115DD9EE50083DFBE /* CTCameraSites.xcdatamodeld in Sources */,
+				9F3606EB15DDA1000083DFBE /* _CameraFeed.m in Sources */,
+				9F3606ED15DDA1000083DFBE /* _CameraSite.m in Sources */,
+				9F3606EF15DDA1000083DFBE /* CameraFeed.m in Sources */,
+				9F3606F115DDA1000083DFBE /* CameraSite.m in Sources */,
+				9F3606F515DDA18E0083DFBE /* CTCamerasDataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -619,6 +677,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9F3606DE15DD9EE50083DFBE /* CTCameraSites.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9F3606DF15DD9EE50083DFBE /* CTCameraSites.xcdatamodel */,
+			);
+			currentVersion = 9F3606DF15DD9EE50083DFBE /* CTCameraSites.xcdatamodel */;
+			path = CTCameraSites.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9F46EEA915504919009EFE4A /* Project object */;
 }

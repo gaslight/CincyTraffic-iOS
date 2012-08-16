@@ -10,6 +10,7 @@
 #import "CTAppDelegate.h"
 #import "CTCameraSite.h"
 #import "CTCameraFeed.h"
+#import "CTCamerasDataModel.h"
 
 @interface CTAppDelegate ()
 
@@ -23,6 +24,14 @@
 {
     [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
     [TestFlight takeOff:@"44e14a3879aa66d2321f385deac7c497_ODc1MzgyMDEyLTA1LTA2IDAyOjUwOjMyLjgxMjUyNA"];
+
+    NSManagedObjectContext *context = [[CTCamerasDataModel sharedDataModel] mainContext];
+    if (context) {
+        NSLog(@"Context is ready!");
+    } else {
+        NSLog(@"Context is nil ;(");
+    }
+
     return YES;
 }
 							
