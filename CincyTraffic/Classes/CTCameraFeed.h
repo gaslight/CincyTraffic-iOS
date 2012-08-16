@@ -16,4 +16,6 @@
 @property (nonatomic, copy) NSString *largeImageURL;
 @property (nonatomic, copy) NSNumber *updateInterval;
 
+- (CTCameraFeed *)initWithDictionary:(NSDictionary *)dictionary;
+
 @end

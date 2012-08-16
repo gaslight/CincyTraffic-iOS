@@ -13,8 +13,10 @@
 
 @property (nonatomic, copy) NSString *description;
 @property (nonatomic, copy) NSNumber *latitude, *longitude;
-@property (nonatomic, copy) NSMutableArray *cameraFeeds;
+@property (nonatomic, retain) NSMutableArray *cameraFeeds;
 
+- (CTCameraSite *)initWithDictionary:(NSDictionary *)dictionary;
 - (CLLocation *)location;
 - (CLLocationCoordinate2D)coordinate;
+
 @end

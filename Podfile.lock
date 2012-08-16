@@ -2,8 +2,10 @@ PODS:
   - AFNetworking (1.0RC1)
   - TDBadgedCell (2.0)
   - TestFlightSDK (1.0)
+  - XMLDictionary (2.0.0)
 
 DEPENDENCIES:
   - AFNetworking
   - TDBadgedCell
   - TestFlightSDK
+  - XMLDictionary

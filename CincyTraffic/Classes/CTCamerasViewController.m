@@ -7,15 +7,21 @@
 //
 
 #import "TDBadgedCell.h"
+#import "XMLDictionary.h"
+#import "CTApiClient.h"
 #import "CTCamerasViewController.h"
 #import "CTCameraViewController.h"
 #import "CTCameraSite.h"
+
+@interface CTCamerasViewController()
+@property (nonatomic, retain) NSArray *allCameras;
+@end
 
 @implementation CTCamerasViewController
 
 @synthesize searchBar = _searchBar;
 @synthesize cameras = _cameras;
-@synthesize tableData = _tableData;
+@synthesize allCameras;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -46,7 +52,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"ShowCameraDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        [[segue destinationViewController] setCamera:[self.tableData objectAtIndex:indexPath.row]];
+        [[segue destinationViewController] setCamera:[self.cameras objectAtIndex:indexPath.row]];
     }
 }
 
@@ -57,7 +63,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.tableData count];
+    return [self.cameras count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -71,7 +77,7 @@
 
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    CTCameraSite *camera = [self.tableData objectAtIndex:indexPath.row];
+    CTCameraSite *camera = [self.cameras objectAtIndex:indexPath.row];
     cell.textLabel.text = camera.description;
     cell.badgeString = [NSString stringWithFormat:@"%d", camera.cameraFeeds.count];
     
@@ -81,10 +87,27 @@
 #pragma mark - Cameras
 
 - (IBAction)loadCameras:(id)sender {
-    // [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/Cameras.aspx" delegate:self];
+    self.cameras = [NSMutableArray array];
+    [[CTApiClient sharedInstance] getPath:@"Cameras.aspx" parameters:nil
+                                  success:^(AFHTTPRequestOperation *operation, id response) {
+                                      NSDictionary *cameraXML = [NSDictionary dictionaryWithXMLString:operation.responseString];
+                                      [self loadCamerasFromXML:cameraXML];
+                                  }
+                                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                      NSLog(@"Error fetching cameras!");
+                                      NSLog(@"%@", error);
+                                  }];
 }
 
-#pragma mark - RestKit
+- (void)loadCamerasFromXML:(NSDictionary *)cameraXML
+{
+    for (NSDictionary *cameraDictionary in [cameraXML valueForKeyPath:@"CameraSite"]) {
+        CTCameraSite *cameraSite = [[CTCameraSite alloc] initWithDictionary:cameraDictionary];
+        [self.cameras addObject:cameraSite];
+    }
+    self.allCameras = [NSArray arrayWithArray:self.cameras];
+    [self.tableView reloadData];
+}
 
 //- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
 //    self.cameras = [NSMutableArray arrayWithArray:objects];
@@ -97,9 +120,8 @@
 #pragma mark - Search bar
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    self.tableData = [[NSMutableArray alloc] initWithArray:self.cameras];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%K like[cd] %@", @"description", [NSString stringWithFormat:@"*%@*", searchText]];
-    [self.tableData filterUsingPredicate:predicate];
+    [self.cameras filterUsingPredicate:predicate];
     [self.tableView reloadData];
 }
 
@@ -108,15 +130,13 @@
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-    self.tableData = self.cameras;
+    [self.cameras removeAllObjects];
+    [self.cameras addObjectsFromArray:self.allCameras];
     
     searchBar.text = nil;
     [searchBar setShowsCancelButton:NO animated:YES];
     [searchBar resignFirstResponder];
-    
-    NSLog(@"table data: %d", self.tableData.count);
-    NSLog(@"cameras: %d", self.cameras.count);
-    
+        
     [self.tableView reloadData];
 }
 
