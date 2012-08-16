@@ -227,9 +227,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jYc-LC-3RG"/>
+                    <navigationItem key="navigationItem" title="Map View" id="jYc-LC-3RG"/>
                     <connections>
                         <outlet property="mapView" destination="cd1-ZC-hB3" id="sKa-OF-fbF"/>
+                        <segue destination="Sic-Ji-ooP" kind="push" identifier="mapCameraDetail" id="MJi-fb-ZTB"/>
                     </connections>
                 </viewController>
             </objects>
@@ -272,4 +273,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="MJi-fb-ZTB"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -44,22 +44,18 @@
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
     
-    CLLocationCoordinate2D coordinate;
-    coordinate.latitude = [self.camera.latitude floatValue];
-    coordinate.longitude = [self.camera.longitude floatValue];
-    self.mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 2000, 2000);
+    self.mapView.region = MKCoordinateRegionMakeWithDistance(self.camera.coordinate, 2000, 2000);
     
     CTCameraAnnotation* annotation = [[CTCameraAnnotation alloc] initWithCameraSite:self.camera];
     [mapView addAnnotation:annotation];
     
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
-    
-    if (!self.geocoder) { self.geocoder = [[CLGeocoder alloc] init]; }
-    
-    [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-        CLPlacemark *placemark = [placemarks objectAtIndex:0];
-        NSLog(@"Camera location: %@", placemark.administrativeArea);
-    }];
+//    CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+//    
+//    if (!self.geocoder) { self.geocoder = [[CLGeocoder alloc] init]; }
+//    
+//    [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+//        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+//    }];
 }
 
 - (void)viewDidUnload
@@ -79,11 +75,5 @@
 
 - (void)timerFireMethod:(NSTimer*)theTimer {
     [self.webView reload];
-}
-
-#pragma mark - WebView delegate methods
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"something finished");
 }
 @end

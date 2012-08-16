@@ -7,6 +7,7 @@
 //
 
 #import "CTCamerasViewController.h"
+#import "CTCameraViewController.h"
 #import "CTMapViewController.h"
 #import "CTCameraAnnotation.h"
 #import "CTCameraSiteAnnotationView.h"
@@ -98,10 +99,25 @@
                                                                 reuseIdentifier:AnnotationViewID];
         annotationView.animatesDrop = YES;
         annotationView.canShowCallout = YES;
+
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        annotationView.rightCalloutAccessoryView = button;
     }
 
     annotationView.annotation = annotation;
     return annotationView;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    CTCameraAnnotation *annotation = (CTCameraAnnotation *)view.annotation;
+    [self performSegueWithIdentifier:@"mapCameraDetail" sender:[annotation cameraSite]];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"mapCameraDetail"]) {
+        [[segue destinationViewController] setCamera:sender];
+    }
 }
 
 @end
