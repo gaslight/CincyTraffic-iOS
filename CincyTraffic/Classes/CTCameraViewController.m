@@ -13,7 +13,7 @@
 #import "CTCameraFeed.h"
 
 @implementation CTCameraViewController
-@synthesize webView, camera, locationLabel, mapView, geocoder, repeatingTimer;
+@synthesize webView, camera, mapView, geocoder, repeatingTimer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,8 +28,8 @@
 {
     [super viewDidLoad];
 
-    self.locationLabel.text = self.camera.description;
-
+    self.title = self.camera.description;
+    
     for (CTCameraFeed *feed in self.camera.cameraFeeds) {
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.smallImageURL]];
         if (feed) { [self.webView loadRequest:request]; }
@@ -62,7 +62,6 @@
 {
     [self.repeatingTimer invalidate];
     [self setRepeatingTimer:nil];
-    [self setLocationLabel:nil];
     [self setMapView:nil];
     [self setWebView:nil];
     [super viewDidUnload];

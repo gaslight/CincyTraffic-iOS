@@ -14,7 +14,6 @@
     NSTimer *timer;
 }
 @property (nonatomic, strong) CTCameraSite *camera;
-@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLGeocoder *geocoder;

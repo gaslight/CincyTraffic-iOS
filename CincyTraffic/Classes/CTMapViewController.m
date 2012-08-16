@@ -61,7 +61,7 @@
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
     self.initialLocation = userLocation.location;
-    self.mapView.region = MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 6500, 6500);
+    [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 6500, 6500) animated:YES];
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
