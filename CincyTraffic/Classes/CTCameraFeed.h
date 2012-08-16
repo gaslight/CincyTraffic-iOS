@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RKObjectMapping.h"
 
 @interface CTCameraFeed : NSObject
 @property (nonatomic, copy) NSString *direction;
@@ -17,5 +16,4 @@
 @property (nonatomic, copy) NSString *largeImageURL;
 @property (nonatomic, copy) NSNumber *updateInterval;
 
-+ (RKObjectMapping *)mapping;
 @end

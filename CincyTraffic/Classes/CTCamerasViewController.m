@@ -81,32 +81,18 @@
 #pragma mark - Cameras
 
 - (IBAction)loadCameras:(id)sender {
-    [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/Cameras.aspx" delegate:self];
+    // [[RKObjectManager sharedManager] loadObjectsAtResourcePath:@"/Cameras.aspx" delegate:self];
 }
 
 #pragma mark - RestKit
 
-- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
-    self.cameras = [NSMutableArray arrayWithArray:objects];
-    self.tableData = [NSMutableArray arrayWithArray:objects];
-    NSLog(@"table data: %d", self.tableData.count);
-    NSLog(@"cameras: %d", self.cameras.count);
-    [self.tableView reloadData];
-}
-
-- (void)objectLoader:(RKObjectLoader *)objectLoader didFailWithError:(NSError *)error {
-    [[[UIAlertView alloc] initWithTitle:@"Network Error"
-                                message:@"There was an issue connecting to the server."
-                               delegate:self
-                      cancelButtonTitle:@"Cancel"
-                      otherButtonTitles:nil] show];
-}
-
-- (void)request:(RKRequest *)request didReceiveData:(NSInteger)bytesReceived
-                                 totalBytesReceived:(NSInteger)totalBytesReceived 
-                        totalBytesExpectedToReceive:(NSInteger)totalBytesExpectedToReceive {
-    NSLog(@"bytes recieved: %d of %d", totalBytesReceived, totalBytesExpectedToReceive);
-}
+//- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
+//    self.cameras = [NSMutableArray arrayWithArray:objects];
+//    self.tableData = [NSMutableArray arrayWithArray:objects];
+//    NSLog(@"table data: %d", self.tableData.count);
+//    NSLog(@"cameras: %d", self.cameras.count);
+//    [self.tableView reloadData];
+//}
 
 #pragma mark - Search bar
 

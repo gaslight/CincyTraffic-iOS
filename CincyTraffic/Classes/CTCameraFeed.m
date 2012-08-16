@@ -16,14 +16,4 @@
             largeImageURL = _largeImageURL,
             updateInterval = _updateInterval;
 
-+ (RKObjectMapping *)mapping {
-    RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[self class]];
-    [mapping mapKeyPathsToAttributes:@"Direction", @"direction",
-                                     @"Type", @"type",
-                                     @"Description", @"description",
-                                     @"SmallImage", @"smallImageURL",
-                                     @"LargeImage", @"largeImageURL",
-                                     @"ImageUpdateInterval", @"updateInterval", nil ];
-    return mapping;
-}
 @end

@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RKObjectManager.h"
 
-@interface CTCamerasViewController : UITableViewController <RKObjectLoaderDelegate, UISearchBarDelegate>
+@interface CTCamerasViewController : UITableViewController <UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) NSMutableArray *cameras;
 @property (strong, nonatomic) NSMutableArray *tableData;

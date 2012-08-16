@@ -8,7 +8,6 @@
 
 #import <MapKit/MapKit.h>
 #import <Foundation/Foundation.h>
-#import "RKObjectMapping.h"
 
 @interface CTCameraSite : NSObject
 
@@ -16,7 +15,6 @@
 @property (nonatomic, copy) NSNumber *latitude, *longitude;
 @property (nonatomic, copy) NSMutableArray *cameraFeeds;
 
-+ (RKObjectMapping *)mapping;
 - (CLLocation *)location;
 - (CLLocationCoordinate2D)coordinate;
 @end
