@@ -109,14 +109,6 @@
     [self.tableView reloadData];
 }
 
-//- (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
-//    self.cameras = [NSMutableArray arrayWithArray:objects];
-//    self.tableData = [NSMutableArray arrayWithArray:objects];
-//    NSLog(@"table data: %d", self.tableData.count);
-//    NSLog(@"cameras: %d", self.cameras.count);
-//    [self.tableView reloadData];
-//}
-
 #pragma mark - Search bar
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
