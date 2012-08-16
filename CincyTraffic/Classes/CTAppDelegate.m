@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 26Webs LLC. All rights reserved.
 //
 
+#import "TestFlight.h"
 #import "CTAppDelegate.h"
 #import "CTCameraSite.h"
 #import "CTCameraFeed.h"
