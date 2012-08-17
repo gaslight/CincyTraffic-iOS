@@ -77,11 +77,15 @@ NSInteger const kLoadView = 1;
 
 - (void)viewDidUnload
 {
-    [self.repeatingTimer invalidate];
     [self setRepeatingTimer:nil];
     [self setMapView:nil];
     [self setWebView:nil];
     [super viewDidUnload];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [self.repeatingTimer invalidate];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -32,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.initialLocation = nil;
 
     UINavigationController *navController = [self.tabBarController.viewControllers objectAtIndex:0];
     CTCamerasViewController *camerasController = [navController.viewControllers objectAtIndex:0];
@@ -60,15 +61,13 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    if (self.initialLocation) return;
     self.initialLocation = userLocation.location;
     [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 6500, 6500) animated:YES];
 }
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
 {
-    if (!self.initialLocation)
-        return;
+    if (self.initialLocation == nil) return;
 
     NSMutableArray *newAnnotations = [NSMutableArray array];
     
