@@ -4,7 +4,12 @@
 #import "_CameraFeed.h"
 
 const struct CameraFeedAttributes CameraFeedAttributes = {
-	.location = @"location",
+	.desc = @"desc",
+	.direction = @"direction",
+	.largeImageURL = @"largeImageURL",
+	.smallImageURL = @"smallImageURL",
+	.type = @"type",
+	.updateInterval = @"updateInterval",
 };
 
 const struct CameraFeedRelationships CameraFeedRelationships = {
@@ -40,6 +45,10 @@ const struct CameraFeedFetchedProperties CameraFeedFetchedProperties = {
 + (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 	
+	if ([key isEqualToString:@"updateIntervalValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"updateInterval"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+	}
 
 	return keyPaths;
 }
@@ -47,8 +56,62 @@ const struct CameraFeedFetchedProperties CameraFeedFetchedProperties = {
 
 
 
-@dynamic location;
+@dynamic desc;
 
+
+
+
+
+
+@dynamic direction;
+
+
+
+
+
+
+@dynamic largeImageURL;
+
+
+
+
+
+
+@dynamic smallImageURL;
+
+
+
+
+
+
+@dynamic type;
+
+
+
+
+
+
+@dynamic updateInterval;
+
+
+
+- (int16_t)updateIntervalValue {
+	NSNumber *result = [self updateInterval];
+	return [result shortValue];
+}
+
+- (void)setUpdateIntervalValue:(int16_t)value_ {
+	[self setUpdateInterval:[NSNumber numberWithShort:value_]];
+}
+
+- (int16_t)primitiveUpdateIntervalValue {
+	NSNumber *result = [self primitiveUpdateInterval];
+	return [result shortValue];
+}
+
+- (void)setPrimitiveUpdateIntervalValue:(int16_t)value_ {
+	[self setPrimitiveUpdateInterval:[NSNumber numberWithShort:value_]];
+}
 
 
 

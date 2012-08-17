@@ -5,7 +5,12 @@
 
 
 extern const struct CameraFeedAttributes {
-	__unsafe_unretained NSString *location;
+	__unsafe_unretained NSString *desc;
+	__unsafe_unretained NSString *direction;
+	__unsafe_unretained NSString *largeImageURL;
+	__unsafe_unretained NSString *smallImageURL;
+	__unsafe_unretained NSString *type;
+	__unsafe_unretained NSString *updateInterval;
 } CameraFeedAttributes;
 
 extern const struct CameraFeedRelationships {
@@ -16,6 +21,11 @@ extern const struct CameraFeedFetchedProperties {
 } CameraFeedFetchedProperties;
 
 @class CameraSite;
+
+
+
+
+
 
 
 
@@ -31,10 +41,54 @@ extern const struct CameraFeedFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSString* location;
+@property (nonatomic, strong) NSString* desc;
 
 
-//- (BOOL)validateLocation:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateDesc:(id*)value_ error:(NSError**)error_;
+
+
+
+
+@property (nonatomic, strong) NSString* direction;
+
+
+//- (BOOL)validateDirection:(id*)value_ error:(NSError**)error_;
+
+
+
+
+@property (nonatomic, strong) NSString* largeImageURL;
+
+
+//- (BOOL)validateLargeImageURL:(id*)value_ error:(NSError**)error_;
+
+
+
+
+@property (nonatomic, strong) NSString* smallImageURL;
+
+
+//- (BOOL)validateSmallImageURL:(id*)value_ error:(NSError**)error_;
+
+
+
+
+@property (nonatomic, strong) NSString* type;
+
+
+//- (BOOL)validateType:(id*)value_ error:(NSError**)error_;
+
+
+
+
+@property (nonatomic, strong) NSNumber* updateInterval;
+
+
+@property int16_t updateIntervalValue;
+- (int16_t)updateIntervalValue;
+- (void)setUpdateIntervalValue:(int16_t)value_;
+
+//- (BOOL)validateUpdateInterval:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -57,8 +111,41 @@ extern const struct CameraFeedFetchedProperties {
 @interface _CameraFeed (CoreDataGeneratedPrimitiveAccessors)
 
 
-- (NSString*)primitiveLocation;
-- (void)setPrimitiveLocation:(NSString*)value;
+- (NSString*)primitiveDesc;
+- (void)setPrimitiveDesc:(NSString*)value;
+
+
+
+
+- (NSString*)primitiveDirection;
+- (void)setPrimitiveDirection:(NSString*)value;
+
+
+
+
+- (NSString*)primitiveLargeImageURL;
+- (void)setPrimitiveLargeImageURL:(NSString*)value;
+
+
+
+
+- (NSString*)primitiveSmallImageURL;
+- (void)setPrimitiveSmallImageURL:(NSString*)value;
+
+
+
+
+- (NSString*)primitiveType;
+- (void)setPrimitiveType:(NSString*)value;
+
+
+
+
+- (NSNumber*)primitiveUpdateInterval;
+- (void)setPrimitiveUpdateInterval:(NSNumber*)value;
+
+- (int16_t)primitiveUpdateIntervalValue;
+- (void)setPrimitiveUpdateIntervalValue:(int16_t)value_;
 
 
 

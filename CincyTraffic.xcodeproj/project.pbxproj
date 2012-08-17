@@ -215,7 +215,6 @@
 		9F46EEA715504919009EFE4A = {
 			isa = PBXGroup;
 			children = (
-				9F3606DB15DD9E0E0083DFBE /* CoreData.framework */,
 				9F46EEBC15504919009EFE4A /* CincyTraffic */,
 				9F46EEE515504919009EFE4A /* CincyTrafficTests */,
 				9F46EEB515504919009EFE4A /* Frameworks */,
@@ -236,6 +235,7 @@
 		9F46EEB515504919009EFE4A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F3606DB15DD9E0E0083DFBE /* CoreData.framework */,
 				9FE56B7B155181AD00781B0F /* CoreLocation.framework */,
 				9FE56B76155173D100781B0F /* MapKit.framework */,
 				9F46EEB615504919009EFE4A /* UIKit.framework */,
@@ -320,6 +320,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F46EEF015504919009EFE4A /* Build configuration list for PBXNativeTarget "CincyTraffic" */;
 			buildPhases = (
+				9F36070315DDE0800083DFBE /* Run Mogenerator */,
 				9F46EEAE15504919009EFE4A /* Sources */,
 				9F46EEAF15504919009EFE4A /* Frameworks */,
 				9F46EEB015504919009EFE4A /* Resources */,
@@ -411,6 +412,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9F36070315DDE0800083DFBE /* Run Mogenerator */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Mogenerator";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "MODELS_DIR=\"CincyTraffic/DataModel\"\nDATA_MODEL_PACKAGE=\"$MODELS_DIR/CTCameraSites.xcdatamodeld\"\nCURRENT_VERSION=`/usr/libexec/PlistBuddy \"$DATA_MODEL_PACKAGE/.xccurrentversion\" -c 'print _XCCurrentVersionName'`\nmogenerator --template-var arc=true --model \"$DATA_MODEL_PACKAGE/$CURRENT_VERSION\" --output-dir \"$MODELS_DIR/\"";
+		};
 		9F46EEDC15504919009EFE4A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

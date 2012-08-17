@@ -5,7 +5,12 @@
 
 
 extern const struct CameraSiteAttributes {
+	__unsafe_unretained NSString *city;
+	__unsafe_unretained NSString *createdAt;
+	__unsafe_unretained NSString *latitude;
 	__unsafe_unretained NSString *location;
+	__unsafe_unretained NSString *longitude;
+	__unsafe_unretained NSString *state;
 } CameraSiteAttributes;
 
 extern const struct CameraSiteRelationships {
@@ -16,6 +21,11 @@ extern const struct CameraSiteFetchedProperties {
 } CameraSiteFetchedProperties;
 
 @class CameraFeed;
+
+
+
+
+
 
 
 
@@ -31,10 +41,62 @@ extern const struct CameraSiteFetchedProperties {
 
 
 
+@property (nonatomic, strong) NSString* city;
+
+
+//- (BOOL)validateCity:(id*)value_ error:(NSError**)error_;
+
+
+
+
+@property (nonatomic, strong) NSDate* createdAt;
+
+
+//- (BOOL)validateCreatedAt:(id*)value_ error:(NSError**)error_;
+
+
+
+
+@property (nonatomic, strong) NSNumber* latitude;
+
+
+@property float latitudeValue;
+- (float)latitudeValue;
+- (void)setLatitudeValue:(float)value_;
+
+//- (BOOL)validateLatitude:(id*)value_ error:(NSError**)error_;
+
+
+
+
 @property (nonatomic, strong) NSString* location;
 
 
 //- (BOOL)validateLocation:(id*)value_ error:(NSError**)error_;
+
+
+
+
+@property (nonatomic, strong) NSNumber* longitude;
+
+
+@property float longitudeValue;
+- (float)longitudeValue;
+- (void)setLongitudeValue:(float)value_;
+
+//- (BOOL)validateLongitude:(id*)value_ error:(NSError**)error_;
+
+
+
+
+@property (nonatomic, strong) NSNumber* state;
+
+
+@property float stateValue;
+- (float)stateValue;
+- (void)setStateValue:(float)value_;
+
+//- (BOOL)validateState:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -62,8 +124,47 @@ extern const struct CameraSiteFetchedProperties {
 @interface _CameraSite (CoreDataGeneratedPrimitiveAccessors)
 
 
+- (NSString*)primitiveCity;
+- (void)setPrimitiveCity:(NSString*)value;
+
+
+
+
+- (NSDate*)primitiveCreatedAt;
+- (void)setPrimitiveCreatedAt:(NSDate*)value;
+
+
+
+
+- (NSNumber*)primitiveLatitude;
+- (void)setPrimitiveLatitude:(NSNumber*)value;
+
+- (float)primitiveLatitudeValue;
+- (void)setPrimitiveLatitudeValue:(float)value_;
+
+
+
+
 - (NSString*)primitiveLocation;
 - (void)setPrimitiveLocation:(NSString*)value;
+
+
+
+
+- (NSNumber*)primitiveLongitude;
+- (void)setPrimitiveLongitude:(NSNumber*)value;
+
+- (float)primitiveLongitudeValue;
+- (void)setPrimitiveLongitudeValue:(float)value_;
+
+
+
+
+- (NSNumber*)primitiveState;
+- (void)setPrimitiveState:(NSNumber*)value;
+
+- (float)primitiveStateValue;
+- (void)setPrimitiveStateValue:(float)value_;
 
 
 
