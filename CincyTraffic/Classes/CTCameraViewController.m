@@ -12,8 +12,14 @@
 #import "CTCameraAnnotation.h"
 #import "CTCameraFeed.h"
 
+@interface CTCameraViewController ()
+- (void)timerFireMethod:(NSTimer*)theTimer;
+@end
+
 @implementation CTCameraViewController
 @synthesize webView, camera, mapView, geocoder, repeatingTimer;
+
+NSInteger const kLoadView = 1;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,20 +35,31 @@
     [super viewDidLoad];
 
     self.title = self.camera.description;
-    
-    for (CTCameraFeed *feed in self.camera.cameraFeeds) {
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.smallImageURL]];
-        if (feed) { [self.webView loadRequest:request]; }
-        self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval:[feed.updateInterval floatValue]
-                                                 target:self
-                                               selector:@selector(timerFireMethod:)
-                                               userInfo:nil
-                                                repeats:YES];
-    }
-    
-    // Set up MapView
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
+
+    CGSize size = self.webView.frame.size;
+    self.webView.hidden = YES;
+    self.webView.delegate = self;
+
+    // Loading View
+    SSLoadingView *loadView = [[SSLoadingView alloc] initWithFrame:CGRectMake(self.webView.frame.origin.x,
+                                                                              self.webView.frame.origin.y,
+                                                                              size.width,
+                                                                              size.height + 80)];
+    loadView.tag = kLoadView;
+	[self.view addSubview:loadView];
+
+    for (CTCameraFeed *feed in self.camera.cameraFeeds) {
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.smallImageURL]];
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+        [self.webView loadRequest:request];
+        self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval:[feed.updateInterval floatValue]
+                                                               target:self
+                                                             selector:@selector(timerFireMethod:)
+                                                             userInfo:nil
+                                                              repeats:YES];
+    }
     
     self.mapView.region = MKCoordinateRegionMakeWithDistance(self.camera.coordinate, 2000, 2000);
     
@@ -72,7 +89,20 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+#pragma mark - Timer methods
+
 - (void)timerFireMethod:(NSTimer*)theTimer {
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     [self.webView reload];
+}
+
+#pragma mark - WebView delegate methods
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    [[self.view viewWithTag:kLoadView] removeFromSuperview];
+    self.webView.hidden = NO;
 }
 @end

@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 26Webs LLC. All rights reserved.
 //
 
-#import "TDBadgedCell.h"
 #import "XMLDictionary.h"
 #import "CTApiClient.h"
 #import "CTCamerasViewController.h"
@@ -50,7 +49,7 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"ShowCameraDetail"]) {
+    if ([[segue identifier] isEqualToString:@"showCameraDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         [[segue destinationViewController] setCamera:[self.cameras objectAtIndex:indexPath.row]];
     }
@@ -68,18 +67,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"CameraCell";
-    TDBadgedCell *cell = (TDBadgedCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"cameraCell";
+    UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
-    if (!cell) {
-        cell = [[TDBadgedCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                           reuseIdentifier:CellIdentifier];
     }
 
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
     CTCameraSite *camera = [self.cameras objectAtIndex:indexPath.row];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.text = camera.description;
-    cell.badgeString = [NSString stringWithFormat:@"%d", camera.cameraFeeds.count];
     
     return cell;
 }
@@ -92,11 +90,14 @@
                                   success:^(AFHTTPRequestOperation *operation, id response) {
                                       NSDictionary *cameraXML = [NSDictionary dictionaryWithXMLString:operation.responseString];
                                       [self loadCamerasFromXML:cameraXML];
+                                      [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
                                   }
                                   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                      [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
                                       NSLog(@"Error fetching cameras!");
                                       NSLog(@"%@", error);
                                   }];
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 
 - (void)loadCamerasFromXML:(NSDictionary *)cameraXML

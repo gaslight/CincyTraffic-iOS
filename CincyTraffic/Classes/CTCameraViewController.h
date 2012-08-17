@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <SSToolkit/SSLoadingView.h>
 #import "CTCameraSite.h"
 
 @interface CTCameraViewController : UIViewController <MKMapViewDelegate, UIWebViewDelegate> {
@@ -18,7 +19,4 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (assign) NSTimer *repeatingTimer;
-
-- (void)timerFireMethod:(NSTimer*)theTimer;
-
 @end
