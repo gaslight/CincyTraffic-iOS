@@ -10,6 +10,8 @@
 		1F7ACB52814B4390946C3AC3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE53C77DC7104554A5F1503F /* libPods.a */; };
 		9F3606B915DC8B0C0083DFBE /* CTApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606B815DC8B0C0083DFBE /* CTApiClient.m */; };
 		9F3606BA15DC8B0C0083DFBE /* CTApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606B815DC8B0C0083DFBE /* CTApiClient.m */; };
+		9F36079415DEEF1F0083DFBE /* CTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F36079315DEEF1F0083DFBE /* CTLocationManager.m */; };
+		9F36079515DEEF1F0083DFBE /* CTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F36079315DEEF1F0083DFBE /* CTLocationManager.m */; };
 		9F42BD3C15D5B3530058CBFC /* CTMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42BD3B15D5B3530058CBFC /* CTMapViewController.m */; };
 		9F42BD3D15D5B3530058CBFC /* CTMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F42BD3B15D5B3530058CBFC /* CTMapViewController.m */; };
 		9F46EEB715504919009EFE4A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F46EEB615504919009EFE4A /* UIKit.framework */; };
@@ -58,6 +60,8 @@
 		60914D1B73CC4F35ABCE9585 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		9F3606B715DC8B0C0083DFBE /* CTApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTApiClient.h; path = Classes/CTApiClient.h; sourceTree = "<group>"; };
 		9F3606B815DC8B0C0083DFBE /* CTApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTApiClient.m; path = Classes/CTApiClient.m; sourceTree = "<group>"; };
+		9F36079215DEEF1F0083DFBE /* CTLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTLocationManager.h; path = Classes/CTLocationManager.h; sourceTree = "<group>"; };
+		9F36079315DEEF1F0083DFBE /* CTLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTLocationManager.m; path = Classes/CTLocationManager.m; sourceTree = "<group>"; };
 		9F42BD3A15D5B3530058CBFC /* CTMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTMapViewController.h; path = Classes/CTMapViewController.h; sourceTree = "<group>"; };
 		9F42BD3B15D5B3530058CBFC /* CTMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTMapViewController.m; path = Classes/CTMapViewController.m; sourceTree = "<group>"; };
 		9F46EEB215504919009EFE4A /* CincyTraffic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CincyTraffic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +162,8 @@
 				9FE56B7415516F8500781B0F /* CTCameraViewController.m */,
 				9F42BD3A15D5B3530058CBFC /* CTMapViewController.h */,
 				9F42BD3B15D5B3530058CBFC /* CTMapViewController.m */,
+				9F36079215DEEF1F0083DFBE /* CTLocationManager.h */,
+				9F36079315DEEF1F0083DFBE /* CTLocationManager.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -403,6 +409,7 @@
 				9F42BD3C15D5B3530058CBFC /* CTMapViewController.m in Sources */,
 				9F5C734915D6057F007201A2 /* CTCameraSiteAnnotationView.m in Sources */,
 				9F3606B915DC8B0C0083DFBE /* CTApiClient.m in Sources */,
+				9F36079415DEEF1F0083DFBE /* CTLocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +421,7 @@
 				9F42BD3D15D5B3530058CBFC /* CTMapViewController.m in Sources */,
 				9F5C734A15D6057F007201A2 /* CTCameraSiteAnnotationView.m in Sources */,
 				9F3606BA15DC8B0C0083DFBE /* CTApiClient.m in Sources */,
+				9F36079515DEEF1F0083DFBE /* CTLocationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <AddressBook/AddressBook.h>
 #import "CTCameraViewController.h"
+#import "CTLocationManager.h"
 #import "CTCameraAnnotation.h"
 #import "CTCameraFeed.h"
 
@@ -34,6 +35,8 @@ NSInteger const kLoadView = 1;
 {
     [super viewDidLoad];
 
+    [CTLocationManager sharedSingleton];
+    
     self.title = self.camera.description;
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;

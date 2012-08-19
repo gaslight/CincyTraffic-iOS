@@ -13,10 +13,6 @@
 #import "CTCameraSiteAnnotationView.h"
 #import "CTCameraSite.h"
 
-@interface CTMapViewController ()
-
-@end
-
 @implementation CTMapViewController
 @synthesize mapView, cameras, mappedCameras;
 
@@ -61,6 +57,7 @@
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
+    if (self.initialLocation != nil) return;
     self.initialLocation = userLocation.location;
     [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 6500, 6500) animated:YES];
 }
