@@ -8,9 +8,15 @@
 
 #import "CTApiClient.h"
 
-#define BuckeyeTrafficBaseURLString @"http://www.buckeyetraffic.org/services/"
-
 @implementation CTApiClient
+
++ (NSURL *)apiBaseURL
+{
+    NSDictionary* env = [[NSProcessInfo processInfo] environment];
+    NSString *url = [env valueForKey:@"BUCKEYE_TRAFFIC_API_URL"];
+    if (!url) url = @"http://www.buckeyetraffic.org/services/";
+    return [NSURL URLWithString:url];
+}
 
 + (id)sharedInstance
 {
@@ -18,7 +24,7 @@
     static dispatch_once_t p = 0;
 
     dispatch_once(&p, ^{
-        __sharedInstance = [[CTApiClient alloc] initWithBaseURL:[NSURL URLWithString:BuckeyeTrafficBaseURLString]];
+        __sharedInstance = [[CTApiClient alloc] initWithBaseURL:[self apiBaseURL]];
     });
 
     return __sharedInstance;
@@ -27,10 +33,11 @@
 - (id)initWithBaseURL:(NSURL *)url {
     self = [super initWithBaseURL:url];
     if (self) {
+        [AFXMLRequestOperation addAcceptableContentTypes:[NSSet setWithObjects:@"text/plain", nil]];
         [self registerHTTPOperationClass:[AFXMLRequestOperation class]];
-        
     }
 
     return self;
 }
+
 @end
