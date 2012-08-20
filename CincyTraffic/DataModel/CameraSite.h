@@ -1,5 +1,8 @@
+#import <CoreLocation/CoreLocation.h>
 #import "_CameraSite.h"
 
 @interface CameraSite : _CameraSite {}
-// Custom logic goes here.
+- (void)updateAttributes:(NSDictionary *)dictionary;
+- (CLLocation *)location;
+- (CLLocationCoordinate2D)coordinate;
 @end

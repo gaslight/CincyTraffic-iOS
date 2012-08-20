@@ -7,8 +7,8 @@
 extern const struct CameraSiteAttributes {
 	__unsafe_unretained NSString *city;
 	__unsafe_unretained NSString *createdAt;
+	__unsafe_unretained NSString *desc;
 	__unsafe_unretained NSString *latitude;
-	__unsafe_unretained NSString *location;
 	__unsafe_unretained NSString *longitude;
 	__unsafe_unretained NSString *state;
 } CameraSiteAttributes;
@@ -57,6 +57,14 @@ extern const struct CameraSiteFetchedProperties {
 
 
 
+@property (nonatomic, strong) NSString* desc;
+
+
+//- (BOOL)validateDesc:(id*)value_ error:(NSError**)error_;
+
+
+
+
 @property (nonatomic, strong) NSNumber* latitude;
 
 
@@ -65,14 +73,6 @@ extern const struct CameraSiteFetchedProperties {
 - (void)setLatitudeValue:(float)value_;
 
 //- (BOOL)validateLatitude:(id*)value_ error:(NSError**)error_;
-
-
-
-
-@property (nonatomic, strong) NSString* location;
-
-
-//- (BOOL)validateLocation:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -136,17 +136,17 @@ extern const struct CameraSiteFetchedProperties {
 
 
 
+- (NSString*)primitiveDesc;
+- (void)setPrimitiveDesc:(NSString*)value;
+
+
+
+
 - (NSNumber*)primitiveLatitude;
 - (void)setPrimitiveLatitude:(NSNumber*)value;
 
 - (float)primitiveLatitudeValue;
 - (void)setPrimitiveLatitudeValue:(float)value_;
-
-
-
-
-- (NSString*)primitiveLocation;
-- (void)setPrimitiveLocation:(NSString*)value;
 
 
 

@@ -12,14 +12,14 @@
     <entity name="CameraSite" representedClassName="CameraSite" syncable="YES">
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="desc" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="location" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="cameraFeeds" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="CameraFeed" inverseName="cameraSite" inverseEntity="CameraFeed" syncable="YES"/>
     </entity>
     <elements>
         <element name="CameraFeed" positionX="171" positionY="-9" width="128" height="148"/>
-        <element name="CameraSite" positionX="-137" positionY="-117" width="128" height="148"/>
+        <element name="CameraSite" positionX="-137" positionY="-117" width="128" height="150"/>
     </elements>
 </model>

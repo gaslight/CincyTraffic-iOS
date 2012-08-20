@@ -11,12 +11,12 @@
 @implementation CTCameraAnnotation
 @synthesize cameraSite, title, subtitle;
 
-- (id)initWithCameraSite:(CTCameraSite *)site
+- (id)initWithCameraSite:(CameraSite *)site
 {
     self = [super init];
     if (self != nil) {
         self.cameraSite = site;
-        self.title = self.cameraSite.description;
+        self.title = self.cameraSite.desc;
         self.subtitle = @"";
     }
     return self;

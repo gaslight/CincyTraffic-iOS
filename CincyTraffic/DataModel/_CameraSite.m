@@ -6,8 +6,8 @@
 const struct CameraSiteAttributes CameraSiteAttributes = {
 	.city = @"city",
 	.createdAt = @"createdAt",
+	.desc = @"desc",
 	.latitude = @"latitude",
-	.location = @"location",
 	.longitude = @"longitude",
 	.state = @"state",
 };
@@ -78,6 +78,13 @@ const struct CameraSiteFetchedProperties CameraSiteFetchedProperties = {
 
 
 
+@dynamic desc;
+
+
+
+
+
+
 @dynamic latitude;
 
 
@@ -99,13 +106,6 @@ const struct CameraSiteFetchedProperties CameraSiteFetchedProperties = {
 - (void)setPrimitiveLatitudeValue:(float)value_ {
 	[self setPrimitiveLatitude:[NSNumber numberWithFloat:value_]];
 }
-
-
-
-
-
-@dynamic location;
-
 
 
 

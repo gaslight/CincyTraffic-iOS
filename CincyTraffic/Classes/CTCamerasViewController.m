@@ -6,11 +6,13 @@
 //  Copyright (c) 2012 26Webs LLC. All rights reserved.
 //
 
+#import "CTCamerasDataModel.h"
 #import "XMLDictionary.h"
 #import "CTApiClient.h"
 #import "CTCamerasViewController.h"
 #import "CTCameraViewController.h"
-#import "CTCameraSite.h"
+#import "CameraSite.h"
+#import "CameraFeed.h"
 
 @interface CTCamerasViewController()
 @property (nonatomic, retain) NSArray *allCameras;
@@ -34,7 +36,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadCameras:nil];
+    self.cameras = [NSMutableArray array];
+    
+    NSString *documentsDirectory = nil;
+    documentsDirectory = [[NSBundle mainBundle] resourcePath];
+    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"cameras.xml"];
+    [self loadCamerasFromXML:[NSDictionary dictionaryWithXMLFile:path]];
 }
 
 - (void)viewDidUnload
@@ -75,9 +82,9 @@
                                            reuseIdentifier:CellIdentifier];
     }
 
-    CTCameraSite *camera = [self.cameras objectAtIndex:indexPath.row];
+    CameraSite *camera = [self.cameras objectAtIndex:indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = camera.description;
+    cell.textLabel.text = camera.desc;
     
     return cell;
 }
@@ -85,7 +92,6 @@
 #pragma mark - Cameras
 
 - (IBAction)loadCameras:(id)sender {
-    self.cameras = [NSMutableArray array];
     [[CTApiClient sharedInstance] getPath:@"Cameras.aspx" parameters:nil
                                   success:^(AFHTTPRequestOperation *operation, id response) {
                                       NSDictionary *cameraXML = [NSDictionary dictionaryWithXMLString:operation.responseString];
@@ -102,10 +108,53 @@
 
 - (void)loadCamerasFromXML:(NSDictionary *)cameraXML
 {
-    for (NSDictionary *cameraDictionary in [cameraXML valueForKeyPath:@"CameraSite"]) {
-        CTCameraSite *cameraSite = [[CTCameraSite alloc] initWithDictionary:cameraDictionary];
-        [self.cameras addObject:cameraSite];
+    NSManagedObjectContext *context = [[CTCamerasDataModel sharedDataModel] mainContext];
+    if (context) {
+        NSLog(@"Context is ready!");
+
+        NSFetchRequest *allCameraSites = [[NSFetchRequest alloc] init];
+        [allCameraSites setEntity:[NSEntityDescription entityForName:@"CameraSite" inManagedObjectContext:context]];
+        [allCameraSites setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+
+        NSError *error = nil;
+        NSArray *cameras = [context executeFetchRequest:allCameraSites error:&error];
+
+        for (NSManagedObject *camera in cameras) {
+            [context deleteObject:camera];
+        }
+        NSError *saveError = nil;
+        [context save:&saveError];
+        saveError = nil;
+        cameras = nil;
+        allCameraSites = nil;
+
+        for (NSDictionary *cameraDictionary in [cameraXML valueForKeyPath:@"CameraSite"]) {
+            CameraSite *cameraSite = [CameraSite insertInManagedObjectContext:context];
+            [cameraSite updateAttributes:cameraDictionary];
+            NSDictionary *foundFeeds = [cameraDictionary valueForKeyPath:@"CameraFeeds.CameraFeed"];
+
+            if ([foundFeeds isKindOfClass:[NSArray class]]) {
+                for (NSDictionary *feed in foundFeeds) {
+                    CameraFeed *cameraFeed = [CameraFeed insertInManagedObjectContext:context];
+                    [cameraFeed updateAttributes:feed];
+                    [cameraSite addCameraFeedsObject:cameraFeed];
+                }
+            } else {
+                CameraFeed *cameraFeed = [CameraFeed insertInManagedObjectContext:context];
+                [cameraFeed updateAttributes:foundFeeds];
+                [cameraSite addCameraFeedsObject:cameraFeed];
+            }
+
+            [context save:&error];
+            if (error) {
+                NSLog(@"uh oh.");
+            }
+            [self.cameras addObject:cameraSite];
+        }
+    } else {
+        NSLog(@"Context is nil ;(");
     }
+
     self.allCameras = [NSArray arrayWithArray:self.cameras];
     [self.tableView reloadData];
 }

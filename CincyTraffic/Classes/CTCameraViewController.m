@@ -11,7 +11,7 @@
 #import "CTCameraViewController.h"
 #import "CTLocationManager.h"
 #import "CTCameraAnnotation.h"
-#import "CTCameraFeed.h"
+#import "CameraFeed.h"
 
 @interface CTCameraViewController ()
 - (void)timerFireMethod:(NSTimer*)theTimer;
@@ -37,7 +37,7 @@ NSInteger const kLoadView = 1;
 
     [CTLocationManager sharedSingleton];
     
-    self.title = self.camera.description;
+    self.title = self.camera.desc;
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
 
@@ -53,7 +53,7 @@ NSInteger const kLoadView = 1;
     loadView.tag = kLoadView;
 	[self.view addSubview:loadView];
 
-    for (CTCameraFeed *feed in self.camera.cameraFeeds) {
+    for (CameraFeed *feed in self.camera.cameraFeeds) {
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.smallImageURL]];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         [self.webView loadRequest:request];
