@@ -40,11 +40,16 @@
 + (id)loadCamerasWithSettingsScreen
 {
     KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"View settings and manage cameras"];
+    [scenario addStep:[KIFTestStep stepToReset]];
+    
     [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Settings"]];
-    [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Camera Sites"]];
-    [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Update Cameras"]];
 
-    [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"222"]];
+    // Make sure we start with 0.
+    [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Camera Sites"]];
+    [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"0"]];
+
+    [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Update Cameras"]];
+    [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"355"]];
     return scenario;
 }
 @end

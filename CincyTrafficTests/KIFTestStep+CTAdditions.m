@@ -7,6 +7,8 @@
 //
 
 #import "KIFTestStep+CTAdditions.h"
+#import "CTCamerasDataModel.h"
+#import "CameraSite.h"
 
 @implementation KIFTestStep (CTAdditions)
 
@@ -14,11 +16,9 @@
 {
     return [KIFTestStep stepWithDescription:@"Reset the application state." executionBlock:^(KIFTestStep *step, NSError **error) {
         BOOL successfulReset = YES;
-
-        // Do the actual reset for your app. Set successfulReset = NO if it fails.
-
+        NSManagedObjectContext *context = [[CTCamerasDataModel sharedDataModel] mainContext];
+        [CameraSite removeAllCamerasUsingContext:context];
         KIFTestCondition(successfulReset, error, @"Failed to reset the application.");
-
         return KIFTestStepResultSuccess;
     }];
 }

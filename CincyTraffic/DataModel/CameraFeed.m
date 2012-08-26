@@ -10,14 +10,10 @@
 
     if ([[dictionary objectForKey:@"SmallImage"] isKindOfClass:[NSString class]]) {
         self.smallImageURL = [dictionary objectForKey:@"SmallImage"];
-    } else {
-        NSLog(@"something up small with %@", dictionary);
     }
 
     if ([[dictionary objectForKey:@"LargeImage"] isKindOfClass:[NSString class]]) {
         self.largeImageURL = [dictionary objectForKey:@"LargeImage"];
-    } else {
-        NSLog(@"something up large with %@", dictionary);
     }
 
     NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
