@@ -4,7 +4,7 @@
 @interface CameraSite : _CameraSite {}
 + (void)loadCamerasFromLocalXML;
 + (void)loadCamerasFromDictionary:(NSDictionary *)xmlDictionary;
-+ (void)removeAllCameras;
++ (void)removeAllCamerasUsingContext:(NSManagedObjectContext *)context;
 + (NSArray *)allCameras;
 
 - (void)updateAttributes:(NSDictionary *)dictionary;

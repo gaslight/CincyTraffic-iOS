@@ -7,6 +7,7 @@
 //
 
 #import "CTSettingsViewController.h"
+#import "CTCamerasDataModel.h"
 
 @interface CTSettingsViewController ()
 
@@ -58,8 +59,17 @@
                                       reuseIdentifier:CellIdentifier];
     }
 
+    NSManagedObjectContext *context = [[CTCamerasDataModel sharedDataModel] mainContext];
+    NSFetchRequest *allCameraSites = [[NSFetchRequest alloc] init];
+    [allCameraSites setEntity:[NSEntityDescription entityForName:@"CameraSite" inManagedObjectContext:context]];
+    [allCameraSites setIncludesPropertyValues:NO];
+    NSError *error = nil;
+    NSUInteger count = [context countForFetchRequest:allCameraSites error:&error];
+
     cell.textLabel.text = NSLocalizedString(@"CameraSites", @"Camera site");
-    cell.detailTextLabel.text = @"222";
+
+    NSString *countString = NSLocalizedString(@"countString", nil);
+    cell.detailTextLabel.text = [NSString stringWithFormat:countString, count];
     
     return cell;
 }

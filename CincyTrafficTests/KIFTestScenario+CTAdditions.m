@@ -42,6 +42,9 @@
     KIFTestScenario *scenario = [KIFTestScenario scenarioWithDescription:@"View settings and manage cameras"];
     [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Settings"]];
     [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"Camera Sites"]];
+    [scenario addStep:[KIFTestStep stepToTapViewWithAccessibilityLabel:@"Update Cameras"]];
+
+    [scenario addStep:[KIFTestStep stepToWaitForViewWithAccessibilityLabel:@"222"]];
     return scenario;
 }
 @end
