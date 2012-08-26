@@ -7,8 +7,6 @@
 //
 
 #import "CTCamerasDataModel.h"
-#import "XMLDictionary.h"
-#import "CTApiClient.h"
 #import "CTCamerasViewController.h"
 #import "CTCameraViewController.h"
 #import "CameraSite.h"
@@ -36,12 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.cameras = [NSMutableArray array];
-    
-    NSString *documentsDirectory = nil;
-    documentsDirectory = [[NSBundle mainBundle] resourcePath];
-    NSString *path = [documentsDirectory stringByAppendingPathComponent:@"cameras.xml"];
-    [self loadCamerasFromXML:[NSDictionary dictionaryWithXMLFile:path]];
+    [self loadCameras];
 }
 
 - (void)viewDidUnload
@@ -91,70 +84,14 @@
 
 #pragma mark - Cameras
 
-- (IBAction)loadCameras:(id)sender {
-    [[CTApiClient sharedInstance] getPath:@"Cameras.aspx" parameters:nil
-                                  success:^(AFHTTPRequestOperation *operation, id response) {
-                                      NSDictionary *cameraXML = [NSDictionary dictionaryWithXMLString:operation.responseString];
-                                      [self loadCamerasFromXML:cameraXML];
-                                      [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-                                  }
-                                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                      [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-                                      NSLog(@"Error fetching cameras!");
-                                      NSLog(@"%@", error);
-                                  }];
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+- (IBAction)refreshCamerasButtonClicked:(id)sender {
+    [self loadCameras];
 }
 
-- (void)loadCamerasFromXML:(NSDictionary *)cameraXML
+- (void)loadCameras
 {
-    NSManagedObjectContext *context = [[CTCamerasDataModel sharedDataModel] mainContext];
-    if (context) {
-        NSLog(@"Context is ready!");
-
-        NSFetchRequest *allCameraSites = [[NSFetchRequest alloc] init];
-        [allCameraSites setEntity:[NSEntityDescription entityForName:@"CameraSite" inManagedObjectContext:context]];
-        [allCameraSites setIncludesPropertyValues:NO]; //only fetch the managedObjectID
-
-        NSError *error = nil;
-        NSArray *cameras = [context executeFetchRequest:allCameraSites error:&error];
-
-        for (NSManagedObject *camera in cameras) {
-            [context deleteObject:camera];
-        }
-        NSError *saveError = nil;
-        [context save:&saveError];
-        saveError = nil;
-        cameras = nil;
-        allCameraSites = nil;
-
-        for (NSDictionary *cameraDictionary in [cameraXML valueForKeyPath:@"CameraSite"]) {
-            CameraSite *cameraSite = [CameraSite insertInManagedObjectContext:context];
-            [cameraSite updateAttributes:cameraDictionary];
-            NSDictionary *foundFeeds = [cameraDictionary valueForKeyPath:@"CameraFeeds.CameraFeed"];
-
-            if ([foundFeeds isKindOfClass:[NSArray class]]) {
-                for (NSDictionary *feed in foundFeeds) {
-                    CameraFeed *cameraFeed = [CameraFeed insertInManagedObjectContext:context];
-                    [cameraFeed updateAttributes:feed];
-                    [cameraSite addCameraFeedsObject:cameraFeed];
-                }
-            } else {
-                CameraFeed *cameraFeed = [CameraFeed insertInManagedObjectContext:context];
-                [cameraFeed updateAttributes:foundFeeds];
-                [cameraSite addCameraFeedsObject:cameraFeed];
-            }
-
-            [context save:&error];
-            if (error) {
-                NSLog(@"uh oh.");
-            }
-            [self.cameras addObject:cameraSite];
-        }
-    } else {
-        NSLog(@"Context is nil ;(");
-    }
-
+    self.cameras = [NSMutableArray array];
+    [self.cameras addObjectsFromArray:[CameraSite allCameras]];
     self.allCameras = [NSArray arrayWithArray:self.cameras];
     [self.tableView reloadData];
 }
