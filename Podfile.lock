@@ -1,13 +1,13 @@
 PODS:
   - AFNetworking (1.0RC1)
+  - KIF (0.0.1)
   - SSToolkit (1.0.2)
-  - TDBadgedCell (2.0)
   - TestFlightSDK (1.0)
   - XMLDictionary (2.0.0)
 
 DEPENDENCIES:
   - AFNetworking
+  - KIF
   - SSToolkit
-  - TDBadgedCell
   - TestFlightSDK
   - XMLDictionary

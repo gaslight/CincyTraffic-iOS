@@ -1,8 +1,11 @@
 platform :ios
 xcodeproj 'CincyTraffic.xcodeproj'
 
-dependency 'TestFlightSDK'
-dependency 'AFNetworking'
-dependency 'XMLDictionary'
-dependency 'SSToolkit'
+pod 'TestFlightSDK'
+pod 'AFNetworking'
+pod 'XMLDictionary'
+pod 'SSToolkit'
 
+target 'Integration Tests' do
+  pod 'KIF'
+end

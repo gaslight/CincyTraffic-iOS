@@ -10,6 +10,10 @@
 #import "CTAppDelegate.h"
 #import "CTCamerasDataModel.h"
 
+#if RUN_KIF_TESTS
+#import "CTTestController.h"
+#endif
+
 @interface CTAppDelegate ()
 
 @end
@@ -20,19 +24,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [_window makeKeyAndVisible];
     [TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
     [TestFlight takeOff:@"44e14a3879aa66d2321f385deac7c497_ODc1MzgyMDEyLTA1LTA2IDAyOjUwOjMyLjgxMjUyNA"];
-
-    NSManagedObjectContext *context = [[CTCamerasDataModel sharedDataModel] mainContext];
-    if (context) {
-        NSLog(@"Context is ready!");
-    } else {
-        NSLog(@"Context is nil ;(");
-    }
-
+    
+    #if RUN_KIF_TESTS
+        [[CTTestController sharedInstance] startTestingWithCompletionBlock:^{
+            // Exit after the tests complete so that CI knows we're done
+            exit([[CTTestController sharedInstance] failureCount]);
+        }];
+    #endif
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
