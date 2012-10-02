@@ -6,11 +6,11 @@
 //  Copyright (c) 2012 26Webs LLC. All rights reserved.
 //
 
-#import "XMLDictionary.h"
-#import "CTApiClient.h"
+#import "CTCamerasDataModel.h"
 #import "CTCamerasViewController.h"
 #import "CTCameraViewController.h"
-#import "CTCameraSite.h"
+#import "CameraSite.h"
+#import "CameraFeed.h"
 
 @interface CTCamerasViewController()
 @property (nonatomic, retain) NSArray *allCameras;
@@ -34,7 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadCameras:nil];
+    [self loadCameras];
 }
 
 - (void)viewDidUnload
@@ -75,37 +75,23 @@
                                            reuseIdentifier:CellIdentifier];
     }
 
-    CTCameraSite *camera = [self.cameras objectAtIndex:indexPath.row];
+    CameraSite *camera = [self.cameras objectAtIndex:indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = camera.description;
+    cell.textLabel.text = camera.desc;
     
     return cell;
 }
 
 #pragma mark - Cameras
 
-- (IBAction)loadCameras:(id)sender {
-    self.cameras = [NSMutableArray array];
-    [[CTApiClient sharedInstance] getPath:@"Cameras.aspx" parameters:nil
-                                  success:^(AFHTTPRequestOperation *operation, id response) {
-                                      NSDictionary *cameraXML = [NSDictionary dictionaryWithXMLString:operation.responseString];
-                                      [self loadCamerasFromXML:cameraXML];
-                                      [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-                                  }
-                                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                      [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-                                      NSLog(@"Error fetching cameras!");
-                                      NSLog(@"%@", error);
-                                  }];
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+- (IBAction)refreshCamerasButtonClicked:(id)sender {
+    [self loadCameras];
 }
 
-- (void)loadCamerasFromXML:(NSDictionary *)cameraXML
+- (void)loadCameras
 {
-    for (NSDictionary *cameraDictionary in [cameraXML valueForKeyPath:@"CameraSite"]) {
-        CTCameraSite *cameraSite = [[CTCameraSite alloc] initWithDictionary:cameraDictionary];
-        [self.cameras addObject:cameraSite];
-    }
+    self.cameras = [NSMutableArray array];
+    [self.cameras addObjectsFromArray:[CameraSite allCameras]];
     self.allCameras = [NSArray arrayWithArray:self.cameras];
     [self.tableView reloadData];
 }

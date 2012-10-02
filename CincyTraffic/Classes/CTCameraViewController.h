@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <SSToolkit/SSLoadingView.h>
-#import "CTCameraSite.h"
+#import "CameraSite.h"
 
 @interface CTCameraViewController : UIViewController <MKMapViewDelegate, UIWebViewDelegate> {
     NSTimer *timer;
 }
-@property (nonatomic, strong) CTCameraSite *camera;
+@property (nonatomic, strong) CameraSite *camera;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLGeocoder *geocoder;

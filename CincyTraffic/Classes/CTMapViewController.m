@@ -11,7 +11,6 @@
 #import "CTMapViewController.h"
 #import "CTCameraAnnotation.h"
 #import "CTCameraSiteAnnotationView.h"
-#import "CTCameraSite.h"
 
 @implementation CTMapViewController
 @synthesize mapView, cameras, mappedCameras;
@@ -68,7 +67,7 @@
 
     NSMutableArray *newAnnotations = [NSMutableArray array];
     
-    for (CTCameraSite *camera in self.cameras) {
+    for (CameraSite *camera in self.cameras) {
         if (MKMapRectContainsPoint(self.mapView.visibleMapRect, MKMapPointForCoordinate(camera.coordinate))) {
             if (![self.mappedCameras containsObject:camera]) {
                 CTCameraAnnotation* annotation = [[CTCameraAnnotation alloc] initWithCameraSite:camera];

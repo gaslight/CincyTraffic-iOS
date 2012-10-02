@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  CincyTraffic
+
+  Created by Chris Moore on 5/6/12.
+  Copyright (c) 2012 26Webs LLC. All rights reserved.
+*/
+
+"CameraSite" = "Camera Site";
+"CameraSites" = "Camera Sites";
+"CameraFeed" = "Camera Feed";
+"CameraFeeds" = "Camera Feeds";
+"countString" = "%d";

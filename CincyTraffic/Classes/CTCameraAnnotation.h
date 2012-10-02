@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-#import "CTCameraSite.h"
+#import "CameraSite.h"
 
 @interface CTCameraAnnotation : NSObject <MKAnnotation>
-@property (weak, nonatomic) CTCameraSite *cameraSite;
+@property (weak, nonatomic) CameraSite *cameraSite;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *subtitle;
 
-- (id)initWithCameraSite:(CTCameraSite *)site;
+- (id)initWithCameraSite:(CameraSite *)site;
 - (CLLocationCoordinate2D)coordinate;
 @end

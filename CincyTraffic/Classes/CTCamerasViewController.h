@@ -13,5 +13,5 @@
 @property (strong, nonatomic) NSMutableArray *cameras;
 @property (strong, nonatomic) NSMutableArray *tableData;
 
-- (IBAction)loadCameras:(id)sender;
+- (IBAction)refreshCamerasButtonClicked:(id)sender;
 @end

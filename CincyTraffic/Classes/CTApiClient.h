@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 
 @interface CTApiClient : AFHTTPClient
-+(id)sharedInstance;
--(CTApiClient *)initWithBaseURL:(NSURL *)url;
++ (NSURL *)apiBaseURL;
++ (id)sharedInstance;
+- (CTApiClient *)initWithBaseURL:(NSURL *)url;
 @end
