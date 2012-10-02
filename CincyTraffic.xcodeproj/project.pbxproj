@@ -82,6 +82,11 @@
 		9FDD668415E93DB70046241A /* cameras.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9FD4D31615E1B56A00480273 /* cameras.xml */; };
 		9FDD66A415E940500046241A /* KIFTestScenario+CTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD66A315E940500046241A /* KIFTestScenario+CTAdditions.m */; };
 		9FDD66A715E940E00046241A /* KIFTestStep+CTAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD66A615E940E00046241A /* KIFTestStep+CTAdditions.m */; };
+		9FDE8C6E161B5D010074F569 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FDE8C6D161B5D010074F569 /* AppIcon.png */; };
+		9FDE8C70161B5D100074F569 /* AppIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FDE8C6F161B5D100074F569 /* AppIcon@2x.png */; };
+		9FDE8C72161B60C50074F569 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FDE8C71161B60C50074F569 /* Default-568h@2x.png */; };
+		9FDE8C74161B60C70074F569 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FDE8C73161B60C70074F569 /* Default@2x.png */; };
+		9FDE8C76161B614D0074F569 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FDE8C75161B614D0074F569 /* Default.png */; };
 		9FE56B7515516F8500781B0F /* CTCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE56B7415516F8500781B0F /* CTCameraViewController.m */; };
 		9FE56B77155173D100781B0F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE56B76155173D100781B0F /* MapKit.framework */; };
 		9FE56B7A15517AC100781B0F /* CTCameraAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE56B7915517AC100781B0F /* CTCameraAnnotation.m */; };
@@ -160,6 +165,11 @@
 		9FDD66A515E940E00046241A /* KIFTestStep+CTAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFTestStep+CTAdditions.h"; sourceTree = "<group>"; };
 		9FDD66A615E940E00046241A /* KIFTestStep+CTAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFTestStep+CTAdditions.m"; sourceTree = "<group>"; };
 		9FDD66BB15E9B9D70046241A /* CTSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTSettingsViewController.h; path = Classes/CTSettingsViewController.h; sourceTree = "<group>"; };
+		9FDE8C6D161B5D010074F569 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = ../AppIcon.png; sourceTree = "<group>"; };
+		9FDE8C6F161B5D100074F569 /* AppIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon@2x.png"; path = "../AppIcon@2x.png"; sourceTree = "<group>"; };
+		9FDE8C71161B60C50074F569 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		9FDE8C73161B60C70074F569 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		9FDE8C75161B614D0074F569 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
 		9FE56B7315516F8500781B0F /* CTCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTCameraViewController.h; path = Classes/CTCameraViewController.h; sourceTree = "<group>"; };
 		9FE56B7415516F8500781B0F /* CTCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTCameraViewController.m; path = Classes/CTCameraViewController.m; sourceTree = "<group>"; };
 		9FE56B76155173D100781B0F /* MapKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -360,10 +370,15 @@
 		9F46EEF715504A5E009EFE4A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9FDE8C6D161B5D010074F569 /* AppIcon.png */,
+				9FDE8C6F161B5D100074F569 /* AppIcon@2x.png */,
 				9FAF2A4B1556CD7500948F2A /* 07-map-marker.png */,
 				9FAF2A491556CD1A00948F2A /* 71-compass.png */,
 				9F46EF1F1550533F009EFE4A /* 86-camera.png */,
 				9F46EF1115504AFD009EFE4A /* CCTV073.jpeg */,
+				9FDE8C75161B614D0074F569 /* Default.png */,
+				9FDE8C73161B60C70074F569 /* Default@2x.png */,
+				9FDE8C71161B60C50074F569 /* Default-568h@2x.png */,
 				9F46EF1215504AFD009EFE4A /* first.png */,
 				9F46EF1315504AFD009EFE4A /* first@2x.png */,
 				9F46EF1415504AFD009EFE4A /* second.png */,
@@ -502,6 +517,11 @@
 				9FD4D31715E1B56A00480273 /* cameras.xml in Resources */,
 				9F5C757215E9BF0B004955D5 /* Localizable.strings in Resources */,
 				9F5C75A615E9C2BD004955D5 /* Localizable.strings in Resources */,
+				9FDE8C6E161B5D010074F569 /* AppIcon.png in Resources */,
+				9FDE8C70161B5D100074F569 /* AppIcon@2x.png in Resources */,
+				9FDE8C72161B60C50074F569 /* Default-568h@2x.png in Resources */,
+				9FDE8C74161B60C70074F569 /* Default@2x.png in Resources */,
+				9FDE8C76161B614D0074F569 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,9 +801,11 @@
 				GCC_PREFIX_HEADER = "CincyTraffic/CincyTraffic-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "CincyTraffic/CincyTraffic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -799,10 +821,12 @@
 				GCC_PREFIX_HEADER = "CincyTraffic/CincyTraffic-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "CincyTraffic/CincyTraffic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
