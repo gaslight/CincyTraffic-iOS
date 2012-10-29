@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 26Webs LLC. All rights reserved.
 //
 
+#import "CameraSite.h"
 #import "CTCamerasViewController.h"
 #import "CTCameraViewController.h"
 #import "CTMapViewController.h"
@@ -32,7 +33,8 @@
     UINavigationController *navController = [self.tabBarController.viewControllers objectAtIndex:0];
     CTCamerasViewController *camerasController = [navController.viewControllers objectAtIndex:0];
 
-    self.cameras = camerasController.cameras;
+    [self loadCameras];
+    
     self.mappedCameras = [NSMutableArray array];
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
@@ -114,6 +116,12 @@
     if ([[segue identifier] isEqualToString:@"mapCameraDetail"]) {
         [[segue destinationViewController] setCamera:sender];
     }
+}
+
+- (void)loadCameras
+{
+    self.cameras = [NSMutableArray array];
+    [self.cameras addObjectsFromArray:[CameraSite allCameras]];
 }
 
 @end

@@ -2,8 +2,9 @@
 #import "_CameraSite.h"
 
 @interface CameraSite : _CameraSite {}
-+ (void)loadCamerasFromLocalXML;
-+ (void)loadCamerasFromDictionary:(NSDictionary *)xmlDictionary;
+
++ (void)loadCamerasFromLocalXMLWithProgressBlock:(void(^)(float progress))block;
++ (void)loadCamerasFromDictionary:(NSDictionary *)xmlDictionary usingProgressBlock:(void(^)(float progress))block;
 + (void)removeAllCamerasUsingContext:(NSManagedObjectContext *)context;
 + (NSArray *)allCameras;
 

@@ -15,12 +15,12 @@
 
 #pragma mark - Class Methods
 
-+ (void)loadCamerasFromLocalXML
++ (void)loadCamerasFromLocalXMLWithProgressBlock:(void(^)(float progress))block
 {
     NSString *documentsDirectory = nil;
     documentsDirectory = [[NSBundle mainBundle] resourcePath];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:@"cameras.xml"];
-    [self loadCamerasFromDictionary:[NSDictionary dictionaryWithXMLFile:path]];
+    [self loadCamerasFromDictionary:[NSDictionary dictionaryWithXMLFile:path] usingProgressBlock:block];
 }
 
 //+ (void)reloadCamerasFromApi
@@ -39,7 +39,7 @@
 //    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 //}
 
-+ (void)loadCamerasFromDictionary:(NSDictionary *)xmlDictionary
++ (void)loadCamerasFromDictionary:(NSDictionary *)xmlDictionary usingProgressBlock:(void(^)(float progress))block
 {
     NSManagedObjectContext *context = [[CTCamerasDataModel sharedDataModel] mainContext];
     NSError *error = nil;
@@ -47,6 +47,8 @@
     if (context) {
         NSLog(@"Context is ready!");
         [self removeAllCamerasUsingContext:context];
+        //float totalCameras = [[xmlDictionary valueForKeyPath:@"CameraSite"] count];
+        //float cameraCount = 0.0;
 
         for (NSDictionary *cameraDictionary in [xmlDictionary valueForKeyPath:@"CameraSite"]) {
             CameraSite *cameraSite = [CameraSite insertInManagedObjectContext:context];
@@ -64,11 +66,17 @@
                 [cameraFeed updateAttributes:foundFeeds];
                 [cameraSite addCameraFeedsObject:cameraFeed];
             }
-
+            
             [context save:&error];
+
             if (error) {
                 NSLog(@"uh oh.");
             }
+            
+            //cameraCount++;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //block(cameraCount/totalCameras);
+            });
         }
     }
 }

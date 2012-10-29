@@ -11,7 +11,7 @@
 #import "CameraSite.h"
 
 @interface CTSettingsViewController ()
-
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 @end
 
 @implementation CTSettingsViewController
@@ -25,6 +25,7 @@
 - (void)viewDidUnload
 {
     [self setReloadCamerasButton:nil];
+    [self setProgressBar:nil];
     [super viewDidUnload];
 }
 
@@ -33,10 +34,28 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)doDoneButton:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 - (IBAction)reloadCamerasButtonClicked:(id)sender {
-    [CameraSite loadCamerasFromLocalXML];
-    [self.tableView reloadData];
+    [self.progressBar setHidden:NO];
+    [self.progressBar setProgress:0 animated:NO];
+
+    void (^progressBlock)(float) = ^(float progress) {
+        [self.progressBar setProgress:progress animated:YES];
+        if (progress >= 1) {
+            NSLog(@"progress: %f", progress);
+            //[self.progressBar setHidden:YES];
+            //[self.tableView reloadData];
+        }
+    };
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [CameraSite loadCamerasFromLocalXMLWithProgressBlock:progressBlock];
+    });
+    
+    
 }
 
 #pragma mark - Table view data source

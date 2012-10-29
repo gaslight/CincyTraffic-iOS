@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C54" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Fs3-kT-HVa">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--Cameras View Controller - Cameras-->
@@ -72,7 +72,7 @@
             <objects>
                 <viewController title="Camera Detail" id="Sic-Ji-ooP" customClass="CTCameraViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iyW-Jf-5Zy">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v1Z-ci-CRv">
@@ -168,7 +168,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="cFu-tg-8VL" kind="relationship" relationship="viewControllers" id="US5-oK-VM6"/>
-                        <segue destination="Fs3-kT-HVa" kind="relationship" relationship="viewControllers" id="G2B-x2-DZt"/>
                         <segue destination="ofz-M5-UMp" kind="relationship" relationship="viewControllers" id="V3f-TG-O3N"/>
                         <segue destination="x4m-jQ-qFa" kind="relationship" relationship="viewControllers" id="wdF-za-Irg"/>
                     </connections>
@@ -180,12 +179,21 @@
         <!--Navigation Controller - Map-->
         <scene sceneID="myS-nf-bH5">
             <objects>
-                <navigationController title="Map" definesPresentationContext="YES" id="Fs3-kT-HVa" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="Fs3-kT-HVa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="71-compass.png" id="ujf-j4-bCO"/>
+                    <toolbarItems>
+                        <barButtonItem image="19-gear.png" id="Kmv-Qp-6TS"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="UV3-pK-nvU"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="lz3-QK-tjh">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="Wgf-HV-dHA">
+                        <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="RAw-Kz-RLK" kind="relationship" relationship="rootViewController" id="vBf-M1-2mX"/>
                     </connections>
@@ -199,11 +207,33 @@
             <objects>
                 <viewController storyboardIdentifier="settings" title="Settings" id="XJ5-h5-5sw" customClass="CTSettingsViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="AhK-0H-rie">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Bkv-ne-pgU">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0W7-ly-CZN">
+                                    <items>
+                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="FZf-HH-mw6"/>
+                                        <barButtonItem style="done" systemItem="done" id="2Df-41-PB8">
+                                            <connections>
+                                                <action selector="doDoneButton:" destination="XJ5-h5-5sw" id="O2c-g7-mu5"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </items>
+                                </toolbar>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="0W7-ly-CZN" firstAttribute="top" secondItem="Bkv-ne-pgU" secondAttribute="top" type="default" id="WJ2-Oz-Tw5"/>
+                                <constraint firstItem="0W7-ly-CZN" firstAttribute="leading" secondItem="Bkv-ne-pgU" secondAttribute="leading" type="default" id="cKI-Cs-NtB"/>
+                                <constraint firstItem="0W7-ly-CZN" firstAttribute="trailing" secondItem="Bkv-ne-pgU" secondAttribute="trailing" type="default" id="kIo-Mj-1YN"/>
+                            </constraints>
+                        </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="JVm-0D-lH0">
-                            <rect key="frame" x="0.0" y="146" width="320" height="84"/>
+                            <rect key="frame" x="0.0" y="180" width="320" height="84"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utP-i1-ntU">
@@ -219,17 +249,21 @@
                                         <action selector="reloadCamerasButtonClicked:" destination="XJ5-h5-5sw" eventType="touchUpInside" id="tm1-HF-s2k"/>
                                     </connections>
                                 </button>
+                                <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="01W-mp-Hhh"/>
                             </subviews>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="utP-i1-ntU" firstAttribute="leading" secondItem="JVm-0D-lH0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="4vs-et-nao"/>
+                                <constraint firstAttribute="trailing" secondItem="01W-mp-Hhh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="NJT-NB-N6B"/>
                                 <constraint firstAttribute="trailing" secondItem="utP-i1-ntU" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Rud-x7-XvU"/>
+                                <constraint firstItem="01W-mp-Hhh" firstAttribute="leading" secondItem="JVm-0D-lH0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ZCg-kN-lUU"/>
+                                <constraint firstItem="01W-mp-Hhh" firstAttribute="top" secondItem="JVm-0D-lH0" secondAttribute="top" constant="77" id="dme-vq-W3a"/>
                                 <constraint firstItem="utP-i1-ntU" firstAttribute="top" secondItem="JVm-0D-lH0" secondAttribute="top" constant="20" symbolic="YES" type="default" id="k2o-7k-ZgN"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="sitesCell" textLabel="Dw3-mv-8iF" detailTextLabel="tF6-H5-pRN" style="IBUITableViewCellStyleValue1" id="ezU-8u-0vD">
-                                <rect key="frame" x="0.0" y="46" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="80" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="1" width="300" height="43"/>
@@ -254,7 +288,7 @@
                                 </view>
                             </tableViewCell>
                             <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="feedsCell" textLabel="xqq-uP-fRO" detailTextLabel="gIZ-cq-X8p" style="IBUITableViewCellStyleValue1" id="boc-cA-k0s">
-                                <rect key="frame" x="0.0" y="91" width="320" height="45"/>
+                                <rect key="frame" x="0.0" y="125" width="320" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -284,18 +318,21 @@
                             <outlet property="delegate" destination="XJ5-h5-5sw" id="XzO-xk-Yhn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="wql-qY-MnI"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="progressBar" destination="01W-mp-Hhh" id="X3M-A3-LmR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDK-dR-T3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1178" y="-899"/>
+            <point key="canvasLocation" x="1718" y="-889"/>
         </scene>
         <!--Map View Controller - Map-->
         <scene sceneID="PFd-jJ-4Et">
             <objects>
                 <viewController title="Map" id="RAw-Kz-RLK" customClass="CTMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F7I-1i-pxg">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cd1-ZC-hB3">
@@ -303,12 +340,31 @@
                                     <outlet property="delegate" destination="RAw-Kz-RLK" id="0aH-b0-rOj"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swC-QI-Prc">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="Ms0-KB-g8M"/>
+                                    <constraint firstAttribute="height" constant="27" id="gep-fh-p0b"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="19-gear.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="XJ5-h5-5sw" kind="modal" id="w5V-rC-gZl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="swC-QI-Prc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="JTa-H6-9E8"/>
                             <constraint firstItem="cd1-ZC-hB3" firstAttribute="bottom" secondItem="F7I-1i-pxg" secondAttribute="bottom" type="default" id="Xr4-Yn-9yh"/>
                             <constraint firstItem="cd1-ZC-hB3" firstAttribute="leading" secondItem="F7I-1i-pxg" secondAttribute="leading" type="default" id="grr-NB-8zK"/>
                             <constraint firstItem="cd1-ZC-hB3" firstAttribute="trailing" secondItem="F7I-1i-pxg" secondAttribute="trailing" type="default" id="lYJ-q7-ByO"/>
+                            <constraint firstAttribute="bottom" secondItem="swC-QI-Prc" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="qo4-Iu-yt4"/>
                             <constraint firstItem="cd1-ZC-hB3" firstAttribute="top" secondItem="F7I-1i-pxg" secondAttribute="top" type="default" id="uXb-wr-AOG"/>
                         </constraints>
                     </view>
@@ -325,17 +381,20 @@
         <!--Navigation Controller - Settings-->
         <scene sceneID="Rd1-Hx-AtV">
             <objects>
-                <navigationController id="x4m-jQ-qFa" sceneMemberID="viewController">
+                <navigationController title="Settings" id="x4m-jQ-qFa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" id="Qxe-SV-dwR"/>
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="roW-8B-0Vb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="XJ5-h5-5sw" kind="relationship" relationship="rootViewController" id="Pgu-VV-Qsj"/>
-                    </connections>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="hks-Xj-VPB">
+                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vc8-Uj-etJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -344,6 +403,7 @@
     </scenes>
     <resources>
         <image name="07-map-marker.png" width="16" height="26"/>
+        <image name="19-gear.png" width="26" height="26"/>
         <image name="71-compass.png" width="24" height="24"/>
         <image name="86-camera.png" width="24" height="18"/>
     </resources>
@@ -371,6 +431,9 @@
         <class className="CTSettingsViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CTSettingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="doDoneButton:"/>
+                <relationship kind="action" name="reloadCamerasButtonClicked:"/>
+                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
                 <relationship kind="outlet" name="reloadCamerasButton" candidateClass="UIButton"/>
             </relationships>
         </class>
@@ -387,6 +450,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="pvB-Yg-ql0"/>
+        <segue reference="MJi-fb-ZTB"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -35,8 +35,6 @@ NSInteger const kLoadView = 1;
 {
     [super viewDidLoad];
 
-    [CTLocationManager sharedSingleton];
-    
     self.title = self.camera.desc;
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
@@ -44,14 +42,6 @@ NSInteger const kLoadView = 1;
     CGSize size = self.webView.frame.size;
     self.webView.hidden = YES;
     self.webView.delegate = self;
-
-    // Loading View
-    SSLoadingView *loadView = [[SSLoadingView alloc] initWithFrame:CGRectMake(self.webView.frame.origin.x,
-                                                                              self.webView.frame.origin.y,
-                                                                              size.width,
-                                                                              size.height + 80)];
-    loadView.tag = kLoadView;
-	[self.view addSubview:loadView];
 
     for (CameraFeed *feed in self.camera.cameraFeeds) {
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.smallImageURL]];
@@ -68,6 +58,7 @@ NSInteger const kLoadView = 1;
     
     CTCameraAnnotation* annotation = [[CTCameraAnnotation alloc] initWithCameraSite:self.camera];
     [mapView addAnnotation:annotation];
+    [mapView setCenterCoordinate:self.camera.coordinate animated:YES];
     
 //    CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
 //    

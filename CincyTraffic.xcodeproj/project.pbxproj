@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F7ACB52814B4390946C3AC3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE53C77DC7104554A5F1503F /* libPods.a */; };
 		5AA5B7F572C348CCA168A5F7 /* libPods-Integration Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D75B8AC4790A4C6EA0DBE137 /* libPods-Integration Tests.a */; };
+		9F1B492D163F30F300F1C674 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1B492C163F30F300F1C674 /* 19-gear.png */; };
 		9F3606B915DC8B0C0083DFBE /* CTApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606B815DC8B0C0083DFBE /* CTApiClient.m */; };
 		9F3606DC15DD9E0E0083DFBE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3606DB15DD9E0E0083DFBE /* CoreData.framework */; };
 		9F3606E015DD9EE50083DFBE /* CTCameraSites.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606DE15DD9EE50083DFBE /* CTCameraSites.xcdatamodeld */; };
@@ -106,6 +107,7 @@
 
 /* Begin PBXFileReference section */
 		60914D1B73CC4F35ABCE9585 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		9F1B492C163F30F300F1C674 /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
 		9F3606B715DC8B0C0083DFBE /* CTApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTApiClient.h; path = Classes/CTApiClient.h; sourceTree = "<group>"; };
 		9F3606B815DC8B0C0083DFBE /* CTApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTApiClient.m; path = Classes/CTApiClient.m; sourceTree = "<group>"; };
 		9F3606DB15DD9E0E0083DFBE /* CoreData.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -370,6 +372,7 @@
 		9F46EEF715504A5E009EFE4A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9F1B492C163F30F300F1C674 /* 19-gear.png */,
 				9FDE8C6D161B5D010074F569 /* AppIcon.png */,
 				9FDE8C6F161B5D100074F569 /* AppIcon@2x.png */,
 				9FAF2A4B1556CD7500948F2A /* 07-map-marker.png */,
@@ -522,6 +525,7 @@
 				9FDE8C72161B60C50074F569 /* Default-568h@2x.png in Resources */,
 				9FDE8C74161B60C70074F569 /* Default@2x.png in Resources */,
 				9FDE8C76161B614D0074F569 /* Default.png in Resources */,
+				9F1B492D163F30F300F1C674 /* 19-gear.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -795,7 +799,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 60914D1B73CC4F35ABCE9585 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chris Moore (7TNK63ZN45)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chris Moore (7TNK63ZN45)";
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CincyTraffic/CincyTraffic-Prefix.pch";
@@ -803,7 +808,8 @@
 				INFOPLIST_FILE = "CincyTraffic/CincyTraffic-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "5A38FF93-C530-4FAB-92C4-F7639380D976";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5A38FF93-C530-4FAB-92C4-F7639380D976";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
