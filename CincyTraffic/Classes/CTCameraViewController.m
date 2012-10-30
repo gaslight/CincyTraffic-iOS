@@ -34,6 +34,8 @@ NSInteger const kLoadView = 1;
 {
     [super viewDidLoad];
 
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
     self.title = self.camera.desc;
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
