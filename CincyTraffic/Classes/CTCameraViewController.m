@@ -36,7 +36,6 @@
 
     self.title = self.camera.desc;
     self.mapView.delegate = self;
-    self.mapView.showsUserLocation = YES;
 
     self.webView.hidden = YES;
     self.webView.delegate = self;
