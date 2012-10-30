@@ -19,8 +19,6 @@
 @implementation CTCameraViewController
 @synthesize webView, camera, mapView, geocoder, repeatingTimer;
 
-NSInteger const kLoadView = 1;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -59,7 +57,6 @@ NSInteger const kLoadView = 1;
     CTCameraAnnotation* annotation = [[CTCameraAnnotation alloc] initWithCameraSite:self.camera];
     [mapView addAnnotation:annotation];
     [mapView setCenterCoordinate:self.camera.coordinate animated:YES];
-
 
     UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc]
                                             initWithTarget:self
@@ -104,7 +101,6 @@ NSInteger const kLoadView = 1;
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
-    [[self.view viewWithTag:kLoadView] removeFromSuperview];
     self.webView.hidden = NO;
 }
 @end
