@@ -57,6 +57,14 @@ NSInteger const kLoadView = 1;
     CTCameraAnnotation* annotation = [[CTCameraAnnotation alloc] initWithCameraSite:self.camera];
     [mapView addAnnotation:annotation];
     [mapView setCenterCoordinate:self.camera.coordinate animated:YES];
+
+
+    UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc]
+                                            initWithTarget:self
+                                                    action:@selector(oneFingerSwipeRight:)];
+
+    [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+    [[self view] addGestureRecognizer:swipeRight];
 }
 
 - (void)viewDidUnload
@@ -77,6 +85,10 @@ NSInteger const kLoadView = 1;
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)oneFingerSwipeRight:(UISwipeGestureRecognizer *)recognizer
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 #pragma mark - Timer methods
 

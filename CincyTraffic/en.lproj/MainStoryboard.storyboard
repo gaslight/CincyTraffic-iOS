@@ -357,13 +357,29 @@
                                     <segue destination="XJ5-h5-5sw" kind="modal" id="w5V-rC-gZl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Iu-NT-wxX">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="GRp-Dg-JEa"/>
+                                    <constraint firstAttribute="width" constant="73" id="nnA-1N-jfv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="swC-QI-Prc" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="JTa-H6-9E8"/>
+                            <constraint firstItem="swC-QI-Prc" firstAttribute="leading" secondItem="6Iu-NT-wxX" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="T9p-2l-WXv"/>
                             <constraint firstItem="cd1-ZC-hB3" firstAttribute="bottom" secondItem="F7I-1i-pxg" secondAttribute="bottom" type="default" id="Xr4-Yn-9yh"/>
                             <constraint firstItem="cd1-ZC-hB3" firstAttribute="leading" secondItem="F7I-1i-pxg" secondAttribute="leading" type="default" id="grr-NB-8zK"/>
                             <constraint firstItem="cd1-ZC-hB3" firstAttribute="trailing" secondItem="F7I-1i-pxg" secondAttribute="trailing" type="default" id="lYJ-q7-ByO"/>
+                            <constraint firstAttribute="bottom" secondItem="6Iu-NT-wxX" secondAttribute="bottom" constant="11" id="oNh-eZ-UYl"/>
                             <constraint firstAttribute="bottom" secondItem="swC-QI-Prc" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="qo4-Iu-yt4"/>
                             <constraint firstItem="cd1-ZC-hB3" firstAttribute="top" secondItem="F7I-1i-pxg" secondAttribute="top" type="default" id="uXb-wr-AOG"/>
                         </constraints>
@@ -407,43 +423,6 @@
         <image name="71-compass.png" width="24" height="24"/>
         <image name="86-camera.png" width="24" height="18"/>
     </resources>
-    <classes>
-        <class className="CTCameraViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTCameraViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="CTCamerasViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTCamerasViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="refreshCamerasButtonClicked:"/>
-                <relationship kind="outlet" name="searchBar" candidateClass="UISearchBar"/>
-            </relationships>
-        </class>
-        <class className="CTMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTMapViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
-            </relationships>
-        </class>
-        <class className="CTSettingsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CTSettingsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doDoneButton:"/>
-                <relationship kind="action" name="reloadCamerasButtonClicked:"/>
-                <relationship kind="outlet" name="progressBar" candidateClass="UIProgressView"/>
-                <relationship kind="outlet" name="reloadCamerasButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SSBadgeTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SSBadgeTableViewCell.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
