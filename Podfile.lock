@@ -1,13 +1,23 @@
+
 PODS:
-  - AFNetworking (1.0RC1)
-  - KIF (0.0.1)
-  - SSToolkit (1.0.2)
-  - TestFlightSDK (1.0)
-  - XMLDictionary (2.0.0)
+- AFNetworking (1.0RC1)
+- KIF (0.0.1)
+- SSToolkit (1.0.2)
+- TestFlightSDK (1.0)
+- XMLDictionary (2.0.0)
 
 DEPENDENCIES:
-  - AFNetworking
-  - KIF
-  - SSToolkit
-  - TestFlightSDK
-  - XMLDictionary
+- AFNetworking
+- KIF
+- SSToolkit
+- TestFlightSDK
+- XMLDictionary
+
+SPEC CHECKSUMS:
+  AFNetworking: b21c1252d437fd322e7db1caa93b163d76a362cb
+  SSToolkit: 852044205c6a15586431e90f46b2ef01f693285a
+  TestFlightSDK: 3b787ae19b2b16a7107240e778264cee89e3b22a
+  XMLDictionary: d41dcb25b03e480f374551037396f4fc1307ff1c
+  KIF: 5d4c54e2943ebca840ba7e6f8e49bdc1d058a13b
+
+COCOAPODS: 0.15.2
