@@ -7,7 +7,6 @@
 //
 
 #import "CameraSite.h"
-#import "CTCamerasViewController.h"
 #import "CTCameraViewController.h"
 #import "CTMapViewController.h"
 #import "CTCameraAnnotation.h"
@@ -28,19 +27,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     self.initialLocation = nil;
-
-    UINavigationController *navController = [self.tabBarController.viewControllers objectAtIndex:0];
-    CTCamerasViewController *camerasController = [navController.viewControllers objectAtIndex:0];
-
     [self loadCameras];
     
     self.mappedCameras = [NSMutableArray array];
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
-
-    navController = nil;
-    camerasController = nil;
 }
 
 - (void)viewDidUnload

@@ -9,7 +9,6 @@
 #import <CoreLocation/CoreLocation.h>
 #import <AddressBook/AddressBook.h>
 #import "CTCameraViewController.h"
-#import "CTLocationManager.h"
 #import "CTCameraAnnotation.h"
 #import "CameraFeed.h"
 
@@ -39,7 +38,6 @@ NSInteger const kLoadView = 1;
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
 
-    CGSize size = self.webView.frame.size;
     self.webView.hidden = YES;
     self.webView.delegate = self;
 
@@ -59,14 +57,6 @@ NSInteger const kLoadView = 1;
     CTCameraAnnotation* annotation = [[CTCameraAnnotation alloc] initWithCameraSite:self.camera];
     [mapView addAnnotation:annotation];
     [mapView setCenterCoordinate:self.camera.coordinate animated:YES];
-    
-//    CLLocation *location = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
-//    
-//    if (!self.geocoder) { self.geocoder = [[CLGeocoder alloc] init]; }
-//    
-//    [self.geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
-//        CLPlacemark *placemark = [placemarks objectAtIndex:0];
-//    }];
 }
 
 - (void)viewDidUnload
