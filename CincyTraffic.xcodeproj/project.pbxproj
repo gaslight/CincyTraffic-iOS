@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		1F7ACB52814B4390946C3AC3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE53C77DC7104554A5F1503F /* libPods.a */; };
 		5AA5B7F572C348CCA168A5F7 /* libPods-Integration Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D75B8AC4790A4C6EA0DBE137 /* libPods-Integration Tests.a */; };
+		9F0A423916529053004A95B3 /* Group+.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F0A423316529053004A95B3 /* Group+.png */; };
+		9F0A423A16529053004A95B3 /* Group+@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F0A423416529053004A95B3 /* Group+@2x.png */; };
+		9F0A423B16529053004A95B3 /* GroupNone.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F0A423516529053004A95B3 /* GroupNone.png */; };
+		9F0A423C16529053004A95B3 /* GroupNone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F0A423616529053004A95B3 /* GroupNone@2x.png */; };
+		9F0A423D16529053004A95B3 /* SingleCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F0A423716529053004A95B3 /* SingleCamera.png */; };
+		9F0A423E16529053004A95B3 /* SingleCamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F0A423816529053004A95B3 /* SingleCamera@2x.png */; };
 		9F1B492D163F30F300F1C674 /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F1B492C163F30F300F1C674 /* 19-gear.png */; };
 		9F3606B915DC8B0C0083DFBE /* CTApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3606B815DC8B0C0083DFBE /* CTApiClient.m */; };
 		9F3606DC15DD9E0E0083DFBE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3606DB15DD9E0E0083DFBE /* CoreData.framework */; };
@@ -103,6 +109,12 @@
 
 /* Begin PBXFileReference section */
 		60914D1B73CC4F35ABCE9585 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		9F0A423316529053004A95B3 /* Group+.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Group+.png"; sourceTree = "<group>"; };
+		9F0A423416529053004A95B3 /* Group+@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Group+@2x.png"; sourceTree = "<group>"; };
+		9F0A423516529053004A95B3 /* GroupNone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GroupNone.png; sourceTree = "<group>"; };
+		9F0A423616529053004A95B3 /* GroupNone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GroupNone@2x.png"; sourceTree = "<group>"; };
+		9F0A423716529053004A95B3 /* SingleCamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SingleCamera.png; sourceTree = "<group>"; };
+		9F0A423816529053004A95B3 /* SingleCamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SingleCamera@2x.png"; sourceTree = "<group>"; };
 		9F1B492C163F30F300F1C674 /* 19-gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "19-gear.png"; sourceTree = "<group>"; };
 		9F3606B715DC8B0C0083DFBE /* CTApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CTApiClient.h; path = Classes/CTApiClient.h; sourceTree = "<group>"; };
 		9F3606B815DC8B0C0083DFBE /* CTApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CTApiClient.m; path = Classes/CTApiClient.m; sourceTree = "<group>"; };
@@ -352,6 +364,12 @@
 		9F46EEF715504A5E009EFE4A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9F0A423316529053004A95B3 /* Group+.png */,
+				9F0A423416529053004A95B3 /* Group+@2x.png */,
+				9F0A423516529053004A95B3 /* GroupNone.png */,
+				9F0A423616529053004A95B3 /* GroupNone@2x.png */,
+				9F0A423716529053004A95B3 /* SingleCamera.png */,
+				9F0A423816529053004A95B3 /* SingleCamera@2x.png */,
 				9F1B492C163F30F300F1C674 /* 19-gear.png */,
 				9FDE8C6D161B5D010074F569 /* AppIcon.png */,
 				9FDE8C6F161B5D100074F569 /* AppIcon@2x.png */,
@@ -506,6 +524,12 @@
 				9FDE8C74161B60C70074F569 /* Default@2x.png in Resources */,
 				9FDE8C76161B614D0074F569 /* Default.png in Resources */,
 				9F1B492D163F30F300F1C674 /* 19-gear.png in Resources */,
+				9F0A423916529053004A95B3 /* Group+.png in Resources */,
+				9F0A423A16529053004A95B3 /* Group+@2x.png in Resources */,
+				9F0A423B16529053004A95B3 /* GroupNone.png in Resources */,
+				9F0A423C16529053004A95B3 /* GroupNone@2x.png in Resources */,
+				9F0A423D16529053004A95B3 /* SingleCamera.png in Resources */,
+				9F0A423E16529053004A95B3 /* SingleCamera@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

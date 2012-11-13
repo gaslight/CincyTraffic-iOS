@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "ADClusterMapView.h"
 
-@interface CTMapViewController : UIViewController <MKMapViewDelegate>
+@interface CTMapViewController : UIViewController <ADClusterMapViewDelegate>
 @property (nonatomic, retain) CLLocation *initialLocation;
 @property (strong, nonatomic) NSMutableArray *annotations;
 @property (strong, nonatomic) NSMutableArray *mappedCameras;
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet ADClusterMapView *mapView;
 @property (strong, nonatomic) NSMutableArray *cameras;
 @end

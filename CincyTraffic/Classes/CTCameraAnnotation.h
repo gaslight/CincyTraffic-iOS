@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "ADMapCluster.h"
 #import "CameraSite.h"
 
 @interface CTCameraAnnotation : NSObject <MKAnnotation>

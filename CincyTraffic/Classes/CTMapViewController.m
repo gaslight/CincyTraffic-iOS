@@ -10,7 +10,6 @@
 #import "CTCameraViewController.h"
 #import "CTMapViewController.h"
 #import "CTCameraAnnotation.h"
-#import "CTCameraSiteAnnotationView.h"
 
 @implementation CTMapViewController
 @synthesize mapView, cameras, mappedCameras;
@@ -39,6 +38,7 @@
     self.mappedCameras = [NSMutableArray array];
     self.mapView.delegate = self;
     self.mapView.showsUserLocation = YES;
+
 }
 
 - (void)viewDidUnload
@@ -61,53 +61,12 @@
     [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(self.mapView.userLocation.coordinate, 6500, 6500) animated:YES];
 }
 
-- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
-{
-    if (self.initialLocation == nil) return;
-
-    NSMutableArray *newAnnotations = [NSMutableArray array];
-    
-    for (CameraSite *camera in self.cameras) {
-        if (MKMapRectContainsPoint(self.mapView.visibleMapRect, MKMapPointForCoordinate(camera.coordinate))) {
-            if (![self.mappedCameras containsObject:camera]) {
-                CTCameraAnnotation* annotation = [[CTCameraAnnotation alloc] initWithCameraSite:camera];
-                [newAnnotations addObject:annotation];
-                [self.mappedCameras addObject:camera];
-            }
-        }
-    }
-
-    [self.mapView addAnnotations:newAnnotations];
-    [self.annotations addObjectsFromArray:newAnnotations];
-}
-
-- (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation
-{
-    static NSString *AnnotationViewID = @"annotationViewID";
-
-    if (annotation == mapView.userLocation)
-        return nil;
-    
-    CTCameraSiteAnnotationView *annotationView = (CTCameraSiteAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:AnnotationViewID];
-    if (annotationView == nil)
-    {
-        annotationView = [[CTCameraSiteAnnotationView alloc] initWithAnnotation:annotation
-                                                                reuseIdentifier:AnnotationViewID];
-        annotationView.animatesDrop = YES;
-        annotationView.canShowCallout = YES;
-
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        annotationView.rightCalloutAccessoryView = button;
-    }
-
-    annotationView.annotation = annotation;
-    return annotationView;
-}
-
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    CTCameraAnnotation *annotation = (CTCameraAnnotation *)view.annotation;
-    [self performSegueWithIdentifier:@"mapCameraDetail" sender:[annotation cameraSite]];
+    ADClusterAnnotation *annotation = (ADClusterAnnotation *)view.annotation;
+    CTCameraAnnotation *point = [[[annotation originalAnnotations] objectAtIndex:0] annotation];
+    CameraSite *cameraSite = point.cameraSite;
+    [self performSegueWithIdentifier:@"mapCameraDetail" sender:cameraSite];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -118,8 +77,63 @@
 
 - (void)loadCameras
 {
-    self.cameras = [NSMutableArray array];
-    [self.cameras addObjectsFromArray:[CameraSite allCameras]];
+    self.cameras = [NSMutableArray arrayWithArray:[CameraSite allCameras]];
+
+    NSMutableArray *annotations = [[NSMutableArray alloc] init];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        for (CameraSite *camera in self.cameras) {
+            CTCameraAnnotation *annotation = [[CTCameraAnnotation alloc] initWithCameraSite:camera];
+            [annotations addObject:annotation];
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.mapView setAnnotations:annotations];
+            NSLog(@"Building KD-Tree…");
+        });
+    });
+}
+
+#pragma mark - ADClusterMapViewDelegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)theMapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    MKAnnotationView *pinView = (MKAnnotationView *)[theMapView dequeueReusableAnnotationViewWithIdentifier:@"ADClusterableAnnotation"];
+    if (!pinView) {
+        pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation
+                                                reuseIdentifier:@"ADClusterableAnnotation"];
+        pinView.image = [UIImage imageNamed:@"SingleCamera.png"];
+        pinView.canShowCallout = YES;
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        pinView.rightCalloutAccessoryView = button;
+    }
+    else {
+        pinView.annotation = annotation;
+    }
+    return pinView;
+}
+
+- (MKAnnotationView *)mapView:(ADClusterMapView *)theMapView viewForClusterAnnotation:(id<MKAnnotation>)annotation {
+    MKAnnotationView * pinView = (MKAnnotationView *)[theMapView dequeueReusableAnnotationViewWithIdentifier:@"ADMapCluster"];
+    if (!pinView) {
+        pinView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"ADMapCluster"];
+        pinView.image = [UIImage imageNamed:@"Group+.png"];
+        pinView.canShowCallout = YES;
+    }
+    else {
+        pinView.annotation = annotation;
+    }
+    return pinView;
+}
+
+
+- (void)mapViewDidFinishClustering:(ADClusterMapView *)mapView {
+    NSLog(@"Done");
+}
+
+- (NSInteger)numberOfClustersInMapView:(ADClusterMapView *)mapView {
+    return 15;
+}
+
+- (double)clusterDiscriminationPowerForMapView:(ADClusterMapView *)mapView {
+    return 1.8;
 }
 
 @end
