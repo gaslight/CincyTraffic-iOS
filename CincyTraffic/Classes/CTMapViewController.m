@@ -87,7 +87,6 @@
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.mapView setAnnotations:annotations];
-            NSLog(@"Building KD-Tree…");
         });
     });
 }
@@ -129,7 +128,7 @@
 }
 
 - (NSInteger)numberOfClustersInMapView:(ADClusterMapView *)mapView {
-    return 15;
+    return 10;
 }
 
 - (double)clusterDiscriminationPowerForMapView:(ADClusterMapView *)mapView {
