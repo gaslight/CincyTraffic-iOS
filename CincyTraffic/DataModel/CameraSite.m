@@ -41,14 +41,19 @@
 
 + (void)loadCamerasFromDictionary:(NSDictionary *)xmlDictionary usingProgressBlock:(void(^)(float progress))block
 {
-    NSManagedObjectContext *context = [[CTCamerasDataModel sharedDataModel] mainContext];
+    NSManagedObjectContext *context = nil;
+    NSPersistentStoreCoordinator *psc = nil;
+    context = [[NSManagedObjectContext alloc] init];
+    psc = [[[CTCamerasDataModel sharedDataModel] mainContext] persistentStoreCoordinator];
+    [context setPersistentStoreCoordinator:psc];
+
     NSError *error = nil;
 
     if (context) {
         NSLog(@"Context is ready!");
         [self removeAllCamerasUsingContext:context];
-        //float totalCameras = [[xmlDictionary valueForKeyPath:@"CameraSite"] count];
-        //float cameraCount = 0.0;
+        float totalCameras = [[xmlDictionary valueForKeyPath:@"CameraSite"] count];
+        float cameraCount = 0.0;
 
         for (NSDictionary *cameraDictionary in [xmlDictionary valueForKeyPath:@"CameraSite"]) {
             CameraSite *cameraSite = [CameraSite insertInManagedObjectContext:context];
@@ -67,15 +72,11 @@
                 [cameraSite addCameraFeedsObject:cameraFeed];
             }
             
-            [context save:&error];
+            if (![context save:&error]) NSLog(@"%@", error);
 
-            if (error) {
-                NSLog(@"uh oh.");
-            }
-            
-            //cameraCount++;
+            cameraCount++;
             dispatch_async(dispatch_get_main_queue(), ^{
-                //block(cameraCount/totalCameras);
+                block(cameraCount/totalCameras);
             });
         }
     }

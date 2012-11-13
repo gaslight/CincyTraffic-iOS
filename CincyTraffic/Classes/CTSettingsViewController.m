@@ -45,9 +45,8 @@
     void (^progressBlock)(float) = ^(float progress) {
         [self.progressBar setProgress:progress animated:YES];
         if (progress >= 1) {
-            NSLog(@"progress: %f", progress);
-            //[self.progressBar setHidden:YES];
-            //[self.tableView reloadData];
+            [self.progressBar setHidden:YES];
+            [self.tableView reloadData];
         }
     };
     
@@ -73,6 +72,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [[UITableViewCell alloc] init];
+    NSManagedObjectContext *context = [[CTCamerasDataModel sharedDataModel] mainContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [fetchRequest setIncludesPropertyValues:NO];
+
+    NSError *error = nil;
 
     if (indexPath.row == 0) {
         static NSString *CellIdentifier = @"sitesCell";
@@ -83,16 +87,12 @@
                                           reuseIdentifier:CellIdentifier];
         }
 
-        NSManagedObjectContext *context = [[CTCamerasDataModel sharedDataModel] mainContext];
-        NSFetchRequest *allCameraSites = [[NSFetchRequest alloc] init];
-        [allCameraSites setEntity:[NSEntityDescription entityForName:@"CameraSite" inManagedObjectContext:context]];
-        [allCameraSites setIncludesPropertyValues:NO];
-        NSError *error = nil;
-        NSUInteger count = [context countForFetchRequest:allCameraSites error:&error];
+        [fetchRequest setEntity:[NSEntityDescription entityForName:@"CameraSite" inManagedObjectContext:context]];
+
+        NSUInteger count = [context countForFetchRequest:fetchRequest error:&error];
+        NSString *countString = NSLocalizedString(@"countString", nil);
 
         cell.textLabel.text = NSLocalizedString(@"CameraSites", @"Camera site");
-
-        NSString *countString = NSLocalizedString(@"countString", nil);
         cell.detailTextLabel.text = [NSString stringWithFormat:countString, count];
     } else {
         static NSString *CellIdentifier = @"feedsCell";
@@ -103,14 +103,12 @@
                                           reuseIdentifier:CellIdentifier];
         }
 
-        NSManagedObjectContext *context = [[CTCamerasDataModel sharedDataModel] mainContext];
-        NSFetchRequest *allFeeds = [[NSFetchRequest alloc] init];
-        [allFeeds setEntity:[NSEntityDescription entityForName:@"CameraFeed" inManagedObjectContext:context]];
-        [allFeeds setIncludesPropertyValues:NO];
-        NSError *error = nil;
-        NSUInteger count = [context countForFetchRequest:allFeeds error:&error];
-        cell.textLabel.text = NSLocalizedString(@"CameraFeeds", @"Camera site");
+        [fetchRequest setEntity:[NSEntityDescription entityForName:@"CameraFeed" inManagedObjectContext:context]];
+
+        NSUInteger count = [context countForFetchRequest:fetchRequest error:&error];
         NSString *countString = NSLocalizedString(@"countString", nil);
+
+        cell.textLabel.text = NSLocalizedString(@"CameraFeeds", @"Camera site");
         cell.detailTextLabel.text = [NSString stringWithFormat:countString, count];
     }
 
