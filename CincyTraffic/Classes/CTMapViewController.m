@@ -129,9 +129,9 @@
     return pinView;
 }
 
-
-- (void)mapViewDidFinishClustering:(ADClusterMapView *)mapView {
-    NSLog(@"Done");
+- (NSString *)clusterTitleForMapView:(ADClusterMapView *)mapView
+{
+    return @"%d cameras";
 }
 
 - (NSInteger)numberOfClustersInMapView:(ADClusterMapView *)mapView {
