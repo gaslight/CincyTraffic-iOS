@@ -32,6 +32,11 @@
 {
     [super viewDidLoad];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadCameras)
+                                                 name:@"camerasReloaded"
+                                               object:nil];
+
     self.initialLocation = nil;
     [self loadCameras];
     
@@ -45,6 +50,8 @@
 {
     [self setMapView:nil];
     [self setCameras:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

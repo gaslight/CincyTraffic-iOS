@@ -47,6 +47,8 @@
         if (progress >= 1) {
             [self.progressBar setHidden:YES];
             [self.tableView reloadData];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"camerasReloaded"
+                                                                object:self];
         }
     };
     
