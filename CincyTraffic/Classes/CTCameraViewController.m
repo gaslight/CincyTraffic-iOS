@@ -41,7 +41,12 @@
     self.webView.delegate = self;
 
     for (CameraFeed *feed in self.camera.cameraFeeds) {
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:feed.smallImageURL]];
+        NSLog(@"%@", feed.largeImageURL);
+        NSLog(@"%@", feed.smallImageURL);
+
+        NSString *badURL = feed.smallImageURL;
+        NSString *url = [badURL stringByReplacingOccurrencesOfString:@"cmhimg01/" withString:@"cmhimg01.dot.state.oh.us/"];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
         [self.webView loadRequest:request];
         self.repeatingTimer = [NSTimer scheduledTimerWithTimeInterval:[feed.updateInterval floatValue]
