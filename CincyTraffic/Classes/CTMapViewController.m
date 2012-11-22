@@ -74,7 +74,7 @@
     CTCameraAnnotation *point = [[[annotation originalAnnotations] objectAtIndex:0] annotation];
     CameraSite *cameraSite = point.cameraSite;
 
-    [TestFlight passCheckpoint:cameraSite.description];
+    [TestFlight passCheckpoint:cameraSite.desc];
 
     [self performSegueWithIdentifier:@"mapCameraDetail" sender:cameraSite];
 }
