@@ -41,7 +41,9 @@ extern const struct CameraSiteFetchedProperties {
 
 
 
+
 @property (nonatomic, strong) NSString* city;
+
 
 
 //- (BOOL)validateCity:(id*)value_ error:(NSError**)error_;
@@ -49,7 +51,9 @@ extern const struct CameraSiteFetchedProperties {
 
 
 
+
 @property (nonatomic, strong) NSDate* createdAt;
+
 
 
 //- (BOOL)validateCreatedAt:(id*)value_ error:(NSError**)error_;
@@ -57,7 +61,9 @@ extern const struct CameraSiteFetchedProperties {
 
 
 
+
 @property (nonatomic, strong) NSString* desc;
+
 
 
 //- (BOOL)validateDesc:(id*)value_ error:(NSError**)error_;
@@ -65,7 +71,9 @@ extern const struct CameraSiteFetchedProperties {
 
 
 
+
 @property (nonatomic, strong) NSNumber* latitude;
+
 
 
 @property float latitudeValue;
@@ -77,7 +85,9 @@ extern const struct CameraSiteFetchedProperties {
 
 
 
+
 @property (nonatomic, strong) NSNumber* longitude;
+
 
 
 @property float longitudeValue;
@@ -89,7 +99,9 @@ extern const struct CameraSiteFetchedProperties {
 
 
 
+
 @property (nonatomic, strong) NSNumber* state;
+
 
 
 @property float stateValue;
@@ -102,7 +114,7 @@ extern const struct CameraSiteFetchedProperties {
 
 
 
-@property (nonatomic, strong) NSSet* cameraFeeds;
+@property (nonatomic, strong) NSSet *cameraFeeds;
 
 - (NSMutableSet*)cameraFeedsSet;
 

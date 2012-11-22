@@ -42,12 +42,13 @@ const struct CameraFeedFetchedProperties CameraFeedFetchedProperties = {
 	return (CameraFeedID*)[super objectID];
 }
 
-+ (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
++ (NSSet*)keyPathsForValuesAffectingValueForKey:(NSString*)key {
 	NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
 	
 	if ([key isEqualToString:@"updateIntervalValue"]) {
 		NSSet *affectingKey = [NSSet setWithObject:@"updateInterval"];
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
 	}
 
 	return keyPaths;

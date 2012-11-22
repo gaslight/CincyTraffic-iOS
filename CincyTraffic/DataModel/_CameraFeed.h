@@ -41,7 +41,9 @@ extern const struct CameraFeedFetchedProperties {
 
 
 
+
 @property (nonatomic, strong) NSString* desc;
+
 
 
 //- (BOOL)validateDesc:(id*)value_ error:(NSError**)error_;
@@ -49,7 +51,9 @@ extern const struct CameraFeedFetchedProperties {
 
 
 
+
 @property (nonatomic, strong) NSString* direction;
+
 
 
 //- (BOOL)validateDirection:(id*)value_ error:(NSError**)error_;
@@ -57,7 +61,9 @@ extern const struct CameraFeedFetchedProperties {
 
 
 
+
 @property (nonatomic, strong) NSString* largeImageURL;
+
 
 
 //- (BOOL)validateLargeImageURL:(id*)value_ error:(NSError**)error_;
@@ -65,7 +71,9 @@ extern const struct CameraFeedFetchedProperties {
 
 
 
+
 @property (nonatomic, strong) NSString* smallImageURL;
+
 
 
 //- (BOOL)validateSmallImageURL:(id*)value_ error:(NSError**)error_;
@@ -73,7 +81,9 @@ extern const struct CameraFeedFetchedProperties {
 
 
 
+
 @property (nonatomic, strong) NSString* type;
+
 
 
 //- (BOOL)validateType:(id*)value_ error:(NSError**)error_;
@@ -81,7 +91,9 @@ extern const struct CameraFeedFetchedProperties {
 
 
 
+
 @property (nonatomic, strong) NSNumber* updateInterval;
+
 
 
 @property int16_t updateIntervalValue;
@@ -94,7 +106,7 @@ extern const struct CameraFeedFetchedProperties {
 
 
 
-@property (nonatomic, strong) CameraSite* cameraSite;
+@property (nonatomic, strong) CameraSite *cameraSite;
 
 //- (BOOL)validateCameraSite:(id*)value_ error:(NSError**)error_;
 
