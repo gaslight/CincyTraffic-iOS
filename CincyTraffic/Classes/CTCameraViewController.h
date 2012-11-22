@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import <SSToolkit/SSLoadingView.h>
 #import "CameraSite.h"
 
 @interface CTCameraViewController : UIViewController <MKMapViewDelegate, UIWebViewDelegate> {

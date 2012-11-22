@@ -2,25 +2,19 @@
 PODS:
 - ADClusterMapView (0.0.1)
 - AFNetworking (1.0.1)
-- KIF (0.0.1)
-- SSToolkit (1.0.2)
 - TestFlightSDK (1.2.beta2)
 - XMLDictionary (2.0.0)
 
 DEPENDENCIES:
 - ADClusterMapView
 - AFNetworking
-- KIF
-- SSToolkit
 - TestFlightSDK
 - XMLDictionary
 
 SPEC CHECKSUMS:
   ADClusterMapView: 77b052dcae47ee8ffd4ae337e2e298fbb5d0fb0a
   AFNetworking: 4c11f857c9a18d65f4257c90a1e74ac49f0ac422
-  SSToolkit: 852044205c6a15586431e90f46b2ef01f693285a
-  TestFlightSDK: 5e99e21c11d7f4447171bf787b256062d4405f23
+  TestFlightSDK: 964167fdbf681a26e4452d087b779cafcba756ae
   XMLDictionary: d41dcb25b03e480f374551037396f4fc1307ff1c
-  KIF: 5d4c54e2943ebca840ba7e6f8e49bdc1d058a13b
 
 COCOAPODS: 0.15.2
