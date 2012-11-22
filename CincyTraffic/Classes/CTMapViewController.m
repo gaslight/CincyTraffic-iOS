@@ -73,6 +73,9 @@
     ADClusterAnnotation *annotation = (ADClusterAnnotation *)view.annotation;
     CTCameraAnnotation *point = [[[annotation originalAnnotations] objectAtIndex:0] annotation];
     CameraSite *cameraSite = point.cameraSite;
+
+    [TestFlight passCheckpoint:cameraSite.description];
+
     [self performSegueWithIdentifier:@"mapCameraDetail" sender:cameraSite];
 }
 

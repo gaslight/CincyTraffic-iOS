@@ -49,6 +49,7 @@
             [self.tableView reloadData];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"camerasReloaded"
                                                                 object:self];
+           [TestFlight passCheckpoint:@"Cameras_Reloaded"];
         }
     };
     
